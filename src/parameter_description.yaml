@@ -1,0 +1,388 @@
+CO2EFFTB:
+ - multiplication factor for EFF to account for an increasing CO2 concentration
+ - [PPM, -]
+ - ["%4.0f", "%4.2f"]
+CO2TRATB:
+ - multiplication factor for maximum transpiration rate TRAMX to account for an increasing CO2 concentration
+ - [PPM, -]
+ - ["%4.0f", "%4.2f"]
+CO2AMAXTB:
+ - multiplication factor for AMAX to account for an increasing CO2 concentration
+ - [PPM, -]
+ - ["%4.0f", "%4.2f"]
+TBASEM:
+- Lower threshold temperature for emergence
+- [C]
+- "%4.1f"
+TEFFMX:
+- maximum effective temperature for emergence
+- [C]
+- "%4.1f"
+TSUMEM:
+- temperature sum from sowing to emergence
+- [C.d]
+- "%4.0f"
+# phenology
+IDSL:
+- indicates whether pre-anthesis development depends on
+  temperature (=0), plus daylength (=1) , plus vernalization (=2)
+- [Undefined]
+- "%2.0f"
+DLO:
+- optimum daylength for development
+- [hr]
+- "%4.1f"
+DLC:
+- critical daylength (lower threshold)
+- [hr]
+- "%4.1f"
+VERNBASE:
+- Base vernalization requirement
+- ['days']
+- "%4.1f"
+VERNSAT:
+- Saturated vernalization requirement
+- ['days']
+- "%4.1f"
+VERNDVS:
+- Critical DVS for vernalization to switch off
+- ["-"]
+- "%4.2f"
+VERNRTB:
+- Temperature response function for vernalization
+- ["C","-"]
+- ["%4.1f","%4.1f"]
+TSUM1:
+- temperature sum from emergence to anthesis
+- [C.d]
+- "%4.0f"
+TSUM2:
+- temperature sum from anthesis to maturity
+- [C.d]
+- "%4.0f"
+DTSMTB:
+- daily increase in temperature sum as function of daily average temperature
+- [C, C]
+- ["%4.1f", "%4.1f"]
+DVSI:
+- Initial development stage
+- [-]
+- "%4.1f"
+DVSEND:
+- development stage at harvest (= 2.0 at maturity)
+- [-]
+- "%4.1f"
+
+# Initial states
+TDWI:
+- initial total crop dry weight
+- [kg.ha-1]
+- "%6.2f"
+RGRLAI:
+- maximum relative increase in LAI
+- [ha.ha-1.d-1]
+- "%6.4f"
+
+# green area
+SLATB:
+- specific leaf area as a function of DVS
+- [-, ha.kg-1]
+- ["%4.2f", "%7.5f"]
+SPA:
+- specific pod area
+- [ha.kg-1]
+- "%6.4f"
+SSATB:
+- specific stem area as function of DVS
+- [-, ha.kg-1]
+- ["%4.2f", "%6.4f"]
+SPAN:
+- life span of leaves growing at 35 Celsius
+- [d]
+- "%4.1f"
+TBASE:
+- lower threshold temperature for ageing of leaves
+- [C]
+- "%4.1f"
+
+# assimilation
+KDIFTB:
+- extinction coefficient for diffuse visible light as function of DVS
+- [-, -]
+- ["%4.2f", "%5.3f"]
+EFFTB:
+- initial light-use efficiency single leaf as function of daily mean temperature
+- [C, kg.ha-1.hr-1.J-1.m2.s1]
+- ["%4.1f", "%5.3f"]
+AMAXTB:
+- maximum leaf CO2 assimilation rate as function of DVS
+- [-, kg.ha-1.hr-1]
+- ["%4.2f", "%4.2f"]
+TMPFTB:
+- reduction factor of AMAX as function of average daily temperature
+- [C, -]
+- ["%4.1f", "%5.3f"]
+TMNFTB:
+- reduction factor of gross assimlation rate as function of low minimum temperature
+- [C, -]
+- ["%4.1f", "%5.3f"]
+
+# conversion of assimilates into biomass
+CVL:
+- efficiency of conversion into leaves
+- [kg.kg-1]
+- "%5.3f"
+CVO:
+- efficiency of conversion into storage organs
+- [kg.kg-1]
+- "%5.3f"
+CVR:
+- efficiency of conversion into roots
+- [kg.kg-1]
+- "%5.3f"
+CVS:
+- efficiency of conversion into stems
+- [kg.kg-1]
+- "%5.3f"
+
+# maintenance respiration
+Q10:
+- relative increase in respiration rate per 10 degrees Celsius temperature increase
+- [-]
+- "%5.2f"
+RML:
+- relative maintenance respiration rate of leaves
+- [kg.CH2O.kg-1.d-1]
+- "%6.4f"
+RMO:
+- relative maintenance respiration rate of storage organs
+- [kg.CH2O.kg-1.d-1]
+- "%6.4f"
+RMR:
+- relative maintenance respiration rate of roots
+- [kg.CH2O.kg-1.d-1]
+- "%6.4f"
+RMS:
+- relative maintenance respiration rate of stems
+- [kg.CH2O.kg-1.d-1]
+- "%6.4f"
+RFSETB:
+-  reduction factor for senescence as function of DVS
+- [-, -]
+- ["%4.2f", "%5.3f"]
+
+# partitioning
+FRTB:
+- fraction of total dry matter to roots as a function of DVS
+- [-, kg.kg-1]
+- ["%5.3f", "%5.3f"]
+FLTB:
+- fraction of total dry matter to leaves as a function of DVS
+- [-, kg.kg-1]
+- ["%5.3f", "%5.3f"]
+FSTB:
+- fraction of total dry matter to stems as a function of DVS
+- [-, kg.kg-1]
+- ["%5.3f", "%5.3f"]
+FOTB:
+- fraction of total dry matter to storage organs as a function of DVS
+- [-, kg.kg-1]
+- ["%5.3f", "%5.3f"]
+
+# death rates
+PERDL:
+- maximum relative death rate of leaves due to water stress
+- [Undefined]
+- "%5.3f"
+RDRRTB:
+- Relative death rate of stems as a function of DVS
+- [-, kg.kg-1.d-1]
+- ["%4.2f", "%5.3f"]
+RDRSTB:
+- relative death rate of roots as a function of DVS
+- [-, kg.kg-1.d-1]
+- ["%4.2f", "%5.3f"]
+# water use
+CFET:
+- correction factor transpiration rate
+- [-]
+- "%4.2f"
+DEPNR:
+- crop group number for soil water depletion
+- [-]
+- "%4.2f"
+IAIRDU:
+- air ducts in roots present (=1) or not (=0)
+- [Undefined]
+- "%2.0f"
+# rooting
+RDI:
+- initial rooting depth
+- [cm]
+- "%5.1f"
+RRI:
+- maximum daily increase in rooting depth
+- [cm.d-1]
+- "%4.2f"
+RDMCR:
+- maximum rooting depth
+- [cm]
+- "%5.1f"
+
+DVSNPK_STOP:
+-  DVS above which no crop N-P-K uptake occurs
+- [-]
+- "%4.2f"
+
+# Maximum and residual nitrogen concentration in different organs
+NMAXLV_TB:
+-  maximum N concentration in leaves as function of development stage in kg N kg-1 dry biomass
+- [-, kg.kg-1]
+- ["%4.2f", "%6.4f"]
+NMAXRT_FR:
+-  maximum N concentration in roots as fraction of maximum N concentration in leaves
+- [-]
+- "%6.4f"
+NMAXST_FR:
+-  maximum N concentration in stems as fraction of maximum N concentration in leaves
+- [-]
+- "%6.4f"
+NMAXSO:
+-  maximum P concentration in storage organs [kg N kg-1 dry biomass]
+- [kg.kg-1]
+- "%6.4f"
+NRESIDLV:
+- [kg.kg-1]
+- residual N fraction in leaves [kg N kg-1 dry biomass]
+- "%6.4f"
+NRESIDST:
+- residual N fraction in stems [kg N kg-1 dry biomass]
+- [kg.kg-1]
+- "%6.4f"
+NRESIDRT:
+- residual N fraction in roots [kg N kg-1 dry biomass]
+- [kg.kg-1]
+- "%6.4f"
+TCNT:
+-  time coefficient for N translocation to storage organs [days]
+- [days]
+- "%3.0f"
+
+PMAXLV_TB:
+-  maximum P concentration in leaves as function of development stage in kg P kg-1 dry biomass
+- [-, kg.kg-1]
+- ["%4.2f", "%6.4f"]
+PMAXRT_FR:
+-  maximum P concentration in roots as fraction of maximum P concentration in leaves
+- [-]
+- "%6.4f"
+PMAXST_FR:
+-  maximum P concentration in stems as fraction of maximum P concentration in leaves
+- [-]
+- "%6.4f"
+PMAXSO:
+- [kg.kg-1]
+-  maximum P concentration in storage organs [kg P kg-1 dry biomass]
+- "%6.4f"
+PRESIDLV:
+- residual P fraction in leaves [kg P kg-1 dry biomass]
+- [kg.kg-1]
+- "%6.4f"
+PRESIDST:
+- residual P fraction in stems [kg P kg-1 dry biomass]
+- [kg.kg-1]
+- "%6.4f"
+PRESIDRT:
+- residual P fraction in roots [kg P kg-1 dry biomass]
+- [kg.kg-1]
+- "%6.4f"
+TCPT:
+-  time coefficient for P translocation to storage organs [days]
+- [days]
+- "%3.0f"
+
+KMAXLV_TB:
+-  maximum K concentration in leaves as function of development stage in kg K kg-1 dry biomass
+- [-, kg.kg-1]
+- ["%4.2f", "%6.4f"]
+KMAXRT_FR:
+-  maximum K concentration in roots as fraction of maximum K concentration in leaves
+- [-]
+- "%6.4f"
+KMAXST_FR:
+-  maximum K concentration in stems as fraction of maximum K concentration in leaves
+- [-]
+- "%6.4f"
+KMAXSO:
+-  maximum K concentration in storage organs [kg K kg-1 dry biomass]
+- [kg.kg-1]
+- "%6.4f"
+KRESIDLV:
+- residual K fraction in leaves [kg K kg-1 dry biomass]
+- [kg.kg-1]
+- "%6.4f"
+KRESIDST:
+- residual K fraction in stems [kg K kg-1 dry biomass]
+- [kg.kg-1]
+- "%6.4f"
+KRESIDRT:
+- residual K fraction in roots [kg K kg-1 dry biomass]
+- [kg.kg-1]
+- "%6.4f"
+TCKT:
+-  time coefficient for K translocation to storage organs [days]
+- [days]
+- "%3.0f"
+
+# Impact of NPK limitation on various processes
+DVS_NPK_TRANSL:
+- development stage above which N/P/K translocation to storage organs does occur
+- [-]
+- "%4.2f"
+DVS_NPK_STOP:
+- development stage above which no crop N/P/K uptake occurs
+- [-]
+- "%4.2f"
+NLAI_NPK:
+- coefficient for the reduction due to nutrient NPK stress of the LAI increase (during juvenile phase)
+- [-]
+- "%4.2f"
+NSLA_NPK:
+- coefficient for the effect of nutrient NPK stress on SLA reduction
+- [-]
+- "%4.2f"
+NPART:
+- coefficient for the effect of nutrient N stress on leaf allocation
+- [-]
+- "%4.2f"
+NLUE_NPK:
+- coefficient for the reduction of gross CO2 assimilation rate due to nutrient (N-P-K) stress
+- [-]
+- "%4.2f"
+NPK_TRANSLRT_FR:
+- NPK translocation from roots as a fraction of total NPK amounts translocated from leaves and stems
+- [-]
+- "%4.2f"
+
+# Critical N/P/K concentration as fraction of the maximum concentration below which reductions occur
+# due to nitrogen stress
+NCRIT_FR:
+- Critical N concentration as fraction of maximum N concentration
+- [-]
+- "%4.2f"
+PCRIT_FR:
+- Critical P concentration as fraction of maximum P concentration
+- [-]
+- "%4.2f"
+KCRIT_FR:
+- Critical K concentration as fraction of maximum K concentration
+- [-]
+- "%4.2f"
+NFIX_FR:
+- fraction of crop nitrogen uptake by biological fixation
+- [-]
+- "%4.2f"
+RDRLV_NPK:
+- maximum relative death rate of leaves due to nutrient NPK stress
+- [-]
+- "%4.2f"

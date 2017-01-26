@@ -1,0 +1,68 @@
+;# Crop parameter file for use with the PCSE/WISS implementations of the WOFOST
+;# crop simulation model
+;#
+;# Creation date: {cdate}
+;#
+;# Contact: Allard de Wit (allard.dewit@wur.nl)
+;#          Wageningen University and Research Centre
+;#          PO Box 47, 6700 AA Wageningen, The Netherlands
+;#
+;# Crop type: ???
+;#
+;# More information: - http://pcse.readthedocs.io
+;#                   - http://www.wageningenur.nl/wofost
+;#                   - https://github.com/ajwdewit/WOFOST_crop_parameters
+;#
+;Version: 0.1
+;CropParameters:
+;    GenericC3: &GenericC3
+;        CO2EFFTB:
+;         - [40., 0.00,
+;           360., 1.00,
+;           720., 1.11,
+;          1000., 1.11,
+;          2000., 1.11]
+;         - multiplication factor for EFF to account for an increasing CO2 concentration
+;         - [PPM, -]
+;        CO2TRATB:
+;         - [40., 0.00,
+;           360., 1.00,
+;           720., 0.9,
+;          1000., 0.9,
+;          2000., 0.9]
+;         - multiplication factor for maximum transpiration rate TRAMX to account for an increasing CO2 concentration
+;         - [PPM, -]
+;        CO2AMAXTB:
+;         - [40.,  0.00,
+;           360.,  1.00,
+;           720.,  1.60,
+;           1000., 1.90,
+;           2000., 1.90]
+;         - multiplication factor for AMAX to account for an increasing CO2 concentration
+;         - [PPM, -]
+;    GenericC4: &GenericC4
+;        CO2EFFTB:
+;         - [40., 0.00,
+;           360., 1.00,
+;           720., 1.00,
+;          1000., 1.00,
+;          2000., 1.00]
+;         - multiplication factor for EFF to account for an increasing CO2 concentration
+;         - [PPM, -]
+;        CO2TRATB:
+;         - [40., 0.00,
+;           360., 1.00,
+;           720., 0.74,
+;          1000., 0.74,
+;          2000., 0.74]
+;         - multiplication factor for maximum transpiration rate TRAMX to account for an increasing CO2 concentration
+;         - [PPM, -]
+;        CO2AMAXTB:
+;         - [40.,  0.00,
+;           360.,  1.00,
+;           720.,  1.00,
+;           1000., 1.00,
+;           2000., 1.00]
+;         - multiplication factor for AMAX to account for an increasing CO2 concentration
+;         - [PPM, -]
+;    EcoTypes:
