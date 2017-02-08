@@ -20,7 +20,7 @@
 ** model in the EC.
 ** Developed in the framework of JRC Agriculture Project Action 3. 
 
-CRPNAM='Faba bean 801, EC'
+CRPNAM='Faba_bean_801'
 
 ECOTYPE='fababean'
 ** emergence

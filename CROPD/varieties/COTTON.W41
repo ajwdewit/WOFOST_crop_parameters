@@ -14,7 +14,7 @@
 ** in tropical regions
 ** Developed in the framework of SysNet, 1997
 
-CRPNAM='Cotton,(Van Heemst, 1988)'
+CRPNAM='Cotton_VanHeemst_1988'
 
 ECOTYPE='cotton'
 ** emergence

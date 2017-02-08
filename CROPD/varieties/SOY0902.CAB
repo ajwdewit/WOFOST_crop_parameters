@@ -19,7 +19,7 @@
 ** crop identity
 ** !CRPNAM  = Soybean (Glycine max (L.) Merril)
 
-CRPNAM='Soybean 902, Central France'
+CRPNAM='Soybean_902'
 
 ECOTYPE='soybean'
 ** emergence

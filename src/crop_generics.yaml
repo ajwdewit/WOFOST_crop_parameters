@@ -7,13 +7,11 @@
 ;#          Wageningen University and Research Centre
 ;#          PO Box 47, 6700 AA Wageningen, The Netherlands
 ;#
-;# Crop type: ???
-;#
 ;# More information: - http://pcse.readthedocs.io
 ;#                   - http://www.wageningenur.nl/wofost
 ;#                   - https://github.com/ajwdewit/WOFOST_crop_parameters
 ;#
-;Version: 0.1
+;Version: 1.0
 ;CropParameters:
 ;    GenericC3: &GenericC3
 ;        CO2EFFTB:

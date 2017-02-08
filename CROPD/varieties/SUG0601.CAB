@@ -16,7 +16,7 @@
 ** model in the EC.
 ** Developed in the framework of JRC Agriculture Project Action 3. 
 
-CRPNAM='Sugar beet 601, N-EC'
+CRPNAM='Sugarbeet_601'
 
 ECOTYPE='sugarbeet'
 ** emergence

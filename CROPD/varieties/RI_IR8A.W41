@@ -20,7 +20,7 @@
 ** Crop identity
 ICROP    = 60112
 
-CRPNAM='Rice IR 8, trt.6, Akita trial'
+CRPNAM='Rice_IR8A'
 ECOTYPE='rice_irri'
 
 ** Rice is transplanted, no simulation before emergence.

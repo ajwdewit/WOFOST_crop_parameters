@@ -19,7 +19,7 @@
 ** model in the EC.
 ** Developed in the framework of JRC Agriculture Project Action 3. 
 
-CRPNAM='Spring barley 301, EC'
+CRPNAM='Spring_barley_301'
 
 ECOTYPE='springbarley'
 ** emergence

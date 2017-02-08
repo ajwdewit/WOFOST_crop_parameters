@@ -42,7 +42,7 @@ WOFOST_parameters = \
      "NMAXLV_TB", "PMAXSO", "PMAXLV_TB", "KRESIDLV", "KRESIDRT", "KRESIDST",
      "NRESIDLV", "NRESIDRT", "NRESIDST", "PRESIDLV", "PRESIDRT", "PRESIDST",
      "TCKT", "TCNT", "TCPT", "RDRLV_NPK", "NLAI_NPK", "NSLA_NPK", "NPART",
-     'VERNBASE', 'VERNRTB', 'VERNSAT', 'VERNDVS']
+     'VERNBASE', 'VERNRTB', 'VERNSAT', 'VERNDVS', 'IOX']
      # "CO2EFFTB","CO2TRATB","CO2AMAXTB",
 
 class TabularParameter():
@@ -143,7 +143,7 @@ def make_variety_yaml_stream(crop, ecotypes):
                 continue
 
             ecotype_params = ecotypes[ecotype_name]
-            cultivar_name = params["CRPNAM"].strip().lower()
+            cultivar_name = params["CRPNAM"].strip()
             msg = "Found cultivar '%s' in file: %s" % (cultivar_name, fname)
             print(msg)
 
@@ -151,9 +151,14 @@ def make_variety_yaml_stream(crop, ecotypes):
                                     ";        <<: *{ecotype}\n".format(ecotype=ecotype_name))
             template = "{parname}:\n{pardesc}\n"
             for name in WOFOST_parameters:
-                if name in WOFOST_NPK_params or name in add_params:
+                if name in WOFOST_NPK_params: # or name in add_params:
                     # Default crop files do not contain the nutrient parameters and additional params
                     continue
+                if name in add_params:
+                    # For additional parameters,
+                    # If name not in crop parameter file, then continue
+                    if name not in params:
+                        continue
                 value = params[name]
                 if name not in ecotype_params:
                     msg = "Warning: parameter '%s' not in ecotype!" % name
@@ -265,7 +270,7 @@ def build_yaml_cropfiles():
         ecotype_params = yaml.load(yaml_tmp)
         ecotypes = ecotype_params['CropParameters']['EcoTypes']
 
-        # Create YAML crop varieties, variety parametrs will be compared to the EcoType parameters
+        # Create YAML crop varieties, variety parameters will be compared to the EcoType parameters
         # only in case the variety is different from the ecotype, the parameter will be added to the
         # YAML stream.
         variety_yaml_stream = make_variety_yaml_stream(crop, ecotypes)

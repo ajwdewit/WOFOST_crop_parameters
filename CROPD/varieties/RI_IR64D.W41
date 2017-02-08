@@ -17,7 +17,7 @@
 ** Crop identity
 ICROP    = 60105
 
-CRPNAM='IR64 Munoz 150kg N DS 1988 by M. Dingkuhn et al.'
+CRPNAM='Rice_IR64'
 ECOTYPE='rice_irri'
 
 ** Rice is transplanted, no simulation before emergence.

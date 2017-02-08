@@ -14,7 +14,7 @@
 ** in tropical regions
 ** Developed in the framework of SysNet, 1997
 
-CRPNAM='Cassava,(Van Heemst, 1988)'
+CRPNAM='Cassava_VanHeemst_1988'
 
 ECOTYPE='cassava'
 ** emergence

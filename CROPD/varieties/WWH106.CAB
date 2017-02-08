@@ -16,7 +16,9 @@
 ** model in the EC.
 ** Developed in the framework of JRC Agriculture Project Action 3. 
 
-CRPNAM='Winter wheat 106, S-Italy, Central and E-Spain, S-Portugal'
+**MARSOP4: variety 2137
+
+CRPNAM='Winter_wheat_106'
 
 ECOTYPE='winterwheat'
 ** emergence
@@ -25,20 +27,22 @@ TEFFMX   =  30.0    ! max. eff. temp. for emergence [cel]
 TSUMEM   =  120.     ! temperature sum from sowing to emergence [cel d]
 
 ** phenology
-IDSL     =   0      ! indicates whether pre-anthesis development depends
+IDSL     =   2      ! indicates whether pre-anthesis development depends
                     ! on temp. (=0), daylength (=1) , or both (=2)
-DLO      = -99.0    ! optimum daylength for development [hr]
-DLC      = -99.0    ! critical daylength (lower threshold) [hr]
-TSUM1    =1300.     ! temperature sum from emergence to anthesis [cel d]
-TSUM2    =1000.     ! temperature sum from anthesis to maturity [cel d]
+DLO      = 14.8     ! optimum daylength for development [hr]
+DLC      = 8        ! critical daylength (lower threshold) [hr]
+TSUM1    = 852.     ! temperature sum from emergence to anthesis [cel d]
+TSUM2    = 950.     ! temperature sum from anthesis to maturity [cel d]
 DTSMTB   =   0.00,    0.00,     ! daily increase in temp. sum 
             30.00,   30.00,     ! as function of av. temp. [cel; cel d]
             45.00,   30.00
+VERNBASE = 5.
+VERNSAT  = 25.
 DVSI = 0.           ! initial DVS
 DVSEND   =   2.00   ! development stage at harvest (= 2.0 at maturity [-])
 
 ** initial
-TDWI     = 210.00   ! initial total crop dry weight [kg ha-1]
+TDWI     =  50.     ! initial total crop dry weight [kg ha-1]
 LAIEM    =   0.1365 ! leaf area index at emergence [ha ha-1]
 RGRLAI   =   0.00817 ! maximum relative increase in LAI [ha ha-1 d-1] 
 

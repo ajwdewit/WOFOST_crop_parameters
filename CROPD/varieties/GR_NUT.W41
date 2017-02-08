@@ -14,7 +14,7 @@
 ** in tropical regions
 ** Developed in the framework of SysNet, 1997
 
-CRPNAM='Groundnut,(Van Heemst, 1988)'
+CRPNAM='Groundnut_VanHeemst_1988'
 
 ECOTYPE='groundnut'
 ** emergence

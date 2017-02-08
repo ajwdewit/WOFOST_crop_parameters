@@ -17,7 +17,7 @@
 
 ICROP=60111
 
-CRPNAM='Rice HYV-IR8,(Van Heemst, 1988)'
+CRPNAM='Rice_HYV_IR8'
 ECOTYPE='rice_irri'
 
 ** Rice is transplanted, no simulation before emergence.

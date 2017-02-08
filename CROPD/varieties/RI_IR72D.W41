@@ -16,7 +16,7 @@
 ** Crop identity
 ICROP    = 60100
 
-CRPNAM='Rice IR72, IRRI 1992 Dry Season, 225 kg N'
+CRPNAM='Rice_IR72_DS'
 ECOTYPE='rice_irri'
 
 ** Rice is transplanted, no simulation before emergence.

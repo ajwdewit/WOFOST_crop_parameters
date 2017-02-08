@@ -16,7 +16,7 @@ ECOTYPE=''
 ** model in the EC.
 ** Developed in the framework of JRC Agriculture Project Action 3. 
 
-CRPNAM='Oilseed rape 1004, Spain'
+CRPNAM='Oilseed_rape_1004'
 
 ECOTYPE='rapeseed'
 ** emergence

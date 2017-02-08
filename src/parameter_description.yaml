@@ -215,6 +215,10 @@ IAIRDU:
 - air ducts in roots present (=1) or not (=0)
 - [Undefined]
 - "%2.0f"
+IOX:
+- Oxygen stress effect enabled (=1) or not (=0)
+- [Undefined]
+- "%2.0f"
 # rooting
 RDI:
 - initial rooting depth
@@ -228,12 +232,10 @@ RDMCR:
 - maximum rooting depth
 - [cm]
 - "%5.1f"
-
 DVSNPK_STOP:
 -  DVS above which no crop N-P-K uptake occurs
 - [-]
 - "%4.2f"
-
 # Maximum and residual nitrogen concentration in different organs
 NMAXLV_TB:
 -  maximum N concentration in leaves as function of development stage in kg N kg-1 dry biomass

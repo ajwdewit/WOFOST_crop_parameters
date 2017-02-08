@@ -14,7 +14,7 @@
 ** in tropical regions
 ** Developed in the framework of SysNet, 1997
 
-CRPNAM='Cowpea,(Van Heemst, 1988)'
+CRPNAM='Cowpea_VanHeemst_1988'
 
 ECOTYPE='cowpea'
 ** emergence

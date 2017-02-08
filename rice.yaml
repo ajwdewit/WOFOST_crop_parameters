@@ -1,0 +1,2019 @@
+# Crop parameter file for use with the PCSE/WISS implementations of the WOFOST
+# crop simulation model
+#
+# Creation date: 2017-02-08
+#
+# Contact: Allard de Wit (allard.dewit@wur.nl)
+#          Wageningen University and Research Centre
+#          PO Box 47, 6700 AA Wageningen, The Netherlands
+#
+# More information: - http://pcse.readthedocs.io
+#                   - http://www.wageningenur.nl/wofost
+#                   - https://github.com/ajwdewit/WOFOST_crop_parameters
+#
+Version: 1.0
+CropParameters:
+    GenericC3: &GenericC3
+        CO2EFFTB:
+         - [40., 0.00,
+           360., 1.00,
+           720., 1.11,
+          1000., 1.11,
+          2000., 1.11]
+         - multiplication factor for EFF to account for an increasing CO2 concentration
+         - [PPM, -]
+        CO2TRATB:
+         - [40., 0.00,
+           360., 1.00,
+           720., 0.9,
+          1000., 0.9,
+          2000., 0.9]
+         - multiplication factor for maximum transpiration rate TRAMX to account for an increasing CO2 concentration
+         - [PPM, -]
+        CO2AMAXTB:
+         - [40.,  0.00,
+           360.,  1.00,
+           720.,  1.60,
+           1000., 1.90,
+           2000., 1.90]
+         - multiplication factor for AMAX to account for an increasing CO2 concentration
+         - [PPM, -]
+    GenericC4: &GenericC4
+        CO2EFFTB:
+         - [40., 0.00,
+           360., 1.00,
+           720., 1.00,
+          1000., 1.00,
+          2000., 1.00]
+         - multiplication factor for EFF to account for an increasing CO2 concentration
+         - [PPM, -]
+        CO2TRATB:
+         - [40., 0.00,
+           360., 1.00,
+           720., 0.74,
+          1000., 0.74,
+          2000., 0.74]
+         - multiplication factor for maximum transpiration rate TRAMX to account for an increasing CO2 concentration
+         - [PPM, -]
+        CO2AMAXTB:
+         - [40.,  0.00,
+           360.,  1.00,
+           720.,  1.00,
+           1000., 1.00,
+           2000., 1.00]
+         - multiplication factor for AMAX to account for an increasing CO2 concentration
+         - [PPM, -]
+    EcoTypes:
+        rice_eu: &rice_eu
+            <<: *GenericC3
+            #
+            # EMERGENCE
+            #
+            TBASEM:
+            -  8.0
+            - Lower threshold temperature for emergence
+            - ['C']
+            TEFFMX:
+            - 22.0
+            - maximum effective temperature for emergence
+            - ['C']
+            TSUMEM:
+            -  100
+            - temperature sum from sowing to emergence
+            - ['C.d']
+            #
+            # PHENOLOGICAL DEVELOPMENT
+            #
+            IDSL:
+            -  0
+            - indicates whether pre-anthesis development depends on temperature (=0), plus daylength (=1) , plus vernalization (=2)
+            - ['Undefined']
+            DLO:
+            - -99.0
+            - optimum daylength for development
+            - ['hr']
+            DLC:
+            - -99.0
+            - critical daylength (lower threshold)
+            - ['hr']
+            TSUM1:
+            -  875
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  625
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            DTSMTB:
+            - [ 0.0,  0.0,
+               10.0,  0.0,
+               25.0, 15.0]
+            - daily increase in temperature sum as function of daily average temperature
+            - ['C', 'C']
+            DVSI:
+            -  0.0
+            - Initial development stage
+            - ['-']
+            DVSEND:
+            -  2.0
+            - development stage at harvest (= 2.0 at maturity)
+            - ['-']
+            VERNBASE:
+            - 14.0
+            - Base vernalization requirement
+            - ['days']
+            VERNSAT:
+            - 70.0
+            - Saturated vernalization requirement
+            - ['days']
+            VERNDVS:
+            - 0.30
+            - Critical DVS for vernalization to switch off
+            - ['-']
+            VERNRTB:
+            - [-8.0,  0.0,
+               -4.0,  0.0,
+                3.0,  1.0,
+               10.0,  1.0,
+               17.0,  0.0,
+               20.0,  0.0]
+            - Temperature response function for vernalization
+            - ['C', '-']
+            #
+            # INITIAL STATES
+            #
+            TDWI:
+            -  55.00
+            - initial total crop dry weight
+            - ['kg.ha-1']
+            RGRLAI:
+            - 0.0070
+            - maximum relative increase in LAI
+            - ['ha.ha-1.d-1']
+            #
+            # CROP GREEN AREA
+            #
+            SLATB:
+            - [0.00, 0.00220,
+               0.60, 0.00220,
+               1.00, 0.00220,
+               2.10, 0.00220]
+            - specific leaf area as a function of DVS
+            - ['-', 'ha.kg-1']
+            SPA:
+            - 0.0000
+            - specific pod area
+            - ['ha.kg-1']
+            SSATB:
+            - [0.00, 0.0000,
+               2.00, 0.0000]
+            - specific stem area as function of DVS
+            - ['-', 'ha.kg-1']
+            SPAN:
+            - 50.0
+            - life span of leaves growing at 35 Celsius
+            - ['d']
+            TBASE:
+            -  0.0
+            - lower threshold temperature for ageing of leaves
+            - ['C']
+            #
+            # CO2 ASSIMILATION
+            #
+            KDIFTB:
+            - [0.00, 0.600,
+               2.00, 0.600]
+            - extinction coefficient for diffuse visible light as function of DVS
+            - ['-', '-']
+            EFFTB:
+            - [ 0.0, 0.450,
+               40.0, 0.450]
+            - initial light-use efficiency single leaf as function of daily mean temperature
+            - ['C', 'kg.ha-1.hr-1.J-1.m2.s1']
+            AMAXTB:
+            - [0.00, 40.00,
+               1.00, 40.00,
+               1.30, 40.00,
+               2.00, 40.00]
+            - maximum leaf CO2 assimilation rate as function of DVS
+            - ['-', 'kg.ha-1.hr-1']
+            TMPFTB:
+            - [ 0.0, 0.010,
+               10.0, 0.000,
+               25.0, 1.000,
+               35.0, 1.000,
+               42.0, 0.000]
+            - reduction factor of AMAX as function of average daily temperature
+            - ['C', '-']
+            TMNFTB:
+            - [ 0.0, 0.000,
+                3.0, 1.000]
+            - reduction factor of gross assimlation rate as function of low minimum temperature
+            - ['C', '-']
+            #
+            # CONVERSION EFFICIENCY OF ASSIMILATES
+            #
+            CVL:
+            - 0.754
+            - efficiency of conversion into leaves
+            - ['kg.kg-1']
+            CVO:
+            - 0.684
+            - efficiency of conversion into storage organs
+            - ['kg.kg-1']
+            CVR:
+            - 0.754
+            - efficiency of conversion into roots
+            - ['kg.kg-1']
+            CVS:
+            - 0.754
+            - efficiency of conversion into stems
+            - ['kg.kg-1']
+            #
+            # RESPIRATION
+            #
+            Q10:
+            -  2.00
+            - relative increase in respiration rate per 10 degrees Celsius temperature increase
+            - ['-']
+            RML:
+            - 0.0300
+            - relative maintenance respiration rate of leaves
+            - ['kg.CH2O.kg-1.d-1']
+            RMO:
+            - 0.0150
+            - relative maintenance respiration rate of storage organs
+            - ['kg.CH2O.kg-1.d-1']
+            RMR:
+            - 0.0150
+            - relative maintenance respiration rate of roots
+            - ['kg.CH2O.kg-1.d-1']
+            RMS:
+            - 0.0200
+            - relative maintenance respiration rate of stems
+            - ['kg.CH2O.kg-1.d-1']
+            RFSETB:
+            - [0.00, 1.000,
+               2.00, 1.000]
+            - reduction factor for senescence as function of DVS
+            - ['-', '-']
+            #
+            # PARTITIONING
+            #
+            FRTB:
+            - [0.000, 0.200,
+               0.500, 0.200,
+               0.800, 0.150,
+               1.000, 0.150,
+               1.100, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to roots as a function of DVS
+            - ['-', 'kg.kg-1']
+            FLTB:
+            - [0.000, 0.400,
+               0.500, 0.350,
+               0.850, 0.180,
+               0.900, 0.150,
+               1.000, 0.000,
+               1.100, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to leaves as a function of DVS
+            - ['-', 'kg.kg-1']
+            FSTB:
+            - [0.000, 0.600,
+               0.500, 0.650,
+               0.850, 0.820,
+               0.900, 0.550,
+               1.000, 0.250,
+               1.100, 0.150,
+               1.200, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to stems as a function of DVS
+            - ['-', 'kg.kg-1']
+            FOTB:
+            - [0.850, 0.000,
+               0.900, 0.300,
+               1.000, 0.750,
+               1.100, 0.850,
+               1.200, 1.000,
+               2.000, 1.000]
+            - fraction of total dry matter to storage organs as a function of DVS
+            - ['-', 'kg.kg-1']
+            #
+            # DEATH RATES
+            #
+            PERDL:
+            - 0.030
+            - maximum relative death rate of leaves due to water stress
+            - ['Undefined']
+            RDRRTB:
+            - [0.00, 0.000,
+               1.50, 0.000,
+               1.51, 0.020,
+               2.00, 0.020]
+            - Relative death rate of stems as a function of DVS
+            - ['-', 'kg.kg-1.d-1']
+            RDRSTB:
+            - [0.00, 0.000,
+               1.50, 0.000,
+               1.51, 0.020,
+               2.00, 0.020]
+            - relative death rate of roots as a function of DVS
+            - ['-', 'kg.kg-1.d-1']
+            #
+            # WATER USE
+            #
+            CFET:
+            - 1.00
+            - correction factor transpiration rate
+            - ['-']
+            DEPNR:
+            - 3.50
+            - crop group number for soil water depletion
+            - ['-']
+            IAIRDU:
+            -  1
+            - air ducts in roots present (=1) or not (=0)
+            - ['Undefined']
+            IOX:
+            -  0
+            - Oxygen stress effect enabled (=1) or not (=0)
+            - ['Undefined']
+            #
+            # ROOTING DEPTH
+            #
+            RDI:
+            -  10.0
+            - initial rooting depth
+            - ['cm']
+            RRI:
+            - 1.20
+            - maximum daily increase in rooting depth
+            - ['cm.d-1']
+            RDMCR:
+            -  80.0
+            - maximum rooting depth
+            - ['cm']
+            #
+            # MAXIMUM, CRITICAL AND RESIDUAL NITROGEN CONCENTRATION IN DIFFERENT ORGANS
+            #
+            NMAXLV_TB:
+            - [0.00, 0.0600,
+               0.40, 0.0400,
+               0.70, 0.0300,
+               1.00, 0.0200,
+               2.00, 0.0150,
+               2.10, 0.0150]
+            - maximum N concentration in leaves as function of development stage in kg N kg-1 dry biomass
+            - ['-', 'kg.kg-1']
+            NMAXRT_FR:
+            - 0.5000
+            - maximum N concentration in roots as fraction of maximum N concentration in leaves
+            - ['-']
+            NMAXST_FR:
+            - 0.5000
+            - maximum N concentration in stems as fraction of maximum N concentration in leaves
+            - ['-']
+            NMAXSO:
+            - 0.0270
+            - maximum P concentration in storage organs [kg N kg-1 dry biomass]
+            - ['kg.kg-1']
+            NCRIT_FR:
+            - 1.00
+            - Critical N concentration as fraction of maximum N concentration
+            - ['-']
+            NRESIDLV:
+            - 0.0043
+            - ['kg.kg-1']
+            - residual N fraction in leaves [kg N kg-1 dry biomass]
+            NRESIDST:
+            - 0.0021
+            - residual N fraction in stems [kg N kg-1 dry biomass]
+            - ['kg.kg-1']
+            NRESIDRT:
+            - 0.0021
+            - residual N fraction in roots [kg N kg-1 dry biomass]
+            - ['kg.kg-1']
+            TCNT:
+            -  10
+            - time coefficient for N translocation to storage organs [days]
+            - ['days']
+            NFIX_FR:
+            - 0.00
+            - fraction of crop nitrogen uptake by biological fixation
+            - ['-']
+            #
+            # MAXIMUM, CRITICAL AND RESIDUAL PHOSPHORUS CONCENTRATION IN DIFFERENT ORGANS
+            #
+            PMAXLV_TB:
+            - [0.00, 0.0090,
+               0.40, 0.0060,
+               0.70, 0.0040,
+               1.00, 0.0030,
+               2.00, 0.0021,
+               2.10, 0.0021]
+            - maximum P concentration in leaves as function of development stage in kg P kg-1 dry biomass
+            - ['-', 'kg.kg-1']
+            PMAXRT_FR:
+            - 0.5000
+            - maximum P concentration in roots as fraction of maximum P concentration in leaves
+            - ['-']
+            PMAXST_FR:
+            - 0.5000
+            - maximum P concentration in stems as fraction of maximum P concentration in leaves
+            - ['-']
+            PMAXSO:
+            - 0.0040
+            - ['kg.kg-1']
+            - maximum P concentration in storage organs [kg P kg-1 dry biomass]
+            PCRIT_FR:
+            - 1.00
+            - Critical P concentration as fraction of maximum P concentration
+            - ['-']
+            PRESIDLV:
+            - 0.0004
+            - residual P fraction in leaves [kg P kg-1 dry biomass]
+            - ['kg.kg-1']
+            PRESIDST:
+            - 0.0002
+            - residual P fraction in stems [kg P kg-1 dry biomass]
+            - ['kg.kg-1']
+            PRESIDRT:
+            - 0.0002
+            - residual P fraction in roots [kg P kg-1 dry biomass]
+            - ['kg.kg-1']
+            TCPT:
+            -  10
+            - time coefficient for P translocation to storage organs [days]
+            - ['days']
+            #
+            # MAXIMUM, CRITICAL AND RESIDUAL POTASSIUM CONCENTRATION IN DIFFERENT ORGANS
+            #
+            KMAXLV_TB:
+            - [0.00, 0.1200,
+               0.40, 0.0800,
+               0.70, 0.0600,
+               1.00, 0.0400,
+               2.00, 0.0290,
+               2.10, 0.0290]
+            - maximum K concentration in leaves as function of development stage in kg K kg-1 dry biomass
+            - ['-', 'kg.kg-1']
+            KMAXRT_FR:
+            - 0.5000
+            - maximum K concentration in roots as fraction of maximum K concentration in leaves
+            - ['-']
+            KMAXST_FR:
+            - 0.5000
+            - maximum K concentration in stems as fraction of maximum K concentration in leaves
+            - ['-']
+            KMAXSO:
+            - 0.0075
+            - maximum K concentration in storage organs [kg K kg-1 dry biomass]
+            - ['kg.kg-1']
+            KCRIT_FR:
+            - 1.00
+            - Critical K concentration as fraction of maximum K concentration
+            - ['-']
+            KRESIDLV:
+            - 0.0093
+            - residual K fraction in leaves [kg K kg-1 dry biomass]
+            - ['kg.kg-1']
+            KRESIDST:
+            - 0.0047
+            - residual K fraction in stems [kg K kg-1 dry biomass]
+            - ['kg.kg-1']
+            KRESIDRT:
+            - 0.0047
+            - residual K fraction in roots [kg K kg-1 dry biomass]
+            - ['kg.kg-1']
+            TCKT:
+            -  10
+            - time coefficient for K translocation to storage organs [days]
+            - ['days']
+            #
+            # IMPORT DVS RELATED TO N/P/K UPTAKE AND TRANSLOCATION
+            #
+            DVS_NPK_STOP:
+            - 1.30
+            - development stage above which no crop N/P/K uptake occurs
+            - ['-']
+            DVS_NPK_TRANSL:
+            - 0.80
+            - development stage above which N/P/K translocation to storage organs does occur
+            - ['-']
+            #
+            # IMPACT OF N/P/K STRESS ON PROCESSES
+            #
+            NLAI_NPK:
+            - 1.00
+            - coefficient for the reduction due to nutrient NPK stress of the LAI increase (during juvenile phase)
+            - ['-']
+            NSLA_NPK:
+            - 0.50
+            - coefficient for the effect of nutrient NPK stress on SLA reduction
+            - ['-']
+            NPART:
+            - 1.00
+            - coefficient for the effect of nutrient N stress on leaf allocation
+            - ['-']
+            NLUE_NPK:
+            - 1.10
+            - coefficient for the reduction of gross CO2 assimilation rate due to nutrient (N-P-K) stress
+            - ['-']
+            NPK_TRANSLRT_FR:
+            - 0.50
+            - NPK translocation from roots as a fraction of total NPK amounts translocated from leaves and stems
+            - ['-']
+            RDRLV_NPK:
+            - 0.05
+            - maximum relative death rate of leaves due to nutrient NPK stress
+            - ['-']
+        rice_irri: &rice_irri
+            <<: *GenericC3
+            #
+            # EMERGENCE
+            #
+            TBASEM:
+            -  0.0
+            - Lower threshold temperature for emergence
+            - ['C']
+            TEFFMX:
+            -  0.0
+            - maximum effective temperature for emergence
+            - ['C']
+            TSUMEM:
+            -    0
+            - temperature sum from sowing to emergence
+            - ['C.d']
+            #
+            # PHENOLOGICAL DEVELOPMENT
+            #
+            IDSL:
+            -  0
+            - indicates whether pre-anthesis development depends on temperature (=0), plus daylength (=1) , plus vernalization (=2)
+            - ['Undefined']
+            DLO:
+            -  1.0
+            - optimum daylength for development
+            - ['hr']
+            DLC:
+            -  0.0
+            - critical daylength (lower threshold)
+            - ['hr']
+            TSUM1:
+            -  800
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  465
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            DTSMTB:
+            - [ 0.0,  0.0,
+               11.0,  0.0,
+               35.0, 24.0,
+               45.0, 24.0]
+            - daily increase in temperature sum as function of daily average temperature
+            - ['C', 'C']
+            DVSI:
+            -  0.0
+            - Initial development stage
+            - ['-']
+            DVSEND:
+            -  2.0
+            - development stage at harvest (= 2.0 at maturity)
+            - ['-']
+            VERNBASE:
+            - 14.0
+            - Base vernalization requirement
+            - ['days']
+            VERNSAT:
+            - 70.0
+            - Saturated vernalization requirement
+            - ['days']
+            VERNDVS:
+            - 0.30
+            - Critical DVS for vernalization to switch off
+            - ['-']
+            VERNRTB:
+            - [-8.0,  0.0,
+               -4.0,  0.0,
+                3.0,  1.0,
+               10.0,  1.0,
+               17.0,  0.0,
+               20.0,  0.0]
+            - Temperature response function for vernalization
+            - ['C', '-']
+            #
+            # INITIAL STATES
+            #
+            TDWI:
+            - 200.00
+            - initial total crop dry weight
+            - ['kg.ha-1']
+            RGRLAI:
+            - 0.0500
+            - maximum relative increase in LAI
+            - ['ha.ha-1.d-1']
+            #
+            # CROP GREEN AREA
+            #
+            SLATB:
+            - [0.00, 0.00280,
+               2.00, 0.00250]
+            - specific leaf area as a function of DVS
+            - ['-', 'ha.kg-1']
+            SPA:
+            - 0.0000
+            - specific pod area
+            - ['ha.kg-1']
+            SSATB:
+            - [0.00, 0.0000,
+               2.00, 0.0000]
+            - specific stem area as function of DVS
+            - ['-', 'ha.kg-1']
+            SPAN:
+            - 35.0
+            - life span of leaves growing at 35 Celsius
+            - ['d']
+            TBASE:
+            - 11.0
+            - lower threshold temperature for ageing of leaves
+            - ['C']
+            #
+            # CO2 ASSIMILATION
+            #
+            KDIFTB:
+            - [0.00, 0.430,
+               2.00, 0.430]
+            - extinction coefficient for diffuse visible light as function of DVS
+            - ['-', '-']
+            EFFTB:
+            - [10.0, 0.400,
+               40.0, 0.400]
+            - initial light-use efficiency single leaf as function of daily mean temperature
+            - ['C', 'kg.ha-1.hr-1.J-1.m2.s1']
+            AMAXTB:
+            - [0.00, 40.00,
+               1.90, 40.00,
+               2.00, 0.00]
+            - maximum leaf CO2 assimilation rate as function of DVS
+            - ['-', 'kg.ha-1.hr-1']
+            TMPFTB:
+            - [ 0.0, 0.000,
+               12.0, 0.690,
+               18.0, 0.850,
+               24.0, 1.000,
+               30.0, 1.000,
+               36.0, 0.870,
+               42.0, 0.270]
+            - reduction factor of AMAX as function of average daily temperature
+            - ['C', '-']
+            TMNFTB:
+            - [ 0.0, 0.000,
+                3.0, 1.000]
+            - reduction factor of gross assimlation rate as function of low minimum temperature
+            - ['C', '-']
+            #
+            # CONVERSION EFFICIENCY OF ASSIMILATES
+            #
+            CVL:
+            - 0.720
+            - efficiency of conversion into leaves
+            - ['kg.kg-1']
+            CVO:
+            - 0.740
+            - efficiency of conversion into storage organs
+            - ['kg.kg-1']
+            CVR:
+            - 0.720
+            - efficiency of conversion into roots
+            - ['kg.kg-1']
+            CVS:
+            - 0.690
+            - efficiency of conversion into stems
+            - ['kg.kg-1']
+            #
+            # RESPIRATION
+            #
+            Q10:
+            -  2.00
+            - relative increase in respiration rate per 10 degrees Celsius temperature increase
+            - ['-']
+            RML:
+            - 0.0300
+            - relative maintenance respiration rate of leaves
+            - ['kg.CH2O.kg-1.d-1']
+            RMO:
+            - 0.0040
+            - relative maintenance respiration rate of storage organs
+            - ['kg.CH2O.kg-1.d-1']
+            RMR:
+            - 0.0100
+            - relative maintenance respiration rate of roots
+            - ['kg.CH2O.kg-1.d-1']
+            RMS:
+            - 0.0150
+            - relative maintenance respiration rate of stems
+            - ['kg.CH2O.kg-1.d-1']
+            RFSETB:
+            - [0.00, 1.000,
+               2.00, 1.000]
+            - reduction factor for senescence as function of DVS
+            - ['-', '-']
+            #
+            # PARTITIONING
+            #
+            FRTB:
+            - [0.000, 0.400,
+               0.250, 0.150,
+               1.300, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to roots as a function of DVS
+            - ['-', 'kg.kg-1']
+            FLTB:
+            - [0.000, 0.900,
+               0.350, 0.500,
+               0.800, 0.260,
+               1.270, 0.000,
+               1.380, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to leaves as a function of DVS
+            - ['-', 'kg.kg-1']
+            FSTB:
+            - [0.000, 0.100,
+               0.350, 0.500,
+               0.800, 0.740,
+               1.270, 0.200,
+               1.380, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to stems as a function of DVS
+            - ['-', 'kg.kg-1']
+            FOTB:
+            - [0.000, 0.000,
+               0.350, 0.000,
+               0.800, 0.000,
+               1.270, 0.800,
+               1.380, 1.000,
+               2.000, 1.000]
+            - fraction of total dry matter to storage organs as a function of DVS
+            - ['-', 'kg.kg-1']
+            #
+            # DEATH RATES
+            #
+            PERDL:
+            - 0.030
+            - maximum relative death rate of leaves due to water stress
+            - ['Undefined']
+            RDRRTB:
+            - [0.00, 0.000,
+               1.50, 0.000,
+               1.51, 0.020,
+               2.00, 0.020]
+            - Relative death rate of stems as a function of DVS
+            - ['-', 'kg.kg-1.d-1']
+            RDRSTB:
+            - [0.00, 0.000,
+               1.51, 0.020,
+               2.00, 0.020]
+            - relative death rate of roots as a function of DVS
+            - ['-', 'kg.kg-1.d-1']
+            #
+            # WATER USE
+            #
+            CFET:
+            - 1.00
+            - correction factor transpiration rate
+            - ['-']
+            DEPNR:
+            - 3.50
+            - crop group number for soil water depletion
+            - ['-']
+            IAIRDU:
+            -  1
+            - air ducts in roots present (=1) or not (=0)
+            - ['Undefined']
+            IOX:
+            -  0
+            - Oxygen stress effect enabled (=1) or not (=0)
+            - ['Undefined']
+            #
+            # ROOTING DEPTH
+            #
+            RDI:
+            -  10.0
+            - initial rooting depth
+            - ['cm']
+            RRI:
+            - 1.20
+            - maximum daily increase in rooting depth
+            - ['cm.d-1']
+            RDMCR:
+            -  80.0
+            - maximum rooting depth
+            - ['cm']
+            #
+            # MAXIMUM, CRITICAL AND RESIDUAL NITROGEN CONCENTRATION IN DIFFERENT ORGANS
+            #
+            NMAXLV_TB:
+            - [0.00, 0.0600,
+               0.40, 0.0400,
+               0.70, 0.0300,
+               1.00, 0.0200,
+               2.00, 0.0150,
+               2.10, 0.0150]
+            - maximum N concentration in leaves as function of development stage in kg N kg-1 dry biomass
+            - ['-', 'kg.kg-1']
+            NMAXRT_FR:
+            - 0.5000
+            - maximum N concentration in roots as fraction of maximum N concentration in leaves
+            - ['-']
+            NMAXST_FR:
+            - 0.5000
+            - maximum N concentration in stems as fraction of maximum N concentration in leaves
+            - ['-']
+            NMAXSO:
+            - 0.0270
+            - maximum P concentration in storage organs [kg N kg-1 dry biomass]
+            - ['kg.kg-1']
+            NCRIT_FR:
+            - 1.00
+            - Critical N concentration as fraction of maximum N concentration
+            - ['-']
+            NRESIDLV:
+            - 0.0043
+            - ['kg.kg-1']
+            - residual N fraction in leaves [kg N kg-1 dry biomass]
+            NRESIDST:
+            - 0.0021
+            - residual N fraction in stems [kg N kg-1 dry biomass]
+            - ['kg.kg-1']
+            NRESIDRT:
+            - 0.0021
+            - residual N fraction in roots [kg N kg-1 dry biomass]
+            - ['kg.kg-1']
+            TCNT:
+            -  10
+            - time coefficient for N translocation to storage organs [days]
+            - ['days']
+            NFIX_FR:
+            - 0.00
+            - fraction of crop nitrogen uptake by biological fixation
+            - ['-']
+            #
+            # MAXIMUM, CRITICAL AND RESIDUAL PHOSPHORUS CONCENTRATION IN DIFFERENT ORGANS
+            #
+            PMAXLV_TB:
+            - [0.00, 0.0090,
+               0.40, 0.0060,
+               0.70, 0.0040,
+               1.00, 0.0030,
+               2.00, 0.0021,
+               2.10, 0.0021]
+            - maximum P concentration in leaves as function of development stage in kg P kg-1 dry biomass
+            - ['-', 'kg.kg-1']
+            PMAXRT_FR:
+            - 0.5000
+            - maximum P concentration in roots as fraction of maximum P concentration in leaves
+            - ['-']
+            PMAXST_FR:
+            - 0.5000
+            - maximum P concentration in stems as fraction of maximum P concentration in leaves
+            - ['-']
+            PMAXSO:
+            - 0.0040
+            - ['kg.kg-1']
+            - maximum P concentration in storage organs [kg P kg-1 dry biomass]
+            PCRIT_FR:
+            - 1.00
+            - Critical P concentration as fraction of maximum P concentration
+            - ['-']
+            PRESIDLV:
+            - 0.0004
+            - residual P fraction in leaves [kg P kg-1 dry biomass]
+            - ['kg.kg-1']
+            PRESIDST:
+            - 0.0002
+            - residual P fraction in stems [kg P kg-1 dry biomass]
+            - ['kg.kg-1']
+            PRESIDRT:
+            - 0.0002
+            - residual P fraction in roots [kg P kg-1 dry biomass]
+            - ['kg.kg-1']
+            TCPT:
+            -  10
+            - time coefficient for P translocation to storage organs [days]
+            - ['days']
+            #
+            # MAXIMUM, CRITICAL AND RESIDUAL POTASSIUM CONCENTRATION IN DIFFERENT ORGANS
+            #
+            KMAXLV_TB:
+            - [0.00, 0.1200,
+               0.40, 0.0800,
+               0.70, 0.0600,
+               1.00, 0.0400,
+               2.00, 0.0290,
+               2.10, 0.0290]
+            - maximum K concentration in leaves as function of development stage in kg K kg-1 dry biomass
+            - ['-', 'kg.kg-1']
+            KMAXRT_FR:
+            - 0.5000
+            - maximum K concentration in roots as fraction of maximum K concentration in leaves
+            - ['-']
+            KMAXST_FR:
+            - 0.5000
+            - maximum K concentration in stems as fraction of maximum K concentration in leaves
+            - ['-']
+            KMAXSO:
+            - 0.0075
+            - maximum K concentration in storage organs [kg K kg-1 dry biomass]
+            - ['kg.kg-1']
+            KCRIT_FR:
+            - 1.00
+            - Critical K concentration as fraction of maximum K concentration
+            - ['-']
+            KRESIDLV:
+            - 0.0093
+            - residual K fraction in leaves [kg K kg-1 dry biomass]
+            - ['kg.kg-1']
+            KRESIDST:
+            - 0.0047
+            - residual K fraction in stems [kg K kg-1 dry biomass]
+            - ['kg.kg-1']
+            KRESIDRT:
+            - 0.0047
+            - residual K fraction in roots [kg K kg-1 dry biomass]
+            - ['kg.kg-1']
+            TCKT:
+            -  10
+            - time coefficient for K translocation to storage organs [days]
+            - ['days']
+            #
+            # IMPORT DVS RELATED TO N/P/K UPTAKE AND TRANSLOCATION
+            #
+            DVS_NPK_STOP:
+            - 1.30
+            - development stage above which no crop N/P/K uptake occurs
+            - ['-']
+            DVS_NPK_TRANSL:
+            - 0.80
+            - development stage above which N/P/K translocation to storage organs does occur
+            - ['-']
+            #
+            # IMPACT OF N/P/K STRESS ON PROCESSES
+            #
+            NLAI_NPK:
+            - 1.00
+            - coefficient for the reduction due to nutrient NPK stress of the LAI increase (during juvenile phase)
+            - ['-']
+            NSLA_NPK:
+            - 0.50
+            - coefficient for the effect of nutrient NPK stress on SLA reduction
+            - ['-']
+            NPART:
+            - 1.00
+            - coefficient for the effect of nutrient N stress on leaf allocation
+            - ['-']
+            NLUE_NPK:
+            - 1.10
+            - coefficient for the reduction of gross CO2 assimilation rate due to nutrient (N-P-K) stress
+            - ['-']
+            NPK_TRANSLRT_FR:
+            - 0.50
+            - NPK translocation from roots as a fraction of total NPK amounts translocated from leaves and stems
+            - ['-']
+            RDRLV_NPK:
+            - 0.05
+            - maximum relative death rate of leaves due to nutrient NPK stress
+            - ['-']
+    Varieties:
+        Rice_501:
+        <<: *rice_eu
+            TSUM1:
+            -  875
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  625
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+        Rice_HYV_IR8:
+        <<: *rice_irri
+            TSUM1:
+            -  800
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  465
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+        Rice_IR64616H_DS:
+        <<: *rice_irri
+            DLO:
+            - 11.5
+            - optimum daylength for development
+            - ['hr']
+            TSUM1:
+            - 1420
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  680
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            DTSMTB:
+            - [ 0.0,  0.0,
+                8.0,  0.0,
+               30.0, 24.0,
+               42.5,  0.0]
+            - daily increase in temperature sum as function of daily average temperature
+            - ['C', 'C']
+            DVSI:
+            -  0.2
+            - Initial development stage
+            - ['-']
+            TDWI:
+            -  50.00
+            - initial total crop dry weight
+            - ['kg.ha-1']
+            RGRLAI:
+            - 0.0080
+            - maximum relative increase in LAI
+            - ['ha.ha-1.d-1']
+            SLATB:
+            - [0.00, 0.00600,
+               0.17, 0.00600,
+               0.37, 0.00305,
+               0.65, 0.00240,
+               0.76, 0.00260,
+               1.00, 0.00240,
+               1.44, 0.00210,
+               2.00, 0.00190]
+            - specific leaf area as a function of DVS
+            - ['-', 'ha.kg-1']
+            SSATB:
+            - [0.00, 0.0003,
+               0.90, 0.0003,
+               2.00, 0.0000]
+            - specific stem area as function of DVS
+            - ['-', 'ha.kg-1']
+            TBASE:
+            -  8.0
+            - lower threshold temperature for ageing of leaves
+            - ['C']
+            KDIFTB:
+            - [0.00, 0.400,
+               0.65, 0.400,
+               1.00, 0.600,
+               2.00, 0.600]
+            - extinction coefficient for diffuse visible light as function of DVS
+            - ['-', '-']
+            EFFTB:
+            - [10.0, 0.540,
+               40.0, 0.360]
+            - initial light-use efficiency single leaf as function of daily mean temperature
+            - ['C', 'kg.ha-1.hr-1.J-1.m2.s1']
+            AMAXTB:
+            - [0.00, 40.00,
+               1.90, 40.00,
+               2.00, 40.00]
+            - maximum leaf CO2 assimilation rate as function of DVS
+            - ['-', 'kg.ha-1.hr-1']
+            CVL:
+            - 0.754
+            - efficiency of conversion into leaves
+            - ['kg.kg-1']
+            CVO:
+            - 0.684
+            - efficiency of conversion into storage organs
+            - ['kg.kg-1']
+            CVR:
+            - 0.754
+            - efficiency of conversion into roots
+            - ['kg.kg-1']
+            CVS:
+            - 0.754
+            - efficiency of conversion into stems
+            - ['kg.kg-1']
+            RML:
+            - 0.0200
+            - relative maintenance respiration rate of leaves
+            - ['kg.CH2O.kg-1.d-1']
+            RMO:
+            - 0.0030
+            - relative maintenance respiration rate of storage organs
+            - ['kg.CH2O.kg-1.d-1']
+            FRTB:
+            - [0.000, 0.500,
+               0.430, 0.250,
+               1.000, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to roots as a function of DVS
+            - ['-', 'kg.kg-1']
+            FLTB:
+            - [0.000, 0.533,
+               0.085, 0.533,
+               0.270, 0.585,
+               0.510, 0.550,
+               0.705, 0.430,
+               0.880, 0.077,
+               1.220, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to leaves as a function of DVS
+            - ['-', 'kg.kg-1']
+            FSTB:
+            - [0.000, 0.467,
+               0.085, 0.467,
+               0.270, 0.415,
+               0.510, 0.450,
+               0.705, 0.570,
+               0.880, 0.555,
+               1.220, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to stems as a function of DVS
+            - ['-', 'kg.kg-1']
+            FOTB:
+            - [0.000, 0.000,
+               0.705, 0.000,
+               0.880, 0.368,
+               1.220, 1.000,
+               2.000, 1.000]
+            - fraction of total dry matter to storage organs as a function of DVS
+            - ['-', 'kg.kg-1']
+            RDRSTB:
+            - [0.00, 0.000,
+               1.50, 0.000,
+               1.51, 0.020,
+               2.00, 0.020]
+            - relative death rate of roots as a function of DVS
+            - ['-', 'kg.kg-1.d-1']
+        Rice_IR64616H_WS:
+        <<: *rice_irri
+            DLO:
+            - 11.5
+            - optimum daylength for development
+            - ['hr']
+            TSUM1:
+            - 1500
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  580
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            DTSMTB:
+            - [ 0.0,  0.0,
+                8.0,  0.0,
+               30.0, 24.0,
+               42.5,  0.0]
+            - daily increase in temperature sum as function of daily average temperature
+            - ['C', 'C']
+            DVSI:
+            -  0.2
+            - Initial development stage
+            - ['-']
+            TDWI:
+            - 100.00
+            - initial total crop dry weight
+            - ['kg.ha-1']
+            RGRLAI:
+            - 0.0080
+            - maximum relative increase in LAI
+            - ['ha.ha-1.d-1']
+            SLATB:
+            - [0.00, 0.00550,
+               0.18, 0.00550,
+               0.40, 0.00110,
+               0.65, 0.00200,
+               0.79, 0.00170,
+               1.00, 0.00200,
+               1.55, 0.00210,
+               2.00, 0.00220]
+            - specific leaf area as a function of DVS
+            - ['-', 'ha.kg-1']
+            SSATB:
+            - [0.00, 0.0003,
+               0.90, 0.0003,
+               2.00, 0.0000]
+            - specific stem area as function of DVS
+            - ['-', 'ha.kg-1']
+            TBASE:
+            -  8.0
+            - lower threshold temperature for ageing of leaves
+            - ['C']
+            KDIFTB:
+            - [0.00, 0.400,
+               0.65, 0.400,
+               1.00, 0.600,
+               2.00, 0.600]
+            - extinction coefficient for diffuse visible light as function of DVS
+            - ['-', '-']
+            EFFTB:
+            - [10.0, 0.540,
+               40.0, 0.360]
+            - initial light-use efficiency single leaf as function of daily mean temperature
+            - ['C', 'kg.ha-1.hr-1.J-1.m2.s1']
+            AMAXTB:
+            - [0.00, 40.00,
+               1.90, 40.00,
+               2.00, 40.00]
+            - maximum leaf CO2 assimilation rate as function of DVS
+            - ['-', 'kg.ha-1.hr-1']
+            CVL:
+            - 0.754
+            - efficiency of conversion into leaves
+            - ['kg.kg-1']
+            CVO:
+            - 0.684
+            - efficiency of conversion into storage organs
+            - ['kg.kg-1']
+            CVR:
+            - 0.754
+            - efficiency of conversion into roots
+            - ['kg.kg-1']
+            CVS:
+            - 0.754
+            - efficiency of conversion into stems
+            - ['kg.kg-1']
+            RML:
+            - 0.0200
+            - relative maintenance respiration rate of leaves
+            - ['kg.CH2O.kg-1.d-1']
+            RMO:
+            - 0.0030
+            - relative maintenance respiration rate of storage organs
+            - ['kg.CH2O.kg-1.d-1']
+            FRTB:
+            - [0.000, 0.500,
+               0.430, 0.250,
+               1.000, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to roots as a function of DVS
+            - ['-', 'kg.kg-1']
+            FLTB:
+            - [0.000, 0.545,
+               0.090, 0.545,
+               0.290, 0.542,
+               0.525, 0.511,
+               0.720, 0.418,
+               0.895, 0.138,
+               1.275, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to leaves as a function of DVS
+            - ['-', 'kg.kg-1']
+            FSTB:
+            - [0.000, 0.455,
+               0.090, 0.455,
+               0.290, 0.458,
+               0.525, 0.489,
+               0.720, 0.582,
+               0.895, 0.479,
+               1.275, 0.000,
+               1.775, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to stems as a function of DVS
+            - ['-', 'kg.kg-1']
+            FOTB:
+            - [0.000, 0.000,
+               0.290, 0.000,
+               0.525, 0.000,
+               0.720, 0.000,
+               0.895, 0.383,
+               1.275, 1.000,
+               1.775, 1.000,
+               2.000, 1.000]
+            - fraction of total dry matter to storage organs as a function of DVS
+            - ['-', 'kg.kg-1']
+            RDRSTB:
+            - [0.00, 0.000,
+               1.50, 0.000,
+               1.51, 0.020,
+               2.00, 0.020]
+            - relative death rate of roots as a function of DVS
+            - ['-', 'kg.kg-1.d-1']
+        Rice_IR64:
+        <<: *rice_irri
+            DLO:
+            - 11.5
+            - optimum daylength for development
+            - ['hr']
+            TSUM1:
+            - 1570
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  770
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            DTSMTB:
+            - [ 0.0,  0.0,
+                8.0,  0.0,
+               30.0, 24.0,
+               42.5,  0.0]
+            - daily increase in temperature sum as function of daily average temperature
+            - ['C', 'C']
+            DVSI:
+            -  0.2
+            - Initial development stage
+            - ['-']
+            TDWI:
+            -  50.00
+            - initial total crop dry weight
+            - ['kg.ha-1']
+            RGRLAI:
+            - 0.0090
+            - maximum relative increase in LAI
+            - ['ha.ha-1.d-1']
+            SLATB:
+            - [0.00, 0.00600,
+               0.24, 0.00600,
+               0.31, 0.00400,
+               0.58, 0.00400,
+               0.67, 0.00300,
+               1.13, 0.00300,
+               1.54, 0.00200,
+               2.01, 0.00200]
+            - specific leaf area as a function of DVS
+            - ['-', 'ha.kg-1']
+            SSATB:
+            - [0.00, 0.0003,
+               0.90, 0.0003,
+               2.00, 0.0000]
+            - specific stem area as function of DVS
+            - ['-', 'ha.kg-1']
+            TBASE:
+            -  8.0
+            - lower threshold temperature for ageing of leaves
+            - ['C']
+            KDIFTB:
+            - [0.00, 0.400,
+               0.65, 0.400,
+               1.00, 0.600,
+               2.00, 0.600]
+            - extinction coefficient for diffuse visible light as function of DVS
+            - ['-', '-']
+            EFFTB:
+            - [10.0, 0.540,
+               40.0, 0.360]
+            - initial light-use efficiency single leaf as function of daily mean temperature
+            - ['C', 'kg.ha-1.hr-1.J-1.m2.s1']
+            AMAXTB:
+            - [0.00, 40.00,
+               1.90, 40.00,
+               2.00, 40.00]
+            - maximum leaf CO2 assimilation rate as function of DVS
+            - ['-', 'kg.ha-1.hr-1']
+            CVL:
+            - 0.754
+            - efficiency of conversion into leaves
+            - ['kg.kg-1']
+            CVO:
+            - 0.684
+            - efficiency of conversion into storage organs
+            - ['kg.kg-1']
+            CVR:
+            - 0.754
+            - efficiency of conversion into roots
+            - ['kg.kg-1']
+            CVS:
+            - 0.754
+            - efficiency of conversion into stems
+            - ['kg.kg-1']
+            RML:
+            - 0.0200
+            - relative maintenance respiration rate of leaves
+            - ['kg.CH2O.kg-1.d-1']
+            RMO:
+            - 0.0030
+            - relative maintenance respiration rate of storage organs
+            - ['kg.CH2O.kg-1.d-1']
+            FRTB:
+            - [0.000, 0.500,
+               0.430, 0.250,
+               1.000, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to roots as a function of DVS
+            - ['-', 'kg.kg-1']
+            FLTB:
+            - [0.000, 0.850,
+               0.120, 0.850,
+               0.240, 0.250,
+               0.275, 0.618,
+               0.350, 0.726,
+               0.435, 0.617,
+               0.530, 0.440,
+               0.625, 0.619,
+               0.720, 0.400,
+               0.820, 0.284,
+               1.000, 0.000,
+               1.335, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to leaves as a function of DVS
+            - ['-', 'kg.kg-1']
+            FSTB:
+            - [0.000, 0.150,
+               0.120, 0.150,
+               0.240, 0.750,
+               0.275, 0.382,
+               0.350, 0.274,
+               0.435, 0.383,
+               0.530, 0.560,
+               0.625, 0.381,
+               0.720, 0.600,
+               0.820, 0.516,
+               1.000, 0.328,
+               1.335, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to stems as a function of DVS
+            - ['-', 'kg.kg-1']
+            FOTB:
+            - [0.000, 0.000,
+               0.720, 0.000,
+               0.820, 0.200,
+               1.000, 0.672,
+               1.335, 1.000,
+               1.220, 1.000,
+               2.000, 1.000]
+            - fraction of total dry matter to storage organs as a function of DVS
+            - ['-', 'kg.kg-1']
+            RDRSTB:
+            - [0.00, 0.000,
+               1.50, 0.000,
+               1.51, 0.020,
+               2.00, 0.020]
+            - relative death rate of roots as a function of DVS
+            - ['-', 'kg.kg-1.d-1']
+        Rice_IR72:
+        <<: *rice_irri
+            DLO:
+            - 11.5
+            - optimum daylength for development
+            - ['hr']
+            TSUM1:
+            - 1420
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  630
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            DTSMTB:
+            - [ 0.0,  0.0,
+                8.0,  0.0,
+               30.0, 24.0,
+               42.5,  0.0]
+            - daily increase in temperature sum as function of daily average temperature
+            - ['C', 'C']
+            DVSI:
+            -  0.2
+            - Initial development stage
+            - ['-']
+            TDWI:
+            -  50.00
+            - initial total crop dry weight
+            - ['kg.ha-1']
+            RGRLAI:
+            - 0.0080
+            - maximum relative increase in LAI
+            - ['ha.ha-1.d-1']
+            SLATB:
+            - [0.00, 0.00450,
+               0.16, 0.00330,
+               0.33, 0.00330,
+               0.65, 0.00280,
+               0.79, 0.00210,
+               1.00, 0.00190,
+               1.46, 0.00170,
+               2.02, 0.00170]
+            - specific leaf area as a function of DVS
+            - ['-', 'ha.kg-1']
+            SSATB:
+            - [0.00, 0.0003,
+               0.90, 0.0003,
+               2.00, 0.0000]
+            - specific stem area as function of DVS
+            - ['-', 'ha.kg-1']
+            TBASE:
+            -  8.0
+            - lower threshold temperature for ageing of leaves
+            - ['C']
+            KDIFTB:
+            - [0.00, 0.400,
+               0.65, 0.400,
+               1.00, 0.600,
+               2.00, 0.600]
+            - extinction coefficient for diffuse visible light as function of DVS
+            - ['-', '-']
+            EFFTB:
+            - [10.0, 0.540,
+               40.0, 0.360]
+            - initial light-use efficiency single leaf as function of daily mean temperature
+            - ['C', 'kg.ha-1.hr-1.J-1.m2.s1']
+            AMAXTB:
+            - [0.00, 40.00,
+               1.90, 40.00,
+               2.00, 40.00]
+            - maximum leaf CO2 assimilation rate as function of DVS
+            - ['-', 'kg.ha-1.hr-1']
+            CVL:
+            - 0.754
+            - efficiency of conversion into leaves
+            - ['kg.kg-1']
+            CVO:
+            - 0.684
+            - efficiency of conversion into storage organs
+            - ['kg.kg-1']
+            CVR:
+            - 0.754
+            - efficiency of conversion into roots
+            - ['kg.kg-1']
+            CVS:
+            - 0.754
+            - efficiency of conversion into stems
+            - ['kg.kg-1']
+            RML:
+            - 0.0200
+            - relative maintenance respiration rate of leaves
+            - ['kg.CH2O.kg-1.d-1']
+            RMO:
+            - 0.0030
+            - relative maintenance respiration rate of storage organs
+            - ['kg.CH2O.kg-1.d-1']
+            FRTB:
+            - [0.000, 0.500,
+               0.430, 0.250,
+               1.000, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to roots as a function of DVS
+            - ['-', 'kg.kg-1']
+            FLTB:
+            - [0.000, 0.497,
+               0.100, 0.497,
+               0.300, 0.591,
+               0.500, 0.524,
+               0.700, 0.401,
+               0.900, 0.091,
+               1.200, 0.000,
+               1.700, 0.000,
+               2.100, 0.000]
+            - fraction of total dry matter to leaves as a function of DVS
+            - ['-', 'kg.kg-1']
+            FSTB:
+            - [0.000, 0.503,
+               0.100, 0.503,
+               0.300, 0.409,
+               0.500, 0.476,
+               0.700, 0.586,
+               0.900, 0.592,
+               1.200, 0.000,
+               1.700, 0.000,
+               2.100, 0.000]
+            - fraction of total dry matter to stems as a function of DVS
+            - ['-', 'kg.kg-1']
+            FOTB:
+            - [0.000, 0.000,
+               0.500, 0.000,
+               0.700, 0.013,
+               0.900, 0.317,
+               1.200, 1.000,
+               1.100, 1.000,
+               2.000, 1.000]
+            - fraction of total dry matter to storage organs as a function of DVS
+            - ['-', 'kg.kg-1']
+            RDRSTB:
+            - [0.00, 0.000,
+               1.50, 0.000,
+               1.51, 0.020,
+               2.00, 0.020]
+            - relative death rate of roots as a function of DVS
+            - ['-', 'kg.kg-1.d-1']
+        Rice_IR72_DS:
+        <<: *rice_irri
+            DLO:
+            - 11.5
+            - optimum daylength for development
+            - ['hr']
+            TSUM1:
+            - 1420
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  630
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            DTSMTB:
+            - [ 0.0,  0.0,
+                8.0,  0.0,
+               30.0, 24.0,
+               42.5,  0.0]
+            - daily increase in temperature sum as function of daily average temperature
+            - ['C', 'C']
+            DVSI:
+            -  0.2
+            - Initial development stage
+            - ['-']
+            TDWI:
+            -  50.00
+            - initial total crop dry weight
+            - ['kg.ha-1']
+            RGRLAI:
+            - 0.0080
+            - maximum relative increase in LAI
+            - ['ha.ha-1.d-1']
+            SLATB:
+            - [0.00, 0.00450,
+               0.16, 0.00450,
+               0.33, 0.00330,
+               0.65, 0.00280,
+               0.79, 0.00210,
+               1.00, 0.00190,
+               1.46, 0.00170,
+               2.02, 0.00170]
+            - specific leaf area as a function of DVS
+            - ['-', 'ha.kg-1']
+            SSATB:
+            - [0.00, 0.0003,
+               0.90, 0.0003,
+               2.00, 0.0000]
+            - specific stem area as function of DVS
+            - ['-', 'ha.kg-1']
+            TBASE:
+            -  8.0
+            - lower threshold temperature for ageing of leaves
+            - ['C']
+            KDIFTB:
+            - [0.00, 0.400,
+               0.65, 0.400,
+               1.00, 0.600,
+               2.00, 0.600]
+            - extinction coefficient for diffuse visible light as function of DVS
+            - ['-', '-']
+            EFFTB:
+            - [10.0, 0.540,
+               40.0, 0.360]
+            - initial light-use efficiency single leaf as function of daily mean temperature
+            - ['C', 'kg.ha-1.hr-1.J-1.m2.s1']
+            AMAXTB:
+            - [0.00, 40.00,
+               1.90, 40.00,
+               2.00, 40.00]
+            - maximum leaf CO2 assimilation rate as function of DVS
+            - ['-', 'kg.ha-1.hr-1']
+            CVL:
+            - 0.754
+            - efficiency of conversion into leaves
+            - ['kg.kg-1']
+            CVO:
+            - 0.684
+            - efficiency of conversion into storage organs
+            - ['kg.kg-1']
+            CVR:
+            - 0.754
+            - efficiency of conversion into roots
+            - ['kg.kg-1']
+            CVS:
+            - 0.754
+            - efficiency of conversion into stems
+            - ['kg.kg-1']
+            RML:
+            - 0.0200
+            - relative maintenance respiration rate of leaves
+            - ['kg.CH2O.kg-1.d-1']
+            RMO:
+            - 0.0030
+            - relative maintenance respiration rate of storage organs
+            - ['kg.CH2O.kg-1.d-1']
+            FRTB:
+            - [0.000, 0.500,
+               0.430, 0.250,
+               1.000, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to roots as a function of DVS
+            - ['-', 'kg.kg-1']
+            FLTB:
+            - [0.000, 0.545,
+               0.080, 0.545,
+               0.245, 0.559,
+               0.490, 0.542,
+               0.720, 0.422,
+               0.895, 0.053,
+               1.000, 0.000,
+               1.230, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to leaves as a function of DVS
+            - ['-', 'kg.kg-1']
+            FSTB:
+            - [0.000, 0.455,
+               0.080, 0.455,
+               0.245, 0.441,
+               0.490, 0.458,
+               0.720, 0.578,
+               0.895, 0.517,
+               1.000, 0.100,
+               1.230, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to stems as a function of DVS
+            - ['-', 'kg.kg-1']
+            FOTB:
+            - [0.000, 0.000,
+               0.720, 0.000,
+               0.895, 0.430,
+               1.000, 0.900,
+               1.230, 1.000,
+               2.000, 1.000]
+            - fraction of total dry matter to storage organs as a function of DVS
+            - ['-', 'kg.kg-1']
+            RDRSTB:
+            - [0.00, 0.000,
+               1.50, 0.000,
+               1.51, 0.020,
+               2.00, 0.020]
+            - relative death rate of roots as a function of DVS
+            - ['-', 'kg.kg-1.d-1']
+        Rice_IR72_WS:
+        <<: *rice_irri
+            DLO:
+            - 11.5
+            - optimum daylength for development
+            - ['hr']
+            TSUM1:
+            - 1550
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  600
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            DTSMTB:
+            - [ 0.0,  0.0,
+                8.0,  0.0,
+               30.0, 24.0,
+               42.5,  0.0]
+            - daily increase in temperature sum as function of daily average temperature
+            - ['C', 'C']
+            DVSI:
+            -  0.2
+            - Initial development stage
+            - ['-']
+            TDWI:
+            -  60.00
+            - initial total crop dry weight
+            - ['kg.ha-1']
+            RGRLAI:
+            - 0.0080
+            - maximum relative increase in LAI
+            - ['ha.ha-1.d-1']
+            SLATB:
+            - [0.00, 0.00270,
+               0.14, 0.00270,
+               0.36, 0.00270,
+               0.65, 0.00220,
+               0.80, 0.00190,
+               1.00, 0.00180,
+               1.53, 0.00200,
+               2.00, 0.00170]
+            - specific leaf area as a function of DVS
+            - ['-', 'ha.kg-1']
+            SSATB:
+            - [0.00, 0.0003,
+               0.90, 0.0003,
+               2.00, 0.0000]
+            - specific stem area as function of DVS
+            - ['-', 'ha.kg-1']
+            TBASE:
+            -  8.0
+            - lower threshold temperature for ageing of leaves
+            - ['C']
+            KDIFTB:
+            - [0.00, 0.400,
+               0.65, 0.400,
+               1.00, 0.600,
+               2.00, 0.600]
+            - extinction coefficient for diffuse visible light as function of DVS
+            - ['-', '-']
+            EFFTB:
+            - [10.0, 0.540,
+               40.0, 0.360]
+            - initial light-use efficiency single leaf as function of daily mean temperature
+            - ['C', 'kg.ha-1.hr-1.J-1.m2.s1']
+            AMAXTB:
+            - [0.00, 40.00,
+               1.90, 40.00,
+               2.00, 40.00]
+            - maximum leaf CO2 assimilation rate as function of DVS
+            - ['-', 'kg.ha-1.hr-1']
+            CVL:
+            - 0.754
+            - efficiency of conversion into leaves
+            - ['kg.kg-1']
+            CVO:
+            - 0.684
+            - efficiency of conversion into storage organs
+            - ['kg.kg-1']
+            CVR:
+            - 0.754
+            - efficiency of conversion into roots
+            - ['kg.kg-1']
+            CVS:
+            - 0.754
+            - efficiency of conversion into stems
+            - ['kg.kg-1']
+            RML:
+            - 0.0200
+            - relative maintenance respiration rate of leaves
+            - ['kg.CH2O.kg-1.d-1']
+            RMO:
+            - 0.0030
+            - relative maintenance respiration rate of storage organs
+            - ['kg.CH2O.kg-1.d-1']
+            FRTB:
+            - [0.000, 0.500,
+               0.430, 0.250,
+               1.000, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to roots as a function of DVS
+            - ['-', 'kg.kg-1']
+            FLTB:
+            - [0.000, 0.545,
+               0.070, 0.545,
+               0.250, 0.583,
+               0.505, 0.450,
+               0.725, 0.497,
+               0.900, 0.109,
+               1.265, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to leaves as a function of DVS
+            - ['-', 'kg.kg-1']
+            FSTB:
+            - [0.000, 0.455,
+               0.070, 0.455,
+               0.250, 0.417,
+               0.505, 0.550,
+               0.725, 0.503,
+               0.900, 0.419,
+               1.265, 0.003,
+               1.765, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to stems as a function of DVS
+            - ['-', 'kg.kg-1']
+            FOTB:
+            - [0.000, 0.000,
+               0.250, 0.000,
+               0.505, 0.000,
+               0.725, 0.000,
+               0.900, 0.472,
+               1.265, 0.997,
+               1.765, 1.000,
+               2.000, 1.000]
+            - fraction of total dry matter to storage organs as a function of DVS
+            - ['-', 'kg.kg-1']
+            RDRSTB:
+            - [0.00, 0.000,
+               1.50, 0.000,
+               1.51, 0.020,
+               2.00, 0.020]
+            - relative death rate of roots as a function of DVS
+            - ['-', 'kg.kg-1.d-1']
+        Rice_IR8A:
+        <<: *rice_irri
+            DLO:
+            - 11.5
+            - optimum daylength for development
+            - ['hr']
+            TSUM1:
+            - 1633
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  506
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            DTSMTB:
+            - [ 0.0,  0.0,
+                8.0,  0.0,
+               30.0, 22.0,
+               42.5, 22.0]
+            - daily increase in temperature sum as function of daily average temperature
+            - ['C', 'C']
+            DVSI:
+            -  0.1
+            - Initial development stage
+            - ['-']
+            TDWI:
+            -  50.00
+            - initial total crop dry weight
+            - ['kg.ha-1']
+            RGRLAI:
+            - 0.0080
+            - maximum relative increase in LAI
+            - ['ha.ha-1.d-1']
+            SLATB:
+            - [0.00, 0.00450,
+               0.16, 0.00450,
+               0.33, 0.00330,
+               0.65, 0.00280,
+               0.79, 0.00210,
+               1.00, 0.00190,
+               1.46, 0.00170,
+               2.02, 0.00170]
+            - specific leaf area as a function of DVS
+            - ['-', 'ha.kg-1']
+            SSATB:
+            - [0.00, 0.0003,
+               0.90, 0.0003,
+               2.00, 0.0000]
+            - specific stem area as function of DVS
+            - ['-', 'ha.kg-1']
+            TBASE:
+            -  8.0
+            - lower threshold temperature for ageing of leaves
+            - ['C']
+            KDIFTB:
+            - [0.00, 0.400,
+               0.65, 0.400,
+               1.00, 0.600,
+               2.00, 0.600]
+            - extinction coefficient for diffuse visible light as function of DVS
+            - ['-', '-']
+            EFFTB:
+            - [10.0, 0.540,
+               40.0, 0.360]
+            - initial light-use efficiency single leaf as function of daily mean temperature
+            - ['C', 'kg.ha-1.hr-1.J-1.m2.s1']
+            AMAXTB:
+            - [0.00, 40.00,
+               1.90, 40.00,
+               2.00, 40.00]
+            - maximum leaf CO2 assimilation rate as function of DVS
+            - ['-', 'kg.ha-1.hr-1']
+            CVL:
+            - 0.754
+            - efficiency of conversion into leaves
+            - ['kg.kg-1']
+            CVO:
+            - 0.684
+            - efficiency of conversion into storage organs
+            - ['kg.kg-1']
+            CVR:
+            - 0.754
+            - efficiency of conversion into roots
+            - ['kg.kg-1']
+            CVS:
+            - 0.754
+            - efficiency of conversion into stems
+            - ['kg.kg-1']
+            RML:
+            - 0.0200
+            - relative maintenance respiration rate of leaves
+            - ['kg.CH2O.kg-1.d-1']
+            RMO:
+            - 0.0030
+            - relative maintenance respiration rate of storage organs
+            - ['kg.CH2O.kg-1.d-1']
+            FRTB:
+            - [0.000, 0.500,
+               0.430, 0.250,
+               1.000, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to roots as a function of DVS
+            - ['-', 'kg.kg-1']
+            FLTB:
+            - [0.000, 0.545,
+               0.080, 0.545,
+               0.245, 0.559,
+               0.490, 0.542,
+               0.720, 0.422,
+               0.895, 0.053,
+               1.000, 0.000,
+               1.230, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to leaves as a function of DVS
+            - ['-', 'kg.kg-1']
+            FSTB:
+            - [0.000, 0.455,
+               0.080, 0.455,
+               0.245, 0.441,
+               0.490, 0.458,
+               0.720, 0.578,
+               0.895, 0.517,
+               1.000, 0.100,
+               1.230, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to stems as a function of DVS
+            - ['-', 'kg.kg-1']
+            FOTB:
+            - [0.000, 0.000,
+               0.720, 0.000,
+               0.895, 0.430,
+               1.000, 0.900,
+               1.230, 1.000,
+               2.000, 1.000]
+            - fraction of total dry matter to storage organs as a function of DVS
+            - ['-', 'kg.kg-1']
+            RDRSTB:
+            - [0.00, 0.000,
+               1.50, 0.000,
+               1.51, 0.020,
+               2.00, 0.020]
+            - relative death rate of roots as a function of DVS
+            - ['-', 'kg.kg-1.d-1']

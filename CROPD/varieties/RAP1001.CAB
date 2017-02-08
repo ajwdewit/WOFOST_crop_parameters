@@ -19,7 +19,7 @@
 ** Rapeseed (Brassica napus L. ssp. oleifera (Metzg.)Sinsk.)
 **
 
-CRPNAM='Oilseed rape 1001, Central and N-EC'
+CRPNAM='Oilseed_rape_1001'
 
 ECOTYPE='rapeseed'
 ** emergence

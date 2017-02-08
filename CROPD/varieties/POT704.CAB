@@ -14,7 +14,7 @@
 ** model in the EC.
 ** Developed in the framework of JRC Agriculture Project Action 3. 
 
-CRPNAM='Potato 704, S-EC'
+CRPNAM='Potato_704'
 
 ECOTYPE='potato'
 ** emergence

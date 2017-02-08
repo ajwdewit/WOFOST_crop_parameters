@@ -37,7 +37,7 @@ DVSI = 0.           ! initial DVS
 DVSEND   =   2.00   ! development stage at harvest (= 2.0 at maturity [-])
 
 ** initial
-TDWI     = 210.00   ! initial total crop dry weight [kg ha-1]
+TDWI     =  50.00   ! initial total crop dry weight [kg ha-1]
 LAIEM    =   0.1365 ! leaf area index at emergence [ha ha-1]
 RGRLAI   =   0.00817 ! maximum relative increase in LAI [ha ha-1 d-1] 
 

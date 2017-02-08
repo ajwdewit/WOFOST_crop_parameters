@@ -19,7 +19,7 @@
 ** model in the EC.
 ** Developed in the framework of JRC Agriculture Project Action 3. 
 
-CRPNAM='Sunflower 1101, France, Italy, Spain, Greece'
+CRPNAM='Sunflower_1101'
 
 ECOTYPE='sunflower'
 ** emergence

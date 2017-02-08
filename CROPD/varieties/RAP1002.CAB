@@ -19,7 +19,7 @@
 ** crop identity
 **  Rapeseed (Brassica napus L. ssp. oleifera (Metzg.)Sinsk.)
 
-CRPNAM='Oilseed rape 1002, S-France, S-Italy'
+CRPNAM='Oilseed_rape_1002'
 
 ECOTYPE='rapeseed'
 ** emergence
