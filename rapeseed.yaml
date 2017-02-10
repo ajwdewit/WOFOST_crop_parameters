@@ -1,7 +1,7 @@
 # Crop parameter file for use with the PCSE/WISS implementations of the WOFOST
 # crop simulation model
 #
-# Creation date: 2017-02-08
+# Creation date: 2017-02-10
 #
 # Contact: Allard de Wit (allard.dewit@wur.nl)
 #          Wageningen University and Research Centre
@@ -534,7 +534,7 @@ CropParameters:
             - ['-']
     Varieties:
         Oilseed_rape_1001:
-        <<: *rapeseed
+            <<: *rapeseed
             TSUM1:
             -  240
             - temperature sum from emergence to anthesis
@@ -544,7 +544,7 @@ CropParameters:
             - temperature sum from anthesis to maturity
             - ['C.d']
         Oilseed_rape_1002:
-        <<: *rapeseed
+            <<: *rapeseed
             TSUM1:
             -  200
             - temperature sum from emergence to anthesis
@@ -606,7 +606,7 @@ CropParameters:
             - fraction of total dry matter to storage organs as a function of DVS
             - ['-', 'kg.kg-1']
         Oilseed_rape_1003:
-        <<: *rapeseed
+            <<: *rapeseed
             TSUM1:
             -  190
             - temperature sum from emergence to anthesis
@@ -668,7 +668,7 @@ CropParameters:
             - fraction of total dry matter to storage organs as a function of DVS
             - ['-', 'kg.kg-1']
         Oilseed_rape_1004:
-        <<: *rapeseed
+            <<: *rapeseed
             DLO:
             - 15.0
             - optimum daylength for development

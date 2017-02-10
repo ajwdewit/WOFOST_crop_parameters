@@ -1,7 +1,7 @@
 # Crop parameter file for use with the PCSE/WISS implementations of the WOFOST
 # crop simulation model
 #
-# Creation date: 2017-02-08
+# Creation date: 2017-02-10
 #
 # Contact: Allard de Wit (allard.dewit@wur.nl)
 #          Wageningen University and Research Centre
@@ -531,7 +531,7 @@ CropParameters:
             - ['-']
     Varieties:
         Sorghum_VanHeemst_1988:
-        <<: *sorghum
+            <<: *sorghum
             TSUM1:
             -  730
             - temperature sum from emergence to anthesis

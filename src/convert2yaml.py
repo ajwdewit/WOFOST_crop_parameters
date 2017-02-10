@@ -148,7 +148,7 @@ def make_variety_yaml_stream(crop, ecotypes):
             print(msg)
 
             variety_yaml_stream += (";        {cropname}:\n".format(cropname=cultivar_name) +
-                                    ";        <<: *{ecotype}\n".format(ecotype=ecotype_name))
+                                    ";            <<: *{ecotype}\n".format(ecotype=ecotype_name))
             template = "{parname}:\n{pardesc}\n"
             for name in WOFOST_parameters:
                 if name in WOFOST_NPK_params: # or name in add_params:

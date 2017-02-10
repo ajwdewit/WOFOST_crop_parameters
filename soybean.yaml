@@ -1,7 +1,7 @@
 # Crop parameter file for use with the PCSE/WISS implementations of the WOFOST
 # crop simulation model
 #
-# Creation date: 2017-02-08
+# Creation date: 2017-02-10
 #
 # Contact: Allard de Wit (allard.dewit@wur.nl)
 #          Wageningen University and Research Centre
@@ -527,7 +527,7 @@ CropParameters:
             - ['-']
     Varieties:
         Soybean_901:
-        <<: *soybean
+            <<: *soybean
             TSUM1:
             -  350
             - temperature sum from emergence to anthesis
@@ -551,7 +551,7 @@ CropParameters:
             - relative death rate of roots as a function of DVS
             - ['-', 'kg.kg-1.d-1']
         Soybean_902:
-        <<: *soybean
+            <<: *soybean
             TSUM1:
             -  350
             - temperature sum from emergence to anthesis
@@ -575,7 +575,7 @@ CropParameters:
             - relative death rate of roots as a function of DVS
             - ['-', 'kg.kg-1.d-1']
         Soybean_903:
-        <<: *soybean
+            <<: *soybean
             TSUM1:
             -  300
             - temperature sum from emergence to anthesis
@@ -599,7 +599,7 @@ CropParameters:
             - relative death rate of roots as a function of DVS
             - ['-', 'kg.kg-1.d-1']
         Soybean_904:
-        <<: *soybean
+            <<: *soybean
             TSUM1:
             -  500
             - temperature sum from emergence to anthesis
@@ -665,7 +665,7 @@ CropParameters:
             - relative death rate of roots as a function of DVS
             - ['-', 'kg.kg-1.d-1']
         Soybean_905:
-        <<: *soybean
+            <<: *soybean
             TSUMEM:
             -   80
             - temperature sum from sowing to emergence
@@ -735,7 +735,7 @@ CropParameters:
             - relative death rate of roots as a function of DVS
             - ['-', 'kg.kg-1.d-1']
         Soybean_906:
-        <<: *soybean
+            <<: *soybean
             TSUMEM:
             -   90
             - temperature sum from sowing to emergence
@@ -805,7 +805,7 @@ CropParameters:
             - relative death rate of roots as a function of DVS
             - ['-', 'kg.kg-1.d-1']
         Soybean_VanHeemst_1988:
-        <<: *soybean
+            <<: *soybean
             TBASEM:
             - 10.0
             - Lower threshold temperature for emergence

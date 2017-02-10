@@ -1,7 +1,7 @@
 # Crop parameter file for use with the PCSE/WISS implementations of the WOFOST
 # crop simulation model
 #
-# Creation date: 2017-02-08
+# Creation date: 2017-02-10
 #
 # Contact: Allard de Wit (allard.dewit@wur.nl)
 #          Wageningen University and Research Centre
@@ -531,7 +531,7 @@ CropParameters:
             - ['-']
     Varieties:
         Winter_wheat_101:
-        <<: *winterwheat
+            <<: *winterwheat
             DLO:
             - 16.8
             - optimum daylength for development
@@ -557,7 +557,7 @@ CropParameters:
             - Saturated vernalization requirement
             - ['days']
         Winter_wheat_102:
-        <<: *winterwheat
+            <<: *winterwheat
             DLO:
             - 16.3
             - optimum daylength for development
@@ -583,7 +583,7 @@ CropParameters:
             - Saturated vernalization requirement
             - ['days']
         Winter_wheat_103:
-        <<: *winterwheat
+            <<: *winterwheat
             DLO:
             - 16.3
             - optimum daylength for development
@@ -609,7 +609,7 @@ CropParameters:
             - Saturated vernalization requirement
             - ['days']
         Winter_wheat_104:
-        <<: *winterwheat
+            <<: *winterwheat
             DLO:
             - 15.8
             - optimum daylength for development
@@ -635,7 +635,7 @@ CropParameters:
             - Saturated vernalization requirement
             - ['days']
         Winter_wheat_105:
-        <<: *winterwheat
+            <<: *winterwheat
             DLO:
             - 15.3
             - optimum daylength for development
@@ -661,7 +661,7 @@ CropParameters:
             - Saturated vernalization requirement
             - ['days']
         Winter_wheat_106:
-        <<: *winterwheat
+            <<: *winterwheat
             DLO:
             - 14.8
             - optimum daylength for development
@@ -687,7 +687,7 @@ CropParameters:
             - Saturated vernalization requirement
             - ['days']
         Winter_wheat_107:
-        <<: *winterwheat
+            <<: *winterwheat
             DLO:
             - 14.6
             - optimum daylength for development
