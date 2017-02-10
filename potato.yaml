@@ -1,7 +1,7 @@
 # Crop parameter file for use with the PCSE/WISS implementations of the WOFOST
 # crop simulation model
 #
-# Creation date: 2017-02-08
+# Creation date: 2017-02-10
 #
 # Contact: Allard de Wit (allard.dewit@wur.nl)
 #          Wageningen University and Research Centre
@@ -523,7 +523,7 @@ CropParameters:
             - ['-']
     Varieties:
         Potato_701:
-        <<: *potato
+            <<: *potato
             TSUM1:
             -  150
             - temperature sum from emergence to anthesis
@@ -533,7 +533,7 @@ CropParameters:
             - temperature sum from anthesis to maturity
             - ['C.d']
         Potato_702:
-        <<: *potato
+            <<: *potato
             TSUM1:
             -  150
             - temperature sum from emergence to anthesis
@@ -543,7 +543,7 @@ CropParameters:
             - temperature sum from anthesis to maturity
             - ['C.d']
         Potato_703:
-        <<: *potato
+            <<: *potato
             TSUM1:
             -  150
             - temperature sum from emergence to anthesis
@@ -557,7 +557,7 @@ CropParameters:
             - life span of leaves growing at 35 Celsius
             - ['d']
         Potato_704:
-        <<: *potato
+            <<: *potato
             TSUM1:
             -  200
             - temperature sum from emergence to anthesis

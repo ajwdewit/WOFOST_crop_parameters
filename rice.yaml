@@ -1,7 +1,7 @@
 # Crop parameter file for use with the PCSE/WISS implementations of the WOFOST
 # crop simulation model
 #
-# Creation date: 2017-02-08
+# Creation date: 2017-02-10
 #
 # Contact: Allard de Wit (allard.dewit@wur.nl)
 #          Wageningen University and Research Centre
@@ -988,7 +988,7 @@ CropParameters:
             - ['-']
     Varieties:
         Rice_501:
-        <<: *rice_eu
+            <<: *rice_eu
             TSUM1:
             -  875
             - temperature sum from emergence to anthesis
@@ -998,7 +998,7 @@ CropParameters:
             - temperature sum from anthesis to maturity
             - ['C.d']
         Rice_HYV_IR8:
-        <<: *rice_irri
+            <<: *rice_irri
             TSUM1:
             -  800
             - temperature sum from emergence to anthesis
@@ -1008,7 +1008,7 @@ CropParameters:
             - temperature sum from anthesis to maturity
             - ['C.d']
         Rice_IR64616H_DS:
-        <<: *rice_irri
+            <<: *rice_irri
             DLO:
             - 11.5
             - optimum daylength for development
@@ -1148,7 +1148,7 @@ CropParameters:
             - relative death rate of roots as a function of DVS
             - ['-', 'kg.kg-1.d-1']
         Rice_IR64616H_WS:
-        <<: *rice_irri
+            <<: *rice_irri
             DLO:
             - 11.5
             - optimum daylength for development
@@ -1292,7 +1292,7 @@ CropParameters:
             - relative death rate of roots as a function of DVS
             - ['-', 'kg.kg-1.d-1']
         Rice_IR64:
-        <<: *rice_irri
+            <<: *rice_irri
             DLO:
             - 11.5
             - optimum daylength for development
@@ -1444,7 +1444,7 @@ CropParameters:
             - relative death rate of roots as a function of DVS
             - ['-', 'kg.kg-1.d-1']
         Rice_IR72:
-        <<: *rice_irri
+            <<: *rice_irri
             DLO:
             - 11.5
             - optimum daylength for development
@@ -1588,7 +1588,7 @@ CropParameters:
             - relative death rate of roots as a function of DVS
             - ['-', 'kg.kg-1.d-1']
         Rice_IR72_DS:
-        <<: *rice_irri
+            <<: *rice_irri
             DLO:
             - 11.5
             - optimum daylength for development
@@ -1731,7 +1731,7 @@ CropParameters:
             - relative death rate of roots as a function of DVS
             - ['-', 'kg.kg-1.d-1']
         Rice_IR72_WS:
-        <<: *rice_irri
+            <<: *rice_irri
             DLO:
             - 11.5
             - optimum daylength for development
@@ -1875,7 +1875,7 @@ CropParameters:
             - relative death rate of roots as a function of DVS
             - ['-', 'kg.kg-1.d-1']
         Rice_IR8A:
-        <<: *rice_irri
+            <<: *rice_irri
             DLO:
             - 11.5
             - optimum daylength for development
