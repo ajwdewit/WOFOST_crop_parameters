@@ -11,7 +11,7 @@
 #                   - http://www.wageningenur.nl/wofost
 #                   - https://github.com/ajwdewit/WOFOST_crop_parameters
 #
-Version: 1.0
+Version: 1.0.0
 CropParameters:
     GenericC3: &GenericC3
         CO2EFFTB:
