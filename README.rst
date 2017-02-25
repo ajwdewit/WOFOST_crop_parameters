@@ -48,21 +48,21 @@ explained with an example (barley in this case):
                 - ['C.d']
 
 The parameter file starts with a version number that is used to identify the file structure.
-Next, the crop parameters are defined starting at the tag `CropParameters`. Under the
-CropParameters section, first all parameters that are generic for C3 and C4 crops are defined
-which have to do with CO_2 response on assimilation and transpiration. These are parameters
-are defined by the tags `GenericC3` and `GenericC4`. Moreover they define two anchors `&GenericC3`
-and `&GenericC4` that can be used to refer to in later sections.
+Next, the crop parameters are defined starting at the tag `CropParameters`. First all parameters
+that are generic for C3 and C4 crops are defined by the tags `GenericC3` and `GenericC4`.
+These parameters mainly have to do with CO_{2} response on assimilation and transpiration.
+Moreover they define two anchors `&GenericC3` and `&GenericC4` that can be used to refer to in
+later sections.
 
 Second, the parameter file defines the `EcoTypes`_. These can be regarded as distinct sets of
 crop parameters that define the properties of groups of varieties. The parameter definitions of
 EcoTypes have to be complete (all crop parameters have to be present) and they have to
 inherit from either GenericC3 or GenericC4 by providing a reference to the anchor. For example,
 the ecotype 'springbarley' refers to the anchor GenericC3 through the syntax '<<: *springbarley'.
-Each ecotype defines an anchor to itself that can be used to refer to.
+Each ecotype defines an anchor to itself that can be used to refer to later on.
 
-Finally, the parameter file defines the `varieties` for the given crop which often are called
-`cultivars`_. Varieties in the parameter file inherit all parameters from one of the defined
+Finally, the parameter file defines the `varieties` for the given crop (often called
+`cultivars`_). Varieties in the parameter file inherit all parameters from one of the defined
 EcoTypes and redefine one or more parameters that are specific for the given variety. In the
 example above, the variety 'Spring_barley_301' inherits its parameters from the EcoType
 'springbarley' while it redefines the parameters TSUM1 and TSUM2 to values specific for this
@@ -71,7 +71,7 @@ variety.
 Parameters themselves are defined by a tag that is the name of the parameter and a list of three
 items: 1) the value of the parameter, 2) a description of the parameter and 3) the units of the
 parameter. The units are defined in such way that they can be easily parsed and used by software
-that supports unit definitions during model definition and simulation.
+that supports units during model definition and simulation.
 
 The indenting and general structure of the parameter files are part of the YAML syntax and not only
 enhance readability of the file, but also are essential for YAML to parse it.
@@ -85,7 +85,7 @@ How to use the parameter files
 ------------------------------
 
 The crop parameter files have been designed to work with the Python Crop Simulation Environment (`PCSE`_)
-while provides a DataProvider that can directly use the YAML crop parameter files::
+which provides a DataProvider that can directly use the YAML crop parameter files::
 
     >>> from pcse.fileinput import YAMLCropDataProvider
     >>> cropd = YAMLCropDataProvider()
@@ -122,7 +122,7 @@ while provides a DataProvider that can directly use the YAML crop parameter file
 .. _PCSE: http://pcse.readthedocs.io
 
 Moreover, the PCSE AgroManager is designed to work with the YAMLCropDataProvider and the parameters files
-by referring to the crop type (crop_name) and crop variety (varietyname) in its definition of the agromanagement:
+by referring to the crop type (crop_name) and crop variety (variety_name) in its definition of the agromanagement:
 
 .. code-block:: yaml
 
