@@ -50,7 +50,7 @@ explained with an example (barley in this case):
 The parameter file starts with a version number that is used to identify the file structure.
 Next, the crop parameters are defined starting at the tag `CropParameters`. First all parameters
 that are generic for C3 and C4 crops are defined by the tags `GenericC3` and `GenericC4`.
-These parameters mainly have to do with CO_{2} response on assimilation and transpiration.
+These parameters mainly have to do with |CO2| response on assimilation and transpiration.
 Moreover they define two anchors `&GenericC3` and `&GenericC4` that can be used to refer to in
 later sections.
 
@@ -85,7 +85,9 @@ How to use the parameter files
 ------------------------------
 
 The crop parameter files have been designed to work with the Python Crop Simulation Environment (`PCSE`_)
-which provides a DataProvider that can directly use the YAML crop parameter files::
+which provides a DataProvider that can directly use the YAML crop parameter files:
+
+.. code-block:: python
 
     >>> from pcse.fileinput import YAMLCropDataProvider
     >>> cropd = YAMLCropDataProvider()
@@ -121,8 +123,10 @@ which provides a DataProvider that can directly use the YAML crop parameter file
 
 .. _PCSE: http://pcse.readthedocs.io
 
-Moreover, the PCSE AgroManager is designed to work with the YAMLCropDataProvider and the parameters files
+Moreover, the PCSE `AgroManager`_ is designed to work with the YAMLCropDataProvider and the parameters files
 by referring to the crop type (crop_name) and crop variety (variety_name) in its definition of the agromanagement:
+
+.. _AgroManager: http://pcse.readthedocs.io/en/master/reference_guide.html#the-agromanager
 
 .. code-block:: yaml
 
@@ -145,7 +149,7 @@ Within the agromanagement definition (also defined in YAML) the `crop_name` and 
 the `CropCalendar` definition directly refer to the name of the parameter file (soybean) and the variety
 (Soybean_906) that is defined in the parameter file.
 
-Note that the crop names and variety names are **case sensitive**!
+Note that the crop names and variety names in the agromanagement definition are **case sensitive**!
 
 Limitations
 -----------
@@ -163,3 +167,6 @@ of the parameter files this will be taken into account including information lik
 * reference publication
 
 * etc.
+
+
+.. |CO2| replace:: CO\ :sub:`2`\
