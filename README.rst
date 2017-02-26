@@ -48,10 +48,10 @@ explained with an example (barley in this case):
                 - ['C.d']
 
 The parameter file starts with a version number that is used to identify the file structure.
-Next, the crop parameters are defined starting at the tag `CropParameters`. First all parameters
-that are generic for C3 and C4 crops are defined by the tags `GenericC3` and `GenericC4`.
+Next, the crop parameters are defined starting at the tag ``CropParameters``. First all parameters
+that are generic for C3 and C4 crops are defined by the tags ``GenericC3`` and ``GenericC4``.
 These parameters mainly have to do with |CO2| response on assimilation and transpiration.
-Moreover they define two anchors `&GenericC3` and `&GenericC4` that can be used to refer to in
+Moreover they define two anchors ``&GenericC3`` and ``&GenericC4`` that can be used to refer to in
 later sections.
 
 Second, the parameter file defines the `EcoTypes`_. These can be regarded as distinct sets of
