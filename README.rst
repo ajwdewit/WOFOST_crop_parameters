@@ -145,7 +145,7 @@ Within the agromanagement definition (also defined in YAML) the `crop_name` and 
 the `CropCalendar` definition directly refer to the name of the parameter file (soybean) and the variety
 (Soybean_906) that is defined in the parameter file.
 
-.. note:: crop names and variety names are *case sensitive*!
+Note that the crop names and variety names are **case sensitive**!
 
 Limitations
 -----------
@@ -153,8 +153,13 @@ Limitations
 A limitation of the current version of the parameter files is that the metadata concerning the
 different ecotypes and varieties has not yet been defined in the file. In a subsequent version
 of the parameter files this will be taken into account including information like:
-- region where the variety can be applied
-- contact person
-- reference dataset
-- reference publication
-- etc.
+
+* region where the variety can be applied
+
+* contact person
+
+* reference dataset
+
+* reference publication
+
+* etc.
