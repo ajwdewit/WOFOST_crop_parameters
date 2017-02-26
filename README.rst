@@ -57,11 +57,11 @@ later sections.
 Second, the parameter file defines the `EcoTypes`_. These can be regarded as distinct sets of
 crop parameters that define the properties of groups of varieties. The parameter definitions of
 EcoTypes have to be complete (all crop parameters have to be present) and they have to
-inherit from either GenericC3 or GenericC4 by providing a reference to the anchor. For example,
-the ecotype 'springbarley' refers to the anchor GenericC3 through the syntax '<<: *springbarley'.
+inherit from either ``GenericC3`` or ``GenericC4`` by providing a reference to the anchor. For example,
+the ecotype 'springbarley' refers to the anchor ``GenericC3`` through the syntax ``<<: *GenericC3``.
 Each ecotype defines an anchor to itself that can be used to refer to later on.
 
-Finally, the parameter file defines the `varieties` for the given crop (often called
+Finally, the parameter file defines the varieties for the given crop (often called
 `cultivars`_). Varieties in the parameter file inherit all parameters from one of the defined
 EcoTypes and redefine one or more parameters that are specific for the given variety. In the
 example above, the variety 'Spring_barley_301' inherits its parameters from the EcoType
@@ -124,7 +124,8 @@ which provides a DataProvider that can directly use the YAML crop parameter file
 .. _PCSE: http://pcse.readthedocs.io
 
 Moreover, the PCSE `AgroManager`_ is designed to work with the YAMLCropDataProvider and the parameters files
-by referring to the crop type (crop_name) and crop variety (variety_name) in its definition of the agromanagement:
+by referring to the crop type (``crop_name``) and crop variety (``variety_name``) in its definition of the
+agromanagement:
 
 .. _AgroManager: http://pcse.readthedocs.io/en/master/reference_guide.html#the-agromanager
 
@@ -145,11 +146,11 @@ by referring to the crop type (crop_name) and crop variety (variety_name) in its
         StateEvents:
     - 1999-01-01:
 
-Within the agromanagement definition (also defined in YAML) the `crop_name` and `variety_name` tags within
-the `CropCalendar` definition directly refer to the name of the parameter file (soybean) and the variety
-(Soybean_906) that is defined in the parameter file.
+Within the agromanagement definition (also defined in YAML) the ``crop_name`` and ``variety_name`` tags within
+the ``CropCalendar`` definition directly refer to the name of the parameter file ('soybean') and the variety
+('Soybean_906') that is defined in the crop parameter file.
 
-Note that the crop names and variety names in the agromanagement definition are **case sensitive**!
+Note that ``crop_name`` and ``variety_name`` in the agromanagement definition are **case sensitive**!
 
 Limitations
 -----------
