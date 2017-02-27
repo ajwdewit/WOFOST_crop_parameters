@@ -31,13 +31,13 @@ explained with an example (barley in this case):
 
         EcoTypes:
             springbarley: &springbarley
-                <<: *GenericC3           # springbarley inherits from GenericC3
+                <<: *GenericC3           # Ecotype springbarley inherits from GenericC3
 
                 ## All parameters specific for springbarley go here
 
         Varieties:
             Spring_barley_301:
-                <<: *springbarley        # Spring_barley_301 inherits from springbarley
+                <<: *springbarley        # Variety Spring_barley_301 inherits from ecotype springbarley
                 TSUM1:
                 -  800
                 - temperature sum from emergence to anthesis
