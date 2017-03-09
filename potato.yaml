@@ -1,7 +1,7 @@
 # Crop parameter file for use with the PCSE/WISS implementations of the WOFOST
 # crop simulation model
 #
-# Creation date: 2017-02-10
+# Creation date: 2017-03-09
 #
 # Contact: Allard de Wit (allard.dewit@wur.nl)
 #          Wageningen University and Research Centre
@@ -87,7 +87,7 @@ CropParameters:
             IDSL:
             -  0
             - indicates whether pre-anthesis development depends on temperature (=0), plus daylength (=1) , plus vernalization (=2)
-            - ['Undefined']
+            - ['NA']
             DLO:
             - -99.0
             - optimum daylength for development
@@ -122,11 +122,11 @@ CropParameters:
             VERNBASE:
             - 14.0
             - Base vernalization requirement
-            - ['days']
+            - ['d']
             VERNSAT:
             - 70.0
             - Saturated vernalization requirement
-            - ['days']
+            - ['d']
             VERNDVS:
             - 0.30
             - Critical DVS for vernalization to switch off
@@ -298,7 +298,7 @@ CropParameters:
             PERDL:
             - 0.030
             - maximum relative death rate of leaves due to water stress
-            - ['Undefined']
+            - ['-']
             RDRRTB:
             - [0.00, 0.000,
                1.50, 0.000,
@@ -327,11 +327,11 @@ CropParameters:
             IAIRDU:
             -  0
             - air ducts in roots present (=1) or not (=0)
-            - ['Undefined']
+            - ['NA']
             IOX:
             -  0
             - Oxygen stress effect enabled (=1) or not (=0)
-            - ['Undefined']
+            - ['NA']
             #
             # ROOTING DEPTH
             #
@@ -377,8 +377,8 @@ CropParameters:
             - ['-']
             NRESIDLV:
             - 0.0200
-            - ['kg.kg-1']
             - residual N fraction in leaves [kg N kg-1 dry biomass]
+            - ['kg.kg-1']
             NRESIDST:
             - 0.0100
             - residual N fraction in stems [kg N kg-1 dry biomass]
@@ -389,8 +389,8 @@ CropParameters:
             - ['kg.kg-1']
             TCNT:
             -  10
-            - time coefficient for N translocation to storage organs [days]
-            - ['days']
+            - time coefficient for N translocation to storage organs
+            - ['d']
             NFIX_FR:
             - 0.00
             - fraction of crop nitrogen uptake by biological fixation
@@ -437,8 +437,8 @@ CropParameters:
             - ['kg.kg-1']
             TCPT:
             -  10
-            - time coefficient for P translocation to storage organs [days]
-            - ['days']
+            - time coefficient for P translocation to storage organs
+            - ['d']
             #
             # MAXIMUM, CRITICAL AND RESIDUAL POTASSIUM CONCENTRATION IN DIFFERENT ORGANS
             #
@@ -481,8 +481,8 @@ CropParameters:
             - ['kg.kg-1']
             TCKT:
             -  10
-            - time coefficient for K translocation to storage organs [days]
-            - ['days']
+            - time coefficient for K translocation to storage organs
+            - ['d']
             #
             # IMPORT DVS RELATED TO N/P/K UPTAKE AND TRANSLOCATION
             #
