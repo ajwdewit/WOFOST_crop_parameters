@@ -279,12 +279,12 @@ PMAXRT_FR:
 - [-]
 - "%6.4f"
 PMAXST_FR:
--  maximum P concentration in stems as fraction of maximum P concentration in leaves
+- maximum P concentration in stems as fraction of maximum P concentration in leaves
 - [-]
 - "%6.4f"
 PMAXSO:
+- maximum P concentration in storage organs [kg P kg-1 dry biomass]
 - [kg.kg-1]
--  maximum P concentration in storage organs [kg P kg-1 dry biomass]
 - "%6.4f"
 PRESIDLV:
 - residual P fraction in leaves [kg P kg-1 dry biomass]
