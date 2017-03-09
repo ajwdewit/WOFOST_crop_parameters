@@ -26,7 +26,7 @@ TSUMEM:
 IDSL:
 - indicates whether pre-anthesis development depends on
   temperature (=0), plus daylength (=1) , plus vernalization (=2)
-- [Undefined]
+- [NA]
 - "%2.0f"
 DLO:
 - optimum daylength for development
@@ -38,11 +38,11 @@ DLC:
 - "%4.1f"
 VERNBASE:
 - Base vernalization requirement
-- ['days']
+- ['d']
 - "%4.1f"
 VERNSAT:
 - Saturated vernalization requirement
-- ['days']
+- ['d']
 - "%4.1f"
 VERNDVS:
 - Critical DVS for vernalization to switch off
@@ -192,7 +192,7 @@ FOTB:
 # death rates
 PERDL:
 - maximum relative death rate of leaves due to water stress
-- [Undefined]
+- [-]
 - "%5.3f"
 RDRRTB:
 - Relative death rate of stems as a function of DVS
@@ -213,11 +213,11 @@ DEPNR:
 - "%4.2f"
 IAIRDU:
 - air ducts in roots present (=1) or not (=0)
-- [Undefined]
+- [NA]
 - "%2.0f"
 IOX:
 - Oxygen stress effect enabled (=1) or not (=0)
-- [Undefined]
+- [NA]
 - "%2.0f"
 # rooting
 RDI:
@@ -254,8 +254,8 @@ NMAXSO:
 - [kg.kg-1]
 - "%6.4f"
 NRESIDLV:
-- [kg.kg-1]
 - residual N fraction in leaves [kg N kg-1 dry biomass]
+- [kg.kg-1]
 - "%6.4f"
 NRESIDST:
 - residual N fraction in stems [kg N kg-1 dry biomass]
@@ -266,8 +266,8 @@ NRESIDRT:
 - [kg.kg-1]
 - "%6.4f"
 TCNT:
--  time coefficient for N translocation to storage organs [days]
-- [days]
+-  time coefficient for N translocation to storage organs
+- [d]
 - "%3.0f"
 
 PMAXLV_TB:
@@ -299,8 +299,8 @@ PRESIDRT:
 - [kg.kg-1]
 - "%6.4f"
 TCPT:
--  time coefficient for P translocation to storage organs [days]
-- [days]
+-  time coefficient for P translocation to storage organs
+- [d]
 - "%3.0f"
 
 KMAXLV_TB:
@@ -332,8 +332,8 @@ KRESIDRT:
 - [kg.kg-1]
 - "%6.4f"
 TCKT:
--  time coefficient for K translocation to storage organs [days]
-- [days]
+-  time coefficient for K translocation to storage organs
+- [d]
 - "%3.0f"
 
 # Impact of NPK limitation on various processes
