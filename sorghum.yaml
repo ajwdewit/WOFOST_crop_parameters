@@ -245,19 +245,19 @@ CropParameters:
             RML:
             - 0.0300
             - relative maintenance respiration rate of leaves
-            - ['kg.CH2O.kg-1.d-1']
+            - ['kg.kg-1.d-1']
             RMO:
             - 0.0100
             - relative maintenance respiration rate of storage organs
-            - ['kg.CH2O.kg-1.d-1']
+            - ['kg.kg-1.d-1']
             RMR:
             - 0.0100
             - relative maintenance respiration rate of roots
-            - ['kg.CH2O.kg-1.d-1']
+            - ['kg.kg-1.d-1']
             RMS:
             - 0.0150
             - relative maintenance respiration rate of stems
-            - ['kg.CH2O.kg-1.d-1']
+            - ['kg.kg-1.d-1']
             RFSETB:
             - [0.00, 1.000,
                2.00, 1.000]

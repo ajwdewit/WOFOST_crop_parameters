@@ -152,19 +152,19 @@ Q10:
 - "%5.2f"
 RML:
 - relative maintenance respiration rate of leaves
-- [kg.CH2O.kg-1.d-1]
+- [kg.kg-1.d-1]
 - "%6.4f"
 RMO:
 - relative maintenance respiration rate of storage organs
-- [kg.CH2O.kg-1.d-1]
+- [kg.kg-1.d-1]
 - "%6.4f"
 RMR:
 - relative maintenance respiration rate of roots
-- [kg.CH2O.kg-1.d-1]
+- [kg.kg-1.d-1]
 - "%6.4f"
 RMS:
 - relative maintenance respiration rate of stems
-- [kg.CH2O.kg-1.d-1]
+- [kg.kg-1.d-1]
 - "%6.4f"
 RFSETB:
 -  reduction factor for senescence as function of DVS
