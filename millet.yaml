@@ -424,8 +424,8 @@ CropParameters:
             - ['-']
             PMAXSO:
             - 0.0080
-            - ['kg.kg-1']
             - maximum P concentration in storage organs [kg P kg-1 dry biomass]
+            - ['kg.kg-1']
             PCRIT_FR:
             - 1.00
             - Critical P concentration as fraction of maximum P concentration
