@@ -1,7 +1,7 @@
 # Crop parameter file for use with the PCSE/WISS implementations of the WOFOST
 # crop simulation model
 #
-# Creation date: 2017-03-09
+# Creation date: 2017-07-06
 #
 # Contact: Allard de Wit (allard.dewit@wur.nl)
 #          Wageningen University and Research Centre
@@ -21,7 +21,7 @@ CropParameters:
           1000., 1.11,
           2000., 1.11]
          - multiplication factor for EFF to account for an increasing CO2 concentration
-         - [PPM, -]
+         - ['PPM', '-']
         CO2TRATB:
          - [40., 0.00,
            360., 1.00,
@@ -29,7 +29,7 @@ CropParameters:
           1000., 0.9,
           2000., 0.9]
          - multiplication factor for maximum transpiration rate TRAMX to account for an increasing CO2 concentration
-         - [PPM, -]
+         - ['PPM', '-']
         CO2AMAXTB:
          - [40.,  0.00,
            360.,  1.00,
@@ -37,7 +37,7 @@ CropParameters:
            1000., 1.90,
            2000., 1.90]
          - multiplication factor for AMAX to account for an increasing CO2 concentration
-         - [PPM, -]
+         - ['PPM', '-']
     GenericC4: &GenericC4
         CO2EFFTB:
          - [40., 0.00,
@@ -46,7 +46,7 @@ CropParameters:
           1000., 1.00,
           2000., 1.00]
          - multiplication factor for EFF to account for an increasing CO2 concentration
-         - [PPM, -]
+         - ['PPM', '-']
         CO2TRATB:
          - [40., 0.00,
            360., 1.00,
@@ -54,7 +54,7 @@ CropParameters:
           1000., 0.74,
           2000., 0.74]
          - multiplication factor for maximum transpiration rate TRAMX to account for an increasing CO2 concentration
-         - [PPM, -]
+         - ['PPM', '-']
         CO2AMAXTB:
          - [40.,  0.00,
            360.,  1.00,
@@ -62,7 +62,7 @@ CropParameters:
            1000., 1.00,
            2000., 1.00]
          - multiplication factor for AMAX to account for an increasing CO2 concentration
-         - [PPM, -]
+         - ['PPM', '-']
     EcoTypes:
         springbarley: &springbarley
             <<: *GenericC3
@@ -149,7 +149,7 @@ CropParameters:
             RGRLAI:
             - 0.0075
             - maximum relative increase in LAI
-            - ['ha.ha-1.d-1']
+            - ['d-1']
             #
             # CROP GREEN AREA
             #
@@ -215,19 +215,19 @@ CropParameters:
             CVL:
             - 0.720
             - efficiency of conversion into leaves
-            - ['kg.kg-1']
+            - ['mass.mass-1']
             CVO:
             - 0.740
             - efficiency of conversion into storage organs
-            - ['kg.kg-1']
+            - ['mass.mass-1']
             CVR:
             - 0.720
             - efficiency of conversion into roots
-            - ['kg.kg-1']
+            - ['mass.mass-1']
             CVS:
             - 0.690
             - efficiency of conversion into stems
-            - ['kg.kg-1']
+            - ['mass.mass-1']
             #
             # RESPIRATION
             #
@@ -238,19 +238,19 @@ CropParameters:
             RML:
             - 0.0300
             - relative maintenance respiration rate of leaves
-            - ['kg.kg-1.d-1']
+            - ['d-1']
             RMO:
             - 0.0100
             - relative maintenance respiration rate of storage organs
-            - ['kg.kg-1.d-1']
+            - ['d-1']
             RMR:
             - 0.0100
             - relative maintenance respiration rate of roots
-            - ['kg.kg-1.d-1']
+            - ['d-1']
             RMS:
             - 0.0150
             - relative maintenance respiration rate of stems
-            - ['kg.kg-1.d-1']
+            - ['d-1']
             RFSETB:
             - [0.00, 1.000,
                2.00, 1.000]
@@ -265,7 +265,7 @@ CropParameters:
                1.000, 0.000,
                2.000, 0.000]
             - fraction of total dry matter to roots as a function of DVS
-            - ['-', 'kg.kg-1']
+            - ['-', 'mass.mass-1']
             FLTB:
             - [0.000, 1.000,
                0.330, 1.000,
@@ -274,7 +274,7 @@ CropParameters:
                1.010, 0.000,
                2.000, 0.000]
             - fraction of total dry matter to leaves as a function of DVS
-            - ['-', 'kg.kg-1']
+            - ['-', 'mass.mass-1']
             FSTB:
             - [0.000, 0.000,
                0.330, 0.000,
@@ -283,7 +283,7 @@ CropParameters:
                1.010, 0.150,
                2.000, 0.000]
             - fraction of total dry matter to stems as a function of DVS
-            - ['-', 'kg.kg-1']
+            - ['-', 'mass.mass-1']
             FOTB:
             - [0.000, 0.000,
                0.800, 0.000,
@@ -291,7 +291,7 @@ CropParameters:
                1.010, 0.850,
                2.000, 1.000]
             - fraction of total dry matter to storage organs as a function of DVS
-            - ['-', 'kg.kg-1']
+            - ['-', 'mass.mass-1']
             #
             # DEATH RATES
             #
@@ -358,7 +358,7 @@ CropParameters:
                2.00, 0.0160,
                2.10, 0.0160]
             - maximum N concentration in leaves as function of development stage in kg N kg-1 dry biomass
-            - ['-', 'kg.kg-1']
+            - ['-', 'mass.mass-1']
             NMAXRT_FR:
             - 0.5000
             - maximum N concentration in roots as fraction of maximum N concentration in leaves
@@ -370,7 +370,7 @@ CropParameters:
             NMAXSO:
             - 0.0350
             - maximum P concentration in storage organs [kg N kg-1 dry biomass]
-            - ['kg.kg-1']
+            - ['mass.mass-1']
             NCRIT_FR:
             - 1.00
             - Critical N concentration as fraction of maximum N concentration
@@ -378,15 +378,15 @@ CropParameters:
             NRESIDLV:
             - 0.0047
             - residual N fraction in leaves [kg N kg-1 dry biomass]
-            - ['kg.kg-1']
+            - ['mass.mass-1']
             NRESIDST:
             - 0.0023
             - residual N fraction in stems [kg N kg-1 dry biomass]
-            - ['kg.kg-1']
+            - ['mass.mass-1']
             NRESIDRT:
             - 0.0023
             - residual N fraction in roots [kg N kg-1 dry biomass]
-            - ['kg.kg-1']
+            - ['mass.mass-1']
             TCNT:
             -  10
             - time coefficient for N translocation to storage organs
@@ -406,7 +406,7 @@ CropParameters:
                2.00, 0.0033,
                2.10, 0.0033]
             - maximum P concentration in leaves as function of development stage in kg P kg-1 dry biomass
-            - ['-', 'kg.kg-1']
+            - ['-', 'mass.mass-1']
             PMAXRT_FR:
             - 0.5000
             - maximum P concentration in roots as fraction of maximum P concentration in leaves
@@ -418,7 +418,7 @@ CropParameters:
             PMAXSO:
             - 0.0060
             - maximum P concentration in storage organs [kg P kg-1 dry biomass]
-            - ['kg.kg-1']
+            - ['mass.mass-1']
             PCRIT_FR:
             - 1.00
             - Critical P concentration as fraction of maximum P concentration
@@ -426,15 +426,15 @@ CropParameters:
             PRESIDLV:
             - 0.0005
             - residual P fraction in leaves [kg P kg-1 dry biomass]
-            - ['kg.kg-1']
+            - ['mass.mass-1']
             PRESIDST:
             - 0.0003
             - residual P fraction in stems [kg P kg-1 dry biomass]
-            - ['kg.kg-1']
+            - ['mass.mass-1']
             PRESIDRT:
             - 0.0003
             - residual P fraction in roots [kg P kg-1 dry biomass]
-            - ['kg.kg-1']
+            - ['mass.mass-1']
             TCPT:
             -  10
             - time coefficient for P translocation to storage organs
@@ -450,7 +450,7 @@ CropParameters:
                2.00, 0.0320,
                2.10, 0.0320]
             - maximum K concentration in leaves as function of development stage in kg K kg-1 dry biomass
-            - ['-', 'kg.kg-1']
+            - ['-', 'mass.mass-1']
             KMAXRT_FR:
             - 0.5000
             - maximum K concentration in roots as fraction of maximum K concentration in leaves
@@ -462,7 +462,7 @@ CropParameters:
             KMAXSO:
             - 0.0080
             - maximum K concentration in storage organs [kg K kg-1 dry biomass]
-            - ['kg.kg-1']
+            - ['mass.mass-1']
             KCRIT_FR:
             - 1.00
             - Critical K concentration as fraction of maximum K concentration
@@ -470,15 +470,15 @@ CropParameters:
             KRESIDLV:
             - 0.0093
             - residual K fraction in leaves [kg K kg-1 dry biomass]
-            - ['kg.kg-1']
+            - ['mass.mass-1']
             KRESIDST:
             - 0.0047
             - residual K fraction in stems [kg K kg-1 dry biomass]
-            - ['kg.kg-1']
+            - ['mass.mass-1']
             KRESIDRT:
             - 0.0047
             - residual K fraction in roots [kg K kg-1 dry biomass]
-            - ['kg.kg-1']
+            - ['mass.mass-1']
             TCKT:
             -  10
             - time coefficient for K translocation to storage organs

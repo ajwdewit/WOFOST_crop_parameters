@@ -80,7 +80,7 @@ TDWI:
 - "%6.2f"
 RGRLAI:
 - maximum relative increase in LAI
-- [ha.ha-1.d-1]
+- [d-1]
 - "%6.4f"
 
 # green area
@@ -130,19 +130,19 @@ TMNFTB:
 # conversion of assimilates into biomass
 CVL:
 - efficiency of conversion into leaves
-- [kg.kg-1]
+- [mass.mass-1]
 - "%5.3f"
 CVO:
 - efficiency of conversion into storage organs
-- [kg.kg-1]
+- [mass.mass-1]
 - "%5.3f"
 CVR:
 - efficiency of conversion into roots
-- [kg.kg-1]
+- [mass.mass-1]
 - "%5.3f"
 CVS:
 - efficiency of conversion into stems
-- [kg.kg-1]
+- [mass.mass-1]
 - "%5.3f"
 
 # maintenance respiration
@@ -152,19 +152,19 @@ Q10:
 - "%5.2f"
 RML:
 - relative maintenance respiration rate of leaves
-- [kg.kg-1.d-1]
+- [d-1]
 - "%6.4f"
 RMO:
 - relative maintenance respiration rate of storage organs
-- [kg.kg-1.d-1]
+- [d-1]
 - "%6.4f"
 RMR:
 - relative maintenance respiration rate of roots
-- [kg.kg-1.d-1]
+- [d-1]
 - "%6.4f"
 RMS:
 - relative maintenance respiration rate of stems
-- [kg.kg-1.d-1]
+- [d-1]
 - "%6.4f"
 RFSETB:
 -  reduction factor for senescence as function of DVS
@@ -174,19 +174,19 @@ RFSETB:
 # partitioning
 FRTB:
 - fraction of total dry matter to roots as a function of DVS
-- [-, kg.kg-1]
+- [-, mass.mass-1]
 - ["%5.3f", "%5.3f"]
 FLTB:
 - fraction of total dry matter to leaves as a function of DVS
-- [-, kg.kg-1]
+- [-, mass.mass-1]
 - ["%5.3f", "%5.3f"]
 FSTB:
 - fraction of total dry matter to stems as a function of DVS
-- [-, kg.kg-1]
+- [-, mass.mass-1]
 - ["%5.3f", "%5.3f"]
 FOTB:
 - fraction of total dry matter to storage organs as a function of DVS
-- [-, kg.kg-1]
+- [-, mass.mass-1]
 - ["%5.3f", "%5.3f"]
 
 # death rates
@@ -239,7 +239,7 @@ DVSNPK_STOP:
 # Maximum and residual nitrogen concentration in different organs
 NMAXLV_TB:
 -  maximum N concentration in leaves as function of development stage in kg N kg-1 dry biomass
-- [-, kg.kg-1]
+- [-, mass.mass-1]
 - ["%4.2f", "%6.4f"]
 NMAXRT_FR:
 -  maximum N concentration in roots as fraction of maximum N concentration in leaves
@@ -251,19 +251,19 @@ NMAXST_FR:
 - "%6.4f"
 NMAXSO:
 -  maximum P concentration in storage organs [kg N kg-1 dry biomass]
-- [kg.kg-1]
+- [mass.mass-1]
 - "%6.4f"
 NRESIDLV:
 - residual N fraction in leaves [kg N kg-1 dry biomass]
-- [kg.kg-1]
+- [mass.mass-1]
 - "%6.4f"
 NRESIDST:
 - residual N fraction in stems [kg N kg-1 dry biomass]
-- [kg.kg-1]
+- [mass.mass-1]
 - "%6.4f"
 NRESIDRT:
 - residual N fraction in roots [kg N kg-1 dry biomass]
-- [kg.kg-1]
+- [mass.mass-1]
 - "%6.4f"
 TCNT:
 -  time coefficient for N translocation to storage organs
@@ -272,7 +272,7 @@ TCNT:
 
 PMAXLV_TB:
 -  maximum P concentration in leaves as function of development stage in kg P kg-1 dry biomass
-- [-, kg.kg-1]
+- [-, mass.mass-1]
 - ["%4.2f", "%6.4f"]
 PMAXRT_FR:
 -  maximum P concentration in roots as fraction of maximum P concentration in leaves
@@ -284,19 +284,19 @@ PMAXST_FR:
 - "%6.4f"
 PMAXSO:
 - maximum P concentration in storage organs [kg P kg-1 dry biomass]
-- [kg.kg-1]
+- [mass.mass-1]
 - "%6.4f"
 PRESIDLV:
 - residual P fraction in leaves [kg P kg-1 dry biomass]
-- [kg.kg-1]
+- [mass.mass-1]
 - "%6.4f"
 PRESIDST:
 - residual P fraction in stems [kg P kg-1 dry biomass]
-- [kg.kg-1]
+- [mass.mass-1]
 - "%6.4f"
 PRESIDRT:
 - residual P fraction in roots [kg P kg-1 dry biomass]
-- [kg.kg-1]
+- [mass.mass-1]
 - "%6.4f"
 TCPT:
 -  time coefficient for P translocation to storage organs
@@ -305,7 +305,7 @@ TCPT:
 
 KMAXLV_TB:
 -  maximum K concentration in leaves as function of development stage in kg K kg-1 dry biomass
-- [-, kg.kg-1]
+- [-, mass.mass-1]
 - ["%4.2f", "%6.4f"]
 KMAXRT_FR:
 -  maximum K concentration in roots as fraction of maximum K concentration in leaves
@@ -317,19 +317,19 @@ KMAXST_FR:
 - "%6.4f"
 KMAXSO:
 -  maximum K concentration in storage organs [kg K kg-1 dry biomass]
-- [kg.kg-1]
+- [mass.mass-1]
 - "%6.4f"
 KRESIDLV:
 - residual K fraction in leaves [kg K kg-1 dry biomass]
-- [kg.kg-1]
+- [mass.mass-1]
 - "%6.4f"
 KRESIDST:
 - residual K fraction in stems [kg K kg-1 dry biomass]
-- [kg.kg-1]
+- [mass.mass-1]
 - "%6.4f"
 KRESIDRT:
 - residual K fraction in roots [kg K kg-1 dry biomass]
-- [kg.kg-1]
+- [mass.mass-1]
 - "%6.4f"
 TCKT:
 -  time coefficient for K translocation to storage organs
