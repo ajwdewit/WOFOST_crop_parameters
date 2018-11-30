@@ -195,11 +195,11 @@ PERDL:
 - [-]
 - "%5.3f"
 RDRRTB:
-- Relative death rate of stems as a function of DVS
+- Relative death rate of roots as a function of DVS
 - [-, kg.kg-1.d-1]
 - ["%4.2f", "%5.3f"]
 RDRSTB:
-- relative death rate of roots as a function of DVS
+- relative death rate of stems as a function of DVS
 - [-, kg.kg-1.d-1]
 - ["%4.2f", "%5.3f"]
 # water use
