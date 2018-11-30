@@ -536,20 +536,6 @@ CropParameters:
             -  850
             - temperature sum from anthesis to maturity
             - ['C.d']
-            RDRRTB:
-            - [0.00, 0.000,
-               1.50, 0.000,
-               1.50, 0.020,
-               2.00, 0.020]
-            - Relative death rate of stems as a function of DVS
-            - ['-', 'kg.kg-1.d-1']
-            RDRSTB:
-            - [0.00, 0.000,
-               1.50, 0.000,
-               1.50, 0.020,
-               2.00, 0.020]
-            - relative death rate of roots as a function of DVS
-            - ['-', 'kg.kg-1.d-1']
         Soybean_902:
             <<: *soybean
             TSUM1:
@@ -560,20 +546,6 @@ CropParameters:
             -  950
             - temperature sum from anthesis to maturity
             - ['C.d']
-            RDRRTB:
-            - [0.00, 0.000,
-               1.50, 0.000,
-               1.50, 0.020,
-               2.00, 0.020]
-            - Relative death rate of stems as a function of DVS
-            - ['-', 'kg.kg-1.d-1']
-            RDRSTB:
-            - [0.00, 0.000,
-               1.50, 0.000,
-               1.50, 0.020,
-               2.00, 0.020]
-            - relative death rate of roots as a function of DVS
-            - ['-', 'kg.kg-1.d-1']
         Soybean_903:
             <<: *soybean
             TSUM1:
@@ -584,20 +556,6 @@ CropParameters:
             -  900
             - temperature sum from anthesis to maturity
             - ['C.d']
-            RDRRTB:
-            - [0.00, 0.000,
-               1.50, 0.000,
-               1.50, 0.020,
-               2.00, 0.020]
-            - Relative death rate of stems as a function of DVS
-            - ['-', 'kg.kg-1.d-1']
-            RDRSTB:
-            - [0.00, 0.000,
-               1.50, 0.000,
-               1.50, 0.020,
-               2.00, 0.020]
-            - relative death rate of roots as a function of DVS
-            - ['-', 'kg.kg-1.d-1']
         Soybean_904:
             <<: *soybean
             TSUM1:
@@ -650,20 +608,6 @@ CropParameters:
                2.000, 1.000]
             - fraction of total dry matter to storage organs as a function of DVS
             - ['-', 'mass.mass-1']
-            RDRRTB:
-            - [0.00, 0.000,
-               1.50, 0.000,
-               1.50, 0.020,
-               2.00, 0.020]
-            - Relative death rate of stems as a function of DVS
-            - ['-', 'kg.kg-1.d-1']
-            RDRSTB:
-            - [0.00, 0.000,
-               1.50, 0.000,
-               1.50, 0.020,
-               2.00, 0.020]
-            - relative death rate of roots as a function of DVS
-            - ['-', 'kg.kg-1.d-1']
         Soybean_905:
             <<: *soybean
             TSUMEM:
@@ -720,20 +664,6 @@ CropParameters:
                2.000, 1.000]
             - fraction of total dry matter to storage organs as a function of DVS
             - ['-', 'mass.mass-1']
-            RDRRTB:
-            - [0.00, 0.000,
-               1.50, 0.000,
-               1.50, 0.020,
-               2.00, 0.020]
-            - Relative death rate of stems as a function of DVS
-            - ['-', 'kg.kg-1.d-1']
-            RDRSTB:
-            - [0.00, 0.000,
-               1.50, 0.000,
-               1.50, 0.020,
-               2.00, 0.020]
-            - relative death rate of roots as a function of DVS
-            - ['-', 'kg.kg-1.d-1']
         Soybean_906:
             <<: *soybean
             TSUMEM:
@@ -790,20 +720,6 @@ CropParameters:
                2.000, 1.000]
             - fraction of total dry matter to storage organs as a function of DVS
             - ['-', 'mass.mass-1']
-            RDRRTB:
-            - [0.00, 0.000,
-               1.50, 0.000,
-               1.50, 0.020,
-               2.00, 0.020]
-            - Relative death rate of stems as a function of DVS
-            - ['-', 'kg.kg-1.d-1']
-            RDRSTB:
-            - [0.00, 0.000,
-               1.50, 0.000,
-               1.50, 0.020,
-               2.00, 0.020]
-            - relative death rate of roots as a function of DVS
-            - ['-', 'kg.kg-1.d-1']
         Soybean_VanHeemst_1988:
             <<: *soybean
             TBASEM:
