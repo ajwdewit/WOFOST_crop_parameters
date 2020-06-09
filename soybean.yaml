@@ -380,15 +380,15 @@ CropParameters:
             - Critical N concentration as fraction of maximum N concentration
             - ['-']
             NRESIDLV:
-            - 0.0093
+            - 0.00933
             - residual N fraction in leaves [kg N kg-1 dry biomass]
             - ['mass.mass-1']
             NRESIDST:
-            - 0.0047
+            - 0.00467
             - residual N fraction in stems [kg N kg-1 dry biomass]
             - ['mass.mass-1']
             NRESIDRT:
-            - 0.0047
+            - 0.00467
             - residual N fraction in roots [kg N kg-1 dry biomass]
             - ['mass.mass-1']
             TCNT:
@@ -420,7 +420,7 @@ CropParameters:
             - maximum P concentration in stems as fraction of maximum P concentration in leaves
             - ['-']
             PMAXSO:
-            - 0.0080
+            - 0.0043
             - maximum P concentration in storage organs [kg P kg-1 dry biomass]
             - ['mass.mass-1']
             PCRIT_FR:
@@ -428,15 +428,15 @@ CropParameters:
             - Critical P concentration as fraction of maximum P concentration
             - ['-']
             PRESIDLV:
-            - 0.0015
+            - 0.00147
             - residual P fraction in leaves [kg P kg-1 dry biomass]
             - ['mass.mass-1']
             PRESIDST:
-            - 0.0007
+            - 0.00073
             - residual P fraction in stems [kg P kg-1 dry biomass]
             - ['mass.mass-1']
             PRESIDRT:
-            - 0.0007
+            - 0.00073
             - residual P fraction in roots [kg P kg-1 dry biomass]
             - ['mass.mass-1']
             TCPT:
@@ -464,7 +464,7 @@ CropParameters:
             - maximum K concentration in stems as fraction of maximum K concentration in leaves
             - ['-']
             KMAXSO:
-            - 0.0260
+            - 0.0192
             - maximum K concentration in storage organs [kg K kg-1 dry biomass]
             - ['mass.mass-1']
             KCRIT_FR:
@@ -472,15 +472,15 @@ CropParameters:
             - Critical K concentration as fraction of maximum K concentration
             - ['-']
             KRESIDLV:
-            - 0.0093
+            - 0.00933
             - residual K fraction in leaves [kg K kg-1 dry biomass]
             - ['mass.mass-1']
             KRESIDST:
-            - 0.0047
+            - 0.00467
             - residual K fraction in stems [kg K kg-1 dry biomass]
             - ['mass.mass-1']
             KRESIDRT:
-            - 0.0047
+            - 0.00467
             - residual K fraction in roots [kg K kg-1 dry biomass]
             - ['mass.mass-1']
             TCKT:

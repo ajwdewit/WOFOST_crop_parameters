@@ -361,7 +361,7 @@ CropParameters:
             - maximum N concentration in stems as fraction of maximum N concentration in leaves
             - ['-']
             NMAXSO:
-            - 0.0090
+            - 0.0035
             - maximum P concentration in storage organs [kg N kg-1 dry biomass]
             - ['mass.mass-1']
             NCRIT_FR:
@@ -409,7 +409,7 @@ CropParameters:
             - maximum P concentration in stems as fraction of maximum P concentration in leaves
             - ['-']
             PMAXSO:
-            - 0.0024
+            - 0.0011
             - maximum P concentration in storage organs [kg P kg-1 dry biomass]
             - ['mass.mass-1']
             PCRIT_FR:
@@ -417,15 +417,15 @@ CropParameters:
             - Critical P concentration as fraction of maximum P concentration
             - ['-']
             PRESIDLV:
-            - 0.0013
+            - 0.00133
             - residual P fraction in leaves [kg P kg-1 dry biomass]
             - ['mass.mass-1']
             PRESIDST:
-            - 0.0007
+            - 0.00067
             - residual P fraction in stems [kg P kg-1 dry biomass]
             - ['mass.mass-1']
             PRESIDRT:
-            - 0.0007
+            - 0.00067
             - residual P fraction in roots [kg P kg-1 dry biomass]
             - ['mass.mass-1']
             TCPT:
@@ -453,7 +453,7 @@ CropParameters:
             - maximum K concentration in stems as fraction of maximum K concentration in leaves
             - ['-']
             KMAXSO:
-            - 0.0140
+            - 0.0056
             - maximum K concentration in storage organs [kg K kg-1 dry biomass]
             - ['mass.mass-1']
             KCRIT_FR:
