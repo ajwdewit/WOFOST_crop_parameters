@@ -1,0 +1,26 @@
+available_crops:
+  - barley.yaml
+  - cassava.yaml
+  - chickpea.yaml
+  - cotton.yaml
+  - cowpea.yaml
+  - crops.yaml
+  - fababean.yaml
+  - groundnut.yaml
+  - maize.yaml
+  - metadata_example.yaml.txt
+  - millet.yaml
+  - mungbean.yaml
+  - pigeonpea.yaml
+  - potato.yaml
+  - rapeseed.yaml
+  - rice.yaml
+  - sorghum.yaml
+  - soybean.yaml
+  - sugarbeet.yaml
+  - sugarcane.yaml
+  - sunflower.yaml
+  - sweetpotato.yaml
+  - tobacco.yaml
+  - wheat.yaml
+  - seed_onion.yaml
