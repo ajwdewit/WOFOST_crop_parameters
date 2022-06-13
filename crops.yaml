@@ -4,7 +4,6 @@ available_crops:
   - chickpea.yaml
   - cotton.yaml
   - cowpea.yaml
-  - crops.yaml
   - fababean.yaml
   - groundnut.yaml
   - maize.yaml
