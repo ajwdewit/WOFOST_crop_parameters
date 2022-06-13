@@ -7,7 +7,6 @@ available_crops:
   - fababean.yaml
   - groundnut.yaml
   - maize.yaml
-  - metadata_example.yaml.txt
   - millet.yaml
   - mungbean.yaml
   - pigeonpea.yaml
