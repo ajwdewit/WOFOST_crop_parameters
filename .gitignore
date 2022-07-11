@@ -91,3 +91,5 @@ ENV/
 .ropeproject
 
 .idea
+
+*.pkl
