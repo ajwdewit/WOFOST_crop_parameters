@@ -521,6 +521,21 @@ CropParameters:
             - 0.05
             - maximum relative death rate of leaves due to nutrient NPK stress
             - ['-']
+            #
+            # Maximum N/P/K uptake rates, see changelog.txt
+            #
+            RNUPTAKEMAX:
+             - 7.2
+             - Maximum rate of daily nitrogen uptake
+             - ['kg.ha-1.d-1']
+            RPUPTAKEMAX:
+             - 0.8
+             - Maximum rate of daily phosphorous uptake
+             - ['kg..ha-1.d-1']
+            RKUPTAKEMAX:
+             - 7.4
+             - Maximum rate of daily phosphorous uptake
+             - ['kg.ha-1.d-1']
     Varieties:
         Mungbean_VanHeemst_1988:
             <<: *mungbean

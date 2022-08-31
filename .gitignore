@@ -93,3 +93,6 @@ ENV/
 .idea
 
 *.pkl
+
+crop_template.yaml.txt
+metadata_example.yaml.txt
