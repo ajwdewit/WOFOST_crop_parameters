@@ -12,6 +12,25 @@
 #                   - https://github.com/ajwdewit/WOFOST_crop_parameters
 #
 Version: 1.0.0
+Metadata: &meta
+    Creator: Allard de Wit
+    Contributor:
+    Contact: allard.dewit@wur.nl
+    Publisher: Wageningen Environmental Research
+    Title: Paramemeter sets for the WOFOST cropping system model for chickpea
+    Date: 1988-01-01
+    Language: EN
+    Format: YAML
+    Subject: Generic crop parameters for cassava
+    Description: This file provides WOFOST parameters for chickpea as collected by Van Heemst (1988)
+    Identifier:
+    Relation:
+    Source: https://edepot.wur.nl/218353
+    Type: Report
+    Coverage:
+       Region: Tropical regions of the World
+    Rights: European Union Public License (EUPL)
+    Keyword: chickpea, WOFOST, Cicer arietinum
 CropParameters:
     GenericC3: &GenericC3
         CO2EFFTB:
@@ -531,9 +550,27 @@ CropParameters:
             - 0.05
             - maximum relative death rate of leaves due to nutrient NPK stress
             - ['-']
+            #
+            # Maximum N/P/K uptake rates, see changelog.txt
+            #
+            RNUPTAKEMAX:
+             - 7.2
+             - Maximum rate of daily nitrogen uptake
+             - ['kg.ha-1.d-1']
+            RPUPTAKEMAX:
+             - 0.8
+             - Maximum rate of daily phosphorous uptake
+             - ['kg..ha-1.d-1']
+            RKUPTAKEMAX:
+             - 7.4
+             - Maximum rate of daily phosphorous uptake
+             - ['kg.ha-1.d-1']
     Varieties:
         Chickpea_VanHeemst_1988:
             <<: *chickpea
+            Metadata:
+                <<: *meta
+                Description: WOFOST parameters for Chickpea as collected by Van Heemst (1988)...
             TSUM1:
             -  691
             - temperature sum from emergence to anthesis

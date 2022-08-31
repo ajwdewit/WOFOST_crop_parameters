@@ -12,6 +12,26 @@
 #                   - https://github.com/ajwdewit/WOFOST_crop_parameters
 #
 Version: 1.0.0
+Metadata: &meta
+    Creator: Allard de Wit
+    Contributor: [Kees van Diepen, Hendrik Boogaard]
+    Contact: allard.dewit@wur.nl
+    Publisher: Wageningen Environmental Research
+    Title: Paramemeter sets for the WOFOST cropping system model for wheat
+    Date: 1990-01-01
+    Language: EN
+    Format: YAML
+    Subject: Generic crop parameters for wheat 
+    Description: This file provides parameters for a generic wheat crop as well as several specific 
+                 wheat cultivars for use with the WOFOST cropping system model
+    Identifier: 
+    Relation:
+    Source: https://edepot.wur.nl/308997
+    Type: 
+    Coverage:
+       Region: Europe    
+    Rights: European Union Public License (EUPL)
+    Keyword: wheat, WOFOST
 CropParameters:
     GenericC3: &GenericC3
         CO2EFFTB:
@@ -529,9 +549,28 @@ CropParameters:
             - 0.05
             - maximum relative death rate of leaves due to nutrient NPK stress
             - ['-']
+            #
+            # Maximum N/P/K uptake rates, see changelog.txt
+            #
+            RNUPTAKEMAX:
+             - 7.2
+             - Maximum rate of daily nitrogen uptake
+             - ['kg.ha-1.d-1']
+            RPUPTAKEMAX:
+             - 0.8
+             - Maximum rate of daily phosphorous uptake
+             - ['kg..ha-1.d-1']
+            RKUPTAKEMAX:
+             - 7.4
+             - Maximum rate of daily phosphorous uptake
+             - ['kg.ha-1.d-1']
     Varieties:
         Winter_wheat_101:
             <<: *winterwheat
+            Metadata:
+                <<: *meta
+                Coverage:
+                   Region: Northern Ireland, Scotland, northern UK (R71), Denmark    
             DLO:
             - 16.8
             - optimum daylength for development
@@ -558,6 +597,10 @@ CropParameters:
             - ['d']
         Winter_wheat_102:
             <<: *winterwheat
+            Metadata:
+                <<: *meta
+                Coverage:
+                   Region: Ireland, central en southern UK, Netherlands, northern Germany
             DLO:
             - 16.3
             - optimum daylength for development
@@ -584,6 +627,10 @@ CropParameters:
             - ['d']
         Winter_wheat_103:
             <<: *winterwheat
+            Metadata:
+                <<: *meta
+                Coverage:
+                   Region: southern Netherlands, Germany, Belgium, Luxembourg    
             DLO:
             - 16.3
             - optimum daylength for development
@@ -610,6 +657,10 @@ CropParameters:
             - ['d']
         Winter_wheat_104:
             <<: *winterwheat
+            Metadata:
+                <<: *meta
+                Coverage:
+                   Region:  Central Germany, northern France
             DLO:
             - 15.8
             - optimum daylength for development
@@ -636,6 +687,10 @@ CropParameters:
             - ['d']
         Winter_wheat_105:
             <<: *winterwheat
+            Metadata:
+                <<: *meta
+                Coverage:
+                   Region: France, northern and central Italy, northern Spain, northern Portugal
             DLO:
             - 15.3
             - optimum daylength for development
@@ -662,6 +717,10 @@ CropParameters:
             - ['d']
         Winter_wheat_106:
             <<: *winterwheat
+            Metadata:
+                <<: *meta
+                Coverage:
+                   Region: southern Italy, central and eastern Spain, southern Portugal
             DLO:
             - 14.8
             - optimum daylength for development
@@ -688,6 +747,10 @@ CropParameters:
             - ['d']
         Winter_wheat_107:
             <<: *winterwheat
+            Metadata:
+                <<: *meta
+                Coverage:
+                   Region: Southern Spain and Central and Southern Greece
             DLO:
             - 14.6
             - optimum daylength for development
@@ -710,5 +773,83 @@ CropParameters:
             - ['d']
             VERNSAT:
             -  5.0
+            - Saturated vernalization requirement
+            - ['d']
+        bermude:
+            <<: *winterwheat
+            Metadata: 
+                <<: *meta
+                Date: 2022-07-12
+                Subject: crop parameters for wheat cultivar bermude
+                Description: Crop specific parameters for variety 'bermude'. This variety is a regional variety 
+                    mainly grown in Northern and Central France. Note that only TSUM1 was calibrated, TSUM2 was
+                    taken from Winterwheat_104.
+                Source: https://doi.org/10.1101/708578 
+                Coverage:
+                    Region: Central to Northern France
+                    Temporal: Variety was introduced in 1995
+                    Sowing: september to november
+                    Harvesting: end of July to early august
+                Keyword: wheat, WOFOST, France, Bermude
+            DLO:
+            - 15.8
+            - optimum daylength for development
+            - ['hr']
+            TSUM1:
+            -  899
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  950
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            RGRLAI:
+            - 0.0082
+            - maximum relative increase in LAI
+            - ['d-1']
+            VERNBASE:
+            -  8.0
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 41.0
+            - Saturated vernalization requirement
+            - ['d']
+        apache:
+            <<: *winterwheat
+            Metadata: 
+                <<: *meta
+                Date: 2022-07-12
+                Subject: crop parameters for wheat cultivar apache
+                Description: Crop specific parameters for variety 'apache'. This variety is a common variety grown throughout France and Central Europes. Note that only TSUM1 was calibrated, TSUM2 was taken from Winterwheat_104.
+                Source: https://doi.org/10.1101/708578 
+                Coverage:
+                    Region: France, Central Europe
+                    Temporal: Variety was introduced in 1995
+                    Sowing: september to november
+                    Harvesting: end of July to early august
+                Keyword: wheat, WOFOST, France, Apache
+            DLO:
+            - 15.8
+            - optimum daylength for development
+            - ['hr']
+            TSUM1:
+            -  899
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  950
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            RGRLAI:
+            - 0.0082
+            - maximum relative increase in LAI
+            - ['d-1']
+            VERNBASE:
+            -  8.0
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 41.0
             - Saturated vernalization requirement
             - ['d']

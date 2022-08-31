@@ -1,0 +1,7 @@
+2022-08-31
+
+Parameter values were added for the maximum N/P/K uptake rates. These were derived from a literature study for various
+crops but because of the general lack of data the same values are current applied for all crops. Note that the impact
+of the parameters on the simulation results is limited. They are mainly there to avoid that a nutrient deficient crop
+can "grab" a large amount of nutrients in a single time-step.
+
