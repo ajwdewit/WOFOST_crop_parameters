@@ -14,11 +14,11 @@
 Version: 1.0.0
 Metadata: &meta
     Creator: Allard de Wit
-    Contributor: [Kees van Diepen, Hendrik Boogaard]
+    Contributor: Kees van Diepen, Hendrik Boogaard, Raymond van de Wijngaart
     Contact: allard.dewit@wur.nl
     Publisher: Wageningen Environmental Research
     Title: Paramemeter sets for the WOFOST cropping system model for wheat
-    Date: 1990-01-01
+    Date: 2020-01-01
     Language: EN
     Format: YAML
     Subject: Generic crop parameters for wheat 
@@ -216,6 +216,10 @@ CropParameters:
                2.00, 4.48]
             - maximum leaf CO2 assimilation rate as function of DVS
             - ['-', 'kg.ha-1.hr-1']
+            REFCO2L:
+            - 360
+            - CO2 level at which AMAX and EFF were measured
+            - ['PPM']
             TMPFTB:
             - [ 0.0, 0.010,
                10.0, 0.600,
@@ -562,7 +566,7 @@ CropParameters:
              - ['kg..ha-1.d-1']
             RKUPTAKEMAX:
              - 7.4
-             - Maximum rate of daily phosphorous uptake
+             - Maximum rate of daily potassium uptake
              - ['kg.ha-1.d-1']
     Varieties:
         Winter_wheat_101:
@@ -821,7 +825,9 @@ CropParameters:
                 <<: *meta
                 Date: 2022-07-12
                 Subject: crop parameters for wheat cultivar apache
-                Description: Crop specific parameters for variety 'apache'. This variety is a common variety grown throughout France and Central Europes. Note that only TSUM1 was calibrated, TSUM2 was taken from Winterwheat_104.
+                Description: Crop specific parameters for variety 'apache'. This variety is a common variety grown
+                    throughout France and Central Europes. Note that only TSUM1 was calibrated, TSUM2 was taken
+                    from Winterwheat_104.
                 Source: https://doi.org/10.1101/708578 
                 Coverage:
                     Region: France, Central Europe

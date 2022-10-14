@@ -2,6 +2,7 @@
 # crop simulation model
 #
 # Creation date: 2017-07-06
+# Last update: 2022-10-07
 #
 # Contact: Allard de Wit (allard.dewit@wur.nl)
 #          Wageningen University and Research Centre
@@ -12,6 +13,26 @@
 #                   - https://github.com/ajwdewit/WOFOST_crop_parameters
 #
 Version: 1.0.0
+Metadata: &meta
+    Creator: Allard de Wit
+    Contributor: Tamara ten Den, Pytrik Reidsma, Martin van Ittersum, Frits van Everts
+    Contact: allard.dewit@wur.nl
+    Publisher: Wageningen Environmental Research, Wageningen Plant Production Systems
+    Title: Parameter sets for the WOFOST7.2/WOFOST8.0 model for simulating potato
+    Date: 2022-02-13
+    Language: EN
+    Format: YAML
+    Subject: WOFOST parameters for potato
+    Description: This file provides parameters for several potato varieties based to two ecotypes. The
+       ecotype 'potato' is based on the original calibrations for potato mainly using cultivar 'Bintje'.
+       The second ecotype 'potato_nl' is based on new experimental trials over the period 2019-2021 with
+       several modern cultivars carried out at two locations in the Netherlands.
+    Identifier:
+    Relation:
+    Coverage:
+       Region: Europe, Netherlands
+    Rights: European Union Public License (EUPL)
+    Keyword: potato; Solanum tuberosum
 CropParameters:
     GenericC3: &GenericC3
         CO2EFFTB:
@@ -196,6 +217,10 @@ CropParameters:
                2.00, 0.00]
             - maximum leaf CO2 assimilation rate as function of DVS
             - ['-', 'kg.ha-1.hr-1']
+            REFCO2L:
+            - 360
+            - CO2 level at which AMAX and EFF were measured
+            - ['PPM']
             TMPFTB:
             - [ 0.0, 0.010,
                 3.0, 0.010,
@@ -534,11 +559,69 @@ CropParameters:
              - ['kg..ha-1.d-1']
             RKUPTAKEMAX:
              - 7.4
-             - Maximum rate of daily phosphorous uptake
+             - Maximum rate of daily potassium uptake
              - ['kg.ha-1.d-1']
+        potato_nl: &potato_nl
+            # New estimates of parameters for modern Dutch potato cultivars. The parameters defined
+            # here under this ecotype are assumed generic across cultivars.
+            <<: *GenericC3
+            <<: *potato
+            TSUMEM:
+            -  255
+            - temperature sum from sowing to emergence
+            - ['C.d']
+            TSUM2:
+            - 2100
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            SLATB:
+            - [0.00, 0.0017,
+               1.00, 0.0024,
+               2.00, 0.0024]
+            - specific leaf area as a function of DVS
+            - ['-', 'ha.kg-1']
+            EFFTB:
+            - [ 0.0, 0.49,
+               40.0, 0.49]
+            - initial light-use efficiency single leaf as function of daily mean temperature
+            - ['C', 'kg.ha-1.hr-1.J-1.m2.s1']
+            AMAXTB:
+            - [0.00, 33.00,
+               2.00, 33.00]
+            - maximum leaf CO2 assimilation rate as function of DVS
+            - ['-', 'kg.ha-1.hr-1']
+            REFCO2L:
+            - 400
+            - CO2 level at which AMAX and EFF were measured
+            - ['PPM']
+            TMPFTB:
+            - [ 0.0, 0.01,
+                3.0, 0.01,
+                10.0, 0.75,
+                15.0, 1.00,
+                24.0, 1.00,
+                29.0, 0.75,
+                36.0, 0.01]
+            - reduction factor of AMAX as function of average daily temperature
+            - ['C', '-']
     Varieties:
         Potato_701:
             <<: *potato
+            Metadata:
+                <<: *meta
+                Description: The Potato 701 variety was calibrated for regions in northern Europe in the framework
+                    of the MARS crop yield monitoring system. This includes Germany, France, The Netherlands,
+                    Belgium, Luxembourg, United Kingdom, Ireland, Denmark. Sowing date 15 April except United Kingdom
+                    with sowing date 25 April.
+                Date: 1992-01-01
+                Identifier:
+                Relation:
+                Source: https://edepot.wur.nl/308997
+                Type: Report
+                Coverage:
+                   Region: NW-Europe
+                Rights: European Union Public License (EUPL)
+                Keyword: potato; Solanum tuberosum
             TSUM1:
             -  150
             - temperature sum from emergence to anthesis
@@ -549,6 +632,19 @@ CropParameters:
             - ['C.d']
         Potato_702:
             <<: *potato
+            Metadata:
+                <<: *meta
+                Description: The Potato 702 variety was calibrated for southern France with sowing dates around
+                    15 april.
+                Date: 1992-01-01
+                Identifier:
+                Relation:
+                Source: https://edepot.wur.nl/308997
+                Type: Report
+                Coverage:
+                   Region: Southern France
+                Rights: European Union Public License (EUPL)
+                Keyword: potato; Solanum tuberosum
             TSUM1:
             -  150
             - temperature sum from emergence to anthesis
@@ -559,6 +655,19 @@ CropParameters:
             - ['C.d']
         Potato_703:
             <<: *potato
+            Metadata:
+                <<: *meta
+                Description: The Potato 703 variety was calibrated for Central and N-Italy with sowing dates around
+                    15 april.
+                Date: 1992-01-01
+                Identifier:
+                Relation:
+                Source: https://edepot.wur.nl/308997
+                Type: Report
+                Coverage:
+                   Region: Central and N-Italy
+                Rights: European Union Public License (EUPL)
+                Keyword: potato; Solanum tuberosum
             TSUM1:
             -  150
             - temperature sum from emergence to anthesis
@@ -573,6 +682,19 @@ CropParameters:
             - ['d']
         Potato_704:
             <<: *potato
+            Metadata:
+                <<: *meta
+                Description: The Potato 704 variety was calibrated for Southern Italy, Greece, Spain and Portugal with
+                    sowing dates ranging from 6 March (Greece), 15 april (Italy) and 25 April (Spain, Portugal).
+                Date: 1992-01-01
+                Identifier:
+                Relation:
+                Source: https://edepot.wur.nl/308997
+                Type: Report
+                Coverage:
+                   Region: Central and N-Italy
+                Rights: European Union Public License (EUPL)
+                Keyword: potato; Solanum tuberosum
             TSUM1:
             -  200
             - temperature sum from emergence to anthesis
@@ -585,3 +707,418 @@ CropParameters:
             - 40.0
             - life span of leaves growing at 35 Celsius
             - ['d']
+        Innovator:
+            <<: *potato_nl
+            Metadata:
+                <<: *meta
+                Description: Innovator is a relatively early maturing variety that is popular due to its
+                    frying and baking characteristics. It is currently growth in most of Europe and is becoming
+                    popular in North America as well. Note that in the paper from Ten Den et al. (2021) reallocation
+                    of stem and leaf
+                    biomass was applied, which is not implemented in WOFOST 7.2. In practice between 0.5 to 1.0 ton
+                    of total dry stem and leaf biomass may be translocated towards the tubers.
+                Identifier:
+                Relation:
+                Source: https://doi.org/10.1016/j.eja.2022.126510
+                Type: Journal article
+                Coverage:
+                   Region: Europe and North America
+                Rights: European Union Public License (EUPL)
+                Keyword: potato; Solanum tuberosum
+            TSUM1:
+            - 187
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            RGRLAI:
+            - 0.017
+            - maximum relative increase in LAI
+            - ['d-1']
+            SPAN:
+            - 35.0
+            - life span of leaves growing at 35 Celsius
+            - ['d']
+            FLTB:
+            - [0.00, 0.74,
+               0.50, 0.74,
+               0.60, 0.74,
+               0.70, 0.74,
+               0.80, 0.74,
+               0.90, 0.71,
+               0.95, 0.67,
+               1.00, 0.56,
+               1.10, 0.18,
+               1.15, 0.07,
+               1.20, 0.03,
+               1.30, 0.00,
+               1.40, 0.00,
+               1.50, 0.00,
+               2.00, 0.00]
+            - fraction of total dry matter to leaves as a function of DVS
+            - ['-', 'mass.mass-1']
+            FSTB:
+            - [0.00, 0.26,
+               0.50, 0.26,
+               0.60, 0.25,
+               0.70, 0.23,
+               0.80, 0.18,
+               0.90, 0.11,
+               0.95, 0.06,
+               1.00, 0.06,
+               1.10, 0.20,
+               1.15, 0.20,
+               1.20, 0.15,
+               1.30, 0.08,
+               1.40, 0.03,
+               1.50, 0.01,
+               2.00, 0.00]
+            - fraction of total dry matter to stems as a function of DVS
+            - ['-', 'mass.mass-1']
+            FOTB:
+            - [0.00, 0.00,
+               0.50, 0.00,
+               0.60, 0.01,
+               0.70, 0.03,
+               0.80, 0.08,
+               0.90, 0.18,
+               0.95, 0.27,
+               1.00, 0.38,
+               1.10, 0.62,
+               1.15, 0.73,
+               1.20, 0.82,
+               1.30, 0.92,
+               1.40, 0.97,
+               1.50, 0.99,
+               2.00, 1.00]
+            - fraction of total dry matter to storage organs as a function of DVS
+            - ['-', 'mass.mass-1']
+        Fontane:
+            <<: *potato_nl
+            Metadata:
+                <<: *meta
+                Description: Fontane is a intermediate maturing variety and is popular as a ware potato for both
+                    processing and consumption. It is currently growth in most of Europe but also in other places
+                    across the World. Note that in the paper from Ten Den et al. (2021) reallocation of stem and leaf
+                    biomass was applied, which is not implemented in WOFOST 7.2. In practice between 0.5 to 1.0 ton
+                    of total dry stem and leaf biomass may be translocated towards the tubers.
+                Identifier:
+                Relation:
+                Source: https://doi.org/10.1016/j.eja.2022.126510
+                Type: Journal article
+                Coverage:
+                   Region: Europe
+                Rights: European Union Public License (EUPL)
+                Keyword: potato; Solanum tuberosum
+            TSUM1:
+            -  222
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            RGRLAI:
+            - 0.018
+            - maximum relative increase in LAI
+            - ['d-1']
+            SPAN:
+            - 32.0
+            - life span of leaves growing at 35 Celsius
+            - ['d']
+            FLTB:
+            - [0.00,   0.71,
+               0.60,   0.71,
+               0.70,   0.71,
+               0.80,   0.71,
+               0.90,   0.69,
+               0.95,   0.64,
+               1.00,   0.54,
+               1.05,   0.37,
+               1.10,   0.20,
+               1.15,   0.10,
+               1.20,   0.05,
+               1.30,   0.03,
+               1.40,   0.03,
+               1.60,   0.03,
+               2.00,   0.03]
+            - fraction of total dry matter to leaves as a function of DVS
+            - ['-', 'mass.mass-1']
+            FSTB:
+            - [0.00,   0.29,
+               0.60,   0.29,
+               0.70,   0.28,
+               0.80,   0.25,
+               0.90,   0.19,
+               0.95,   0.15,
+               1.00,   0.13,
+               1.05,   0.14,
+               1.10,   0.16,
+               1.15,   0.14,
+               1.20,   0.10,
+               1.30,   0.04,
+               1.40,   0.01,
+               1.60,   0.00,
+               2.00,   0.00]
+            - fraction of total dry matter to stems as a function of DVS
+            - ['-', 'mass.mass-1']
+            FOTB:
+            - [0.00,   0.00,
+               0.60,   0.00,
+               0.70,   0.01,
+               0.80,   0.04,
+               0.90,   0.12,
+               0.95,   0.21,
+               1.00,   0.33,
+               1.05,   0.49,
+               1.10,   0.64,
+               1.15,   0.76,
+               1.20,   0.85,
+               1.30,   0.93,
+               1.40,   0.96,
+               1.60,   0.97,
+               2.00,   0.97]
+            - fraction of total dry matter to storage organs as a function of DVS
+            - ['-', 'mass.mass-1']
+        Markies:
+            <<: *potato_nl
+            Metadata:
+                <<: *meta
+                Description: Markies is a late maturing variety and is popular as a ware potato for both
+                    processing and consumption. It is currently growth in most of Europe but also in other places
+                    across the World. Note that in the paper from Ten Den et al. (2021) reallocation of stem and leaf
+                    biomass was applied, which is not implemented in WOFOST 7.2. In practice between 0.5 to 1.0 ton
+                    of total dry stem and leaf biomass may be translocated towards the tubers.
+                Identifier:
+                Relation:
+                Source: https://doi.org/10.1016/j.eja.2022.126510
+                Type: Journal article
+                Coverage:
+                   Region: Europe
+                Rights: European Union Public License (EUPL)
+                Keyword: potato; Solanum tuberosum
+            TSUM1:
+            -  257
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            RGRLAI:
+            - 0.013
+            - maximum relative increase in LAI
+            - ['d-1']
+            SPAN:
+            - 37.0
+            - life span of leaves growing at 35 Celsius
+            - ['d']
+            FLTB:
+            -   [0.00, 0.70,
+                 0.20, 0.70,
+                 0.40, 0.70,
+                 0.60, 0.70,
+                 0.80, 0.70,
+                 0.90, 0.68,
+                 0.95, 0.63,
+                 1.00, 0.54,
+                 1.10, 0.19,
+                 1.15, 0.09,
+                 1.20, 0.05,
+                 1.30, 0.03,
+                 1.50, 0.03,
+                 1.70, 0.03,
+                 2.00, 0.03]
+            - fraction of total dry matter to leaves as a function of DVS
+            - ['-', 'mass.mass-1']
+            FSTB:
+            - [0.00, 0.29,
+               0.20, 0.29,
+               0.40, 0.26,
+               0.60, 0.21,
+               0.80, 0.08,
+               0.90, 0.01,
+               0.95, 0.00,
+               1.00, 0.04,
+               1.10, 0.26,
+               1.15, 0.31,
+               1.20, 0.29,
+               1.30, 0.22,
+               1.50, 0.09,
+               1.70, 0.04,
+               2.00, 0.01]
+            - fraction of total dry matter to stems as a function of DVS
+            - ['-', 'mass.mass-1']
+            FOTB:
+            - [0.00, 0.01,
+               0.20, 0.01,
+               0.40, 0.04,
+               0.60, 0.09,
+               0.80, 0.22,
+               0.90, 0.31,
+               0.95, 0.37,
+               1.00, 0.42,
+               1.10, 0.55,
+               1.15, 0.60,
+               1.20, 0.66,
+               1.30, 0.75,
+               1.50, 0.88,
+               1.70, 0.93,
+               2.00, 0.96]
+            - fraction of total dry matter to storage organs as a function of DVS
+            - ['-', 'mass.mass-1']
+        Premiere:
+            Metadata:
+                <<: *meta
+                Description: Premiere is a very early maturing variety and is popular as a potato for
+                    processing into fries. It is currently growth in most of Europe but also in other places
+                    across the World. Note that in the paper from Ten Den et al. (2021) reallocation of stem and leaf
+                    biomass was applied, which is not implemented in WOFOST 7.2. In practice between 0.5 to 1.0 ton
+                    of total dry stem and leaf biomass may be translocated towards the tubers.
+                Identifier:
+                Relation:
+                Source: https://doi.org/10.1016/j.eja.2022.126510
+                Type: Journal article
+                Coverage:
+                   Region: Europe
+                Rights: European Union Public License (EUPL)
+                Keyword: potato; Solanum tuberosum
+            <<: *potato_nl
+            TSUM1:
+            -  164
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            RGRLAI:
+            - 0.019
+            - maximum relative increase in LAI
+            - ['d-1']
+            SPAN:
+            - 35.0
+            - life span of leaves growing at 35 Celsius
+            - ['d']
+            FLTB:
+            - [0.00, 0.83,
+               0.70, 0.83,
+               0.80, 0.83,
+               0.85, 0.82,
+               0.90, 0.80,
+               0.95, 0.75,
+               1.00, 0.62,
+               1.05, 0.42,
+               1.10, 0.21,
+               1.15, 0.08,
+               1.20, 0.03,
+               1.25, 0.01,
+               1.30, 0.00,
+               1.40, 0.00,
+               2.00, 0.00]
+            - fraction of total dry matter to leaves as a function of DVS
+            - ['-', 'mass.mass-1']
+            FSTB:
+            - [0.00, 0.17,
+               0.70, 0.17,
+               0.80, 0.15,
+               0.85, 0.14,
+               0.90, 0.12,
+               0.95, 0.08,
+               1.00, 0.07,
+               1.05, 0.08,
+               1.10, 0.10,
+               1.15, 0.09,
+               1.20, 0.05,
+               1.25, 0.03,
+               1.30, 0.02,
+               1.40, 0.00,
+               2.00, 0.00]
+            - fraction of total dry matter to stems as a function of DVS
+            - ['-', 'mass.mass-1']
+            FOTB:
+            - [0.00, 0.00,
+               0.70, 0.00,
+               0.80, 0.02,
+               0.85, 0.04,
+               0.90, 0.08,
+               0.95, 0.17,
+               1.00, 0.31,
+               1.05, 0.50,
+               1.10, 0.69,
+               1.15, 0.83,
+               1.20, 0.92,
+               1.25, 0.96,
+               1.30, 0.98,
+               1.40, 1.00,
+               2.00, 1.00]
+            - fraction of total dry matter to storage organs as a function of DVS
+            - ['-', 'mass.mass-1']
+        Festien:
+            <<: *potato_nl
+            Metadata:
+                <<: *meta
+                Description: Festien is a very late maturing variety and is only used as a starch potato for the
+                    processing industry. Note that in the paper from Ten Den et al. (2021) reallocation of stem and leaf
+                    biomass was applied, which is not implemented in WOFOST 7.2. In practice between 0.5 to 1.0 ton
+                    of total dry stem and leaf biomass may be translocated towards the tubers.
+                Identifier:
+                Relation:
+                Source: https://doi.org/10.1016/j.eja.2022.126510
+                Type: Journal article
+                Coverage:
+                   Region: Europe
+                Rights: European Union Public License (EUPL)
+                Keyword: potato; Solanum tuberosum
+            TSUM1:
+            -  280
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            RGRLAI:
+            - 0.015
+            - maximum relative increase in LAI
+            - ['d-1']
+            SPAN:
+            - 32.0
+            - life span of leaves growing at 35 Celsius
+            - ['d']
+            FLTB:
+            - [0.00, 0.72,
+               0.50, 0.72,
+               0.60, 0.72,
+               0.70, 0.72,
+               0.80, 0.72,
+               0.90, 0.70,
+               0.95, 0.66,
+               1.00, 0.56,
+               1.10, 0.20,
+               1.15, 0.10,
+               1.20, 0.06,
+               1.30, 0.04,
+               1.40, 0.04,
+               1.60, 0.04,
+               2.00, 0.04]
+            - fraction of total dry matter to leaves as a function of DVS
+            - ['-', 'mass.mass-1']
+            FSTB:
+            - [0.00, 0.28,
+               0.50, 0.27,
+               0.60, 0.25,
+               0.70, 0.22,
+               0.80, 0.17,
+               0.90, 0.08,
+               0.95, 0.04,
+               1.00, 0.05,
+               1.10, 0.23,
+               1.15, 0.24,
+               1.20, 0.20,
+               1.30, 0.11,
+               1.40, 0.06,
+               1.60, 0.01,
+               2.00, 0.00]
+            - fraction of total dry matter to stems as a function of DVS
+            - ['-', 'mass.mass-1']
+            FOTB:
+            - [0.00, 0.00,
+               0.50, 0.01,
+               0.60, 0.03,
+               0.70, 0.06,
+               0.80, 0.11,
+               0.90, 0.22,
+               0.95, 0.30,
+               1.00, 0.39,
+               1.10, 0.57,
+               1.15, 0.66,
+               1.20, 0.74,
+               1.30, 0.85,
+               1.40, 0.90,
+               1.60, 0.95,
+               2.00, 0.96]
+            - fraction of total dry matter to storage organs as a function of DVS
+            - ['-', 'mass.mass-1']

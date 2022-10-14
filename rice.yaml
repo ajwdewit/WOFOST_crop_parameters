@@ -12,6 +12,27 @@
 #                   - https://github.com/ajwdewit/WOFOST_crop_parameters
 #
 Version: 1.0.0
+Metadata: &meta
+    Creator: Allard de Wit
+    Contributor:
+    Contact: allard.dewit@wur.nl
+    Publisher: Wageningen Environmental Research
+    Title: Parameter sets for the WOFOST7.2/WOFOST8.0 model for simulating rice
+    Date: 2022-02-13
+    Language: EN
+    Format: YAML
+    Subject: WOFOST parameters for rice
+    Description: This file provides parameters for several rice varieties. Mostly calibrated based
+        on observations done at the International Rice Research Institute, but also based on
+        observations from Europe and earlier work.
+    Identifier:
+    Relation:
+    Source:
+    Type:
+    Coverage:
+       Region: Selected locations in Europe (France, Spain, Greece, Italy, Portugal), tropical regions
+    Rights: European Union Public License (EUPL)
+    Keyword: rice; Oryza sativa
 CropParameters:
     GenericC3: &GenericC3
         CO2EFFTB:
@@ -659,6 +680,10 @@ CropParameters:
                2.00, 0.00]
             - maximum leaf CO2 assimilation rate as function of DVS
             - ['-', 'kg.ha-1.hr-1']
+            REFCO2L:
+            - 360
+            - CO2 level at which AMAX and EFF were measured
+            - ['PPM']
             TMPFTB:
             - [ 0.0, 0.000,
                12.0, 0.690,
@@ -999,11 +1024,27 @@ CropParameters:
              - ['kg..ha-1.d-1']
             RKUPTAKEMAX:
              - 7.4
-             - Maximum rate of daily phosphorous uptake
+             - Maximum rate of daily potassium uptake
              - ['kg.ha-1.d-1']
     Varieties:
         Rice_501:
             <<: *rice_eu
+            Metadata:
+                <<: *meta
+                Creator: Allard de Wit
+                Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
+                Date: 1992-06-01
+                subject: Crop parameters for a rice cultivar grown in Europe
+                Description: Parameters for a rice cultivar grown in Europe. Calibrated for the MARS project for
+                    selected locations in Europe. Because of limited data available, only temperature sums were
+                    estimated. Emergence date between 1 and 15 May, mean date of flowering between 21 July and
+                    1 August, mean date of maturity between 1 September and 1 October.
+                Identifier:
+                Relation:
+                Source: https://edepot.wur.nl/308997
+                Type: Report
+                Coverage:
+                   Region: Northern-Italy, Southern France, Spain, Greece
             TSUM1:
             -  875
             - temperature sum from emergence to anthesis
@@ -1014,6 +1055,22 @@ CropParameters:
             - ['C.d']
         Rice_HYV_IR8:
             <<: *rice_irri
+            Metadata:
+                <<: *meta
+                Creator: Allard de Wit
+                Contributor: Diepen, C.A. C. Rappoldt, J. Wolf & H. van Keulen, Cabrerea, J. M. C. A., R. Roetter, H. H. Van Laar
+                Date: 1997-06-01
+                subject: Crop parameters for a tropical rice cultivar based on the Van Heemst (1988) parameters
+                Description: Parameters for a rice cultivar grown in tropical regions. Calibrated for the simulation
+                    of crop growth on the basis of monthly weather data. Purpose of application was the assessment
+                    of regional crop production potential in tropical regions. Developed in the framework of SysNet,
+                    1997. Note that the calibration is based on transplanted rice.
+                Identifier:
+                Relation:
+                Source: https://edepot.wur.nl/218353
+                Type: Report
+                Coverage:
+                   Region: tropical regions
             TSUM1:
             -  800
             - temperature sum from emergence to anthesis
@@ -1024,6 +1081,27 @@ CropParameters:
             - ['C.d']
         Rice_IR64616H_DS:
             <<: *rice_irri
+            Metadata:
+                <<: *meta
+                Creator: Allard de Wit
+                Contributor: Diepen, C.A. C. Rappoldt, J. Wolf & H. van Keulen, Cabrerea, J. M. C. A., R. Roetter, H. H. Van Laar
+                Date: 1997-06-01
+                subject: Crop parameters for a tropical rice cultivar IRRI IR64616H
+                Description: Parameters for a rice cultivar IR64616H developed at IRRI. Calibrated for the simulation
+                    of crop growth on the basis of monthly weather data. Purpose of application was the assessment
+                    of regional crop production potential in tropical regions. Developed in the framework of SysNet,
+                    1997. Calibration based on experiments at IRRI in the dry season of 1992, 225 kg N (M10). Note
+                    that the calibration is based on experiments with transplanted rice given that DVSI > 0.
+                    Parameters related to emergence are not provided and therefore this variety can only be used
+                    with the simulation starting from emergence. Results are provided in "Cabrerea, J. M. C. A.,
+                    R. Roetter, and H. H. Van Laar. Preliminary results of crop model development and evaluation for
+                    rice. No. 2169-2019-1595. 1998. (https://ageconsearch.umn.edu/record/287573/files/Cabrera.pdf)"
+                Identifier:
+                Relation:
+                Source: https://doi.org/10.1016/0308-521X(95)00078-J
+                Type: Journal article
+                Coverage:
+                    Region: tropical regions
             DLO:
             - 11.5
             - optimum daylength for development
@@ -1044,7 +1122,7 @@ CropParameters:
             - daily increase in temperature sum as function of daily average temperature
             - ['C', 'C']
             DVSI:
-            -  0.2
+            -  0.187
             - Initial development stage
             - ['-']
             TDWI:
@@ -1163,6 +1241,27 @@ CropParameters:
             - relative death rate of roots as a function of DVS
             - ['-', 'kg.kg-1.d-1']
         Rice_IR64616H_WS:
+            Metadata:
+                <<: *meta
+                Creator: Allard de Wit
+                Contributor: Diepen, C.A. C. Rappoldt, J. Wolf & H. van Keulen, Cabrerea, J. M. C. A., R. Roetter, H. H. Van Laar
+                Date: 1997-06-01
+                subject: Crop parameters for a tropical rice cultivar IRRI IR64616H
+                Description: Parameters for a rice cultivar IR64616H developed at IRRI. Calibrated for the simulation
+                    of crop growth on the basis of monthly weather data. Purpose of application was the assessment
+                    of regional crop production potential in tropical regions. Developed in the framework of SysNet,
+                    1997. Calibration based on experiments at IRRI in the wet season of 1992, 121 kg N. Note
+                    that the calibration is based on experiments with transplanted rice given that DVSI > 0.
+                    Parameters related to emergence are not provided and therefore this variety can only be used
+                    with the simulation starting from emergence. Results are provided in "Cabrerea, J. M. C. A.,
+                    R. Roetter, and H. H. Van Laar. Preliminary results of crop model development and evaluation for
+                    rice. No. 2169-2019-1595. 1998. (https://ageconsearch.umn.edu/record/287573/files/Cabrera.pdf)"
+                Identifier:
+                Relation:
+                Source: https://doi.org/10.1016/0308-521X(95)00078-J
+                Type: Journal article
+                Coverage:
+                    Region: tropical regions
             <<: *rice_irri
             DLO:
             - 11.5
@@ -1184,7 +1283,7 @@ CropParameters:
             - daily increase in temperature sum as function of daily average temperature
             - ['C', 'C']
             DVSI:
-            -  0.2
+            -  0.198
             - Initial development stage
             - ['-']
             TDWI:
@@ -1308,6 +1407,28 @@ CropParameters:
             - ['-', 'kg.kg-1.d-1']
         Rice_IR64:
             <<: *rice_irri
+            Metadata:
+                <<: *meta
+                Creator: Allard de Wit
+                Contributor: Diepen, C.A. C. Rappoldt, J. Wolf & H. van Keulen, Cabrerea, J. M. C. A., R. Roetter, H. H. Van Laar
+                Date: 1997-06-01
+                subject: Crop parameters for a tropical rice cultivar IRRI IR64
+                Description: Parameters for a rice cultivar IR64616H developed at IRRI. Calibrated for the simulation
+                    of crop growth on the basis of monthly weather data. Purpose of application was the assessment
+                    of regional crop production potential in tropical regions. Developed in the framework of SysNet,
+                    1997. Calibration based on experiments at IRRI in the wet season of 1992, 121 kg N. Note
+                    that the calibration is based on experiments with transplanted rice given that DVSI > 0.
+                    Parameters related to emergence are not provided and therefore this variety can only be used
+                    with the simulation starting from emergence. Results are provided in "Cabrerea, J. M. C. A.,
+                    R. Roetter, and H. H. Van Laar. Preliminary results of crop model development and evaluation for
+                    rice. No. 2169-2019-1595. 1998. (https://ageconsearch.umn.edu/record/287573/files/Cabrera.pdf)"
+                    Calibration results for this variety are likely derived from a sub-optimal experiment.
+                Identifier:
+                Relation:
+                Source: https://doi.org/10.1016/0308-521X(95)00078-J
+                Type: Journal article
+                Coverage:
+                    Region: tropical regions
             DLO:
             - 11.5
             - optimum daylength for development
@@ -1328,7 +1449,7 @@ CropParameters:
             - daily increase in temperature sum as function of daily average temperature
             - ['C', 'C']
             DVSI:
-            -  0.2
+            -  0.24
             - Initial development stage
             - ['-']
             TDWI:
@@ -1459,6 +1580,28 @@ CropParameters:
             - ['-', 'kg.kg-1.d-1']
         Rice_IR72:
             <<: *rice_irri
+            Metadata:
+                <<: *meta
+                Creator: Allard de Wit
+                Contributor: Diepen, C.A. C. Rappoldt, J. Wolf & H. van Keulen, Cabrerea, J. M. C. A., R. Roetter, H. H. Van Laar
+                Date: 1997-06-01
+                subject: Crop parameters for a tropical rice cultivar IRRI IR72
+                Description: Parameters for a rice cultivar IR72 developed at IRRI. Calibrated for the simulation
+                    of crop growth on the basis of monthly weather data. Purpose of application was the assessment
+                    of regional crop production potential in tropical regions. Developed in the framework of SysNet,
+                    1997. This variety is based on a consolidated parameter set derived from the calibrations for
+                    IR72 that were done separately for the dry and wet seasons. Note
+                    that the calibration is based on experiments with transplanted rice given that DVSI > 0.
+                    Parameters related to emergence are not provided and therefore this variety can only be used
+                    with the simulation starting from emergence. Results are provided in "Cabrerea, J. M. C. A.,
+                    R. Roetter, and H. H. Van Laar. Preliminary results of crop model development and evaluation for
+                    rice. No. 2169-2019-1595. 1998. (https://ageconsearch.umn.edu/record/287573/files/Cabrera.pdf)"
+                Identifier:
+                Relation:
+                Source: https://doi.org/10.1016/0308-521X(95)00078-J
+                Type: Journal article
+                Coverage:
+                    Region: tropical regions
             DLO:
             - 11.5
             - optimum daylength for development
@@ -1479,7 +1622,7 @@ CropParameters:
             - daily increase in temperature sum as function of daily average temperature
             - ['C', 'C']
             DVSI:
-            -  0.2
+            -  0.16
             - Initial development stage
             - ['-']
             TDWI:
@@ -1603,6 +1746,28 @@ CropParameters:
             - ['-', 'kg.kg-1.d-1']
         Rice_IR72_DS:
             <<: *rice_irri
+            Metadata:
+                <<: *meta
+                Creator: Allard de Wit
+                Contributor: Diepen, C.A. C. Rappoldt, J. Wolf & H. van Keulen, Cabrerea, J. M. C. A., R. Roetter, H. H. Van Laar
+                Date: 1997-06-01
+                subject: Crop parameters for a tropical rice cultivar IRRI IR72
+                Description: Parameters for a rice cultivar IR72 developed at IRRI. Calibrated for the simulation
+                    of crop growth on the basis of monthly weather data. Purpose of application was the assessment
+                    of regional crop production potential in tropical regions. Developed in the framework of SysNet,
+                    1997. This variety is based on a parameter set derived from the calibrations for
+                    IR72 that were done for the dry season only.
+                    Note that the calibration is based on experiments with transplanted rice given that DVSI > 0.
+                    Parameters related to emergence are not provided and therefore this variety can only be used
+                    with the simulation starting from emergence. Results are provided in "Cabrerea, J. M. C. A.,
+                    R. Roetter, and H. H. Van Laar. Preliminary results of crop model development and evaluation for
+                    rice. No. 2169-2019-1595. 1998. (https://ageconsearch.umn.edu/record/287573/files/Cabrera.pdf)"
+                Identifier:
+                Relation:
+                Source: https://doi.org/10.1016/0308-521X(95)00078-J
+                Type: Journal article
+                Coverage:
+                    Region: tropical regions
             DLO:
             - 11.5
             - optimum daylength for development
@@ -1623,7 +1788,7 @@ CropParameters:
             - daily increase in temperature sum as function of daily average temperature
             - ['C', 'C']
             DVSI:
-            -  0.2
+            -  0.16
             - Initial development stage
             - ['-']
             TDWI:
@@ -1746,6 +1911,28 @@ CropParameters:
             - ['-', 'kg.kg-1.d-1']
         Rice_IR72_WS:
             <<: *rice_irri
+            Metadata:
+                <<: *meta
+                Creator: Allard de Wit
+                Contributor: Diepen, C.A. C. Rappoldt, J. Wolf & H. van Keulen, Cabrerea, J. M. C. A., R. Roetter, H. H. Van Laar
+                Date: 1997-06-01
+                subject: Crop parameters for a tropical rice cultivar IRRI IR72
+                Description: Parameters for a rice cultivar IR72 developed at IRRI. Calibrated for the simulation
+                    of crop growth on the basis of monthly weather data. Purpose of application was the assessment
+                    of regional crop production potential in tropical regions. Developed in the framework of SysNet,
+                    1997. This variety is based on a parameter set derived from the calibrations for
+                    IR72 that were done for the wet season only.
+                    Note that the calibration is based on experiments with transplanted rice given that DVSI > 0.
+                    Parameters related to emergence are not provided and therefore this variety can only be used
+                    with the simulation starting from emergence. Results are provided in "Cabrerea, J. M. C. A.,
+                    R. Roetter, and H. H. Van Laar. Preliminary results of crop model development and evaluation for
+                    rice. No. 2169-2019-1595. 1998. (https://ageconsearch.umn.edu/record/287573/files/Cabrera.pdf)"
+                Identifier:
+                Relation:
+                Source: https://doi.org/10.1016/0308-521X(95)00078-J
+                Type: Journal article
+                Coverage:
+                    Region: tropical regions
             DLO:
             - 11.5
             - optimum daylength for development
@@ -1766,7 +1953,7 @@ CropParameters:
             - daily increase in temperature sum as function of daily average temperature
             - ['C', 'C']
             DVSI:
-            -  0.2
+            -  0.16
             - Initial development stage
             - ['-']
             TDWI:
@@ -1890,6 +2077,27 @@ CropParameters:
             - ['-', 'kg.kg-1.d-1']
         Rice_IR8A:
             <<: *rice_irri
+            Metadata:
+                <<: *meta
+                Creator: Allard de Wit
+                Contributor: Diepen, C.A. C. Rappoldt, J. Wolf & H. van Keulen, Cabrerea, J. M. C. A., R. Roetter, H. H. Van Laar
+                Date: 1997-06-01
+                subject: Crop parameters for a tropical rice cultivar IRRI IR8
+                Description: Parameters for a rice cultivar IR8 developed at IRRI. Calibrated for the simulation
+                    of crop growth on the basis of monthly weather data. Purpose of application was the assessment
+                    of regional crop production potential in tropical regions. Developed in the framework of SysNet,
+                    1997.
+                    Note that the calibration is based on experiments with transplanted rice given that DVSI > 0.
+                    Parameters related to emergence are not provided and therefore this variety can only be used
+                    with the simulation starting from emergence. Results are provided in "Cabrerea, J. M. C. A.,
+                    R. Roetter, and H. H. Van Laar. Preliminary results of crop model development and evaluation for
+                    rice. No. 2169-2019-1595. 1998. (https://ageconsearch.umn.edu/record/287573/files/Cabrera.pdf)"
+                Identifier:
+                Relation:
+                Source: https://doi.org/10.1016/0308-521X(95)00078-J
+                Type: Journal article
+                Coverage:
+                    Region: tropical regions
             DLO:
             - 11.5
             - optimum daylength for development
@@ -1910,7 +2118,7 @@ CropParameters:
             - daily increase in temperature sum as function of daily average temperature
             - ['C', 'C']
             DVSI:
-            -  0.1
+            -  0.15
             - Initial development stage
             - ['-']
             TDWI:
