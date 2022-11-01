@@ -1,3 +1,11 @@
+2002-10-14
+
+* Metadata was added for all crop files
+* A parameter REFCO2L was added in all files describing the reference CO2 level at which the photosynthesis
+  parameters (AMAX, EFF) were measured. This is important because new AMAX and EFF measurements have been made
+  for potato in 2019/2020 with a reference level of 400 ppm instead of 360 ppm.
+* Five new potato cultivars have been added based on the work of Tamara ten Den.
+
 2022-08-31
 
 Parameter values were added for the maximum N/P/K uptake rates. These were derived from a literature study for various
@@ -5,3 +13,7 @@ crops but because of the general lack of data the same values are current applie
 of the parameters on the simulation results is limited. They are mainly there to avoid that a nutrient deficient crop
 can "grab" a large amount of nutrients in a single time-step.
 
+2022-06-13
+
+* A parameter file for WOFOST 7.2 for seed onions was added based on a parameter file from the AgriAdapt project.
+* crops.yaml was added as an entry point to fetch all the crop parameter files.

@@ -14,14 +14,14 @@
 Version: 1.0.0
 Metadata: &meta
     Creator: Allard de Wit
-    Contributor:
+    Contributor: H.D.J. van Heemst
     Contact: allard.dewit@wur.nl
     Publisher: Wageningen Environmental Research
-    Title: Paramemeter sets for the WOFOST cropping system model for chickpea
+    Title: Parameter sets for the WOFOST cropping system model for chickpea
     Date: 1988-01-01
     Language: EN
     Format: YAML
-    Subject: Generic crop parameters for cassava
+    Subject: Generic crop parameters for chickpea
     Description: This file provides WOFOST parameters for chickpea as collected by Van Heemst (1988)
     Identifier:
     Relation:
@@ -215,6 +215,10 @@ CropParameters:
                2.00, 0.00]
             - maximum leaf CO2 assimilation rate as function of DVS
             - ['-', 'kg.ha-1.hr-1']
+            REFCO2L:
+            - 360
+            - CO2 level at which AMAX and EFF were measured
+            - ['PPM']
             TMPFTB:
             - [ 0.0, 0.000,
                 8.0, 0.000,
@@ -563,7 +567,7 @@ CropParameters:
              - ['kg..ha-1.d-1']
             RKUPTAKEMAX:
              - 7.4
-             - Maximum rate of daily phosphorous uptake
+             - Maximum rate of daily potassium uptake
              - ['kg.ha-1.d-1']
     Varieties:
         Chickpea_VanHeemst_1988:

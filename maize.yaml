@@ -12,6 +12,26 @@
 #                   - https://github.com/ajwdewit/WOFOST_crop_parameters
 #
 Version: 1.0.0
+Metadata: &meta
+    Creator: Allard de Wit
+    Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
+    Contact: allard.dewit@wur.nl
+    Publisher: Wageningen Environmental Research
+    Title: Parameter sets for the WOFOST7.2/WOFOST8.0 model for simulating maize
+    Date: 2022-02-13
+    Language: EN
+    Format: YAML
+    Subject: WOFOST parameters for maize
+    Description: This file provides parameters for one or more maize varieties calibrated on
+        local experimental data or regional cropping calendars
+    Identifier:
+    Relation:
+    Source: https://edepot.wur.nl/308997
+    Type: Report
+    Coverage:
+       Region: Europe, global
+    Rights: European Union Public License (EUPL)
+    Keyword: maize; Zea mays
 CropParameters:
     GenericC3: &GenericC3
         CO2EFFTB:
@@ -523,6 +543,21 @@ CropParameters:
             - 0.05
             - maximum relative death rate of leaves due to nutrient NPK stress
             - ['-']
+            #
+            # Maximum N/P/K uptake rates, see changelog.txt
+            #
+            RNUPTAKEMAX:
+             - 7.2
+             - Maximum rate of daily nitrogen uptake
+             - ['kg.ha-1.d-1']
+            RPUPTAKEMAX:
+             - 0.8
+             - Maximum rate of daily phosphorous uptake
+             - ['kg..ha-1.d-1']
+            RKUPTAKEMAX:
+             - 7.4
+             - Maximum rate of daily phosphorous uptake
+             - ['kg.ha-1.d-1']
         temperate_maize: &temperate_maize
             <<: *GenericC4
             #
@@ -657,6 +692,10 @@ CropParameters:
                2.00, 21.00]
             - maximum leaf CO2 assimilation rate as function of DVS
             - ['-', 'kg.ha-1.hr-1']
+            REFCO2L:
+            - 360
+            - CO2 level at which AMAX and EFF were measured
+            - ['PPM']
             TMPFTB:
             - [ 0.0, 0.010,
                 9.0, 0.050,
@@ -1009,11 +1048,21 @@ CropParameters:
              - ['kg..ha-1.d-1']
             RKUPTAKEMAX:
              - 7.4
-             - Maximum rate of daily phosphorous uptake
+             - Maximum rate of daily potassium uptake
              - ['kg.ha-1.d-1']
     Varieties:
         Maize_VanHeemst_1988:
             <<: *tropical_maize
+            Metadata:
+                <<: *meta
+                Contributor: H.D.J. van Heemst
+                Description: Maize variety based on the parameters collected by Van Heemst (1988). This variety
+                    is more representative for tropical maize varieties. Note that storage organs in the Van Heemst
+                    parameter set are related to the entire maize cob, not only the grain.
+                Source: https://edepot.wur.nl/218353
+                Type: Report
+                Coverage:
+                   Region: Tropical regions
             TSUM1:
             -  750
             - temperature sum from emergence to anthesis
@@ -1024,6 +1073,12 @@ CropParameters:
             - ['C.d']
         Grain_maize_201:
             <<: *temperate_maize
+            Metadata:
+                <<: *meta
+                Description: Maize variety calibrated for Luxembourg and Germany. sowing date 1 May,
+                    mean date of flowering 26 July, mature 20 October
+                Coverage:
+                   Region: Germany, Luxembourg
             TSUM1:
             -  695
             - temperature sum from emergence to anthesis
@@ -1034,6 +1089,12 @@ CropParameters:
             - ['C.d']
         Grain_maize_202:
             <<: *temperate_maize
+            Metadata:
+                <<: *meta
+                Description: Maize variety calibrated for Northern France and Southern Germany.
+                    sowing date 25 april to 1 May, mean date of flowering 26 July, mature 20 October
+                Coverage:
+                   Region: Southern Germany, Northern France
             TSUM1:
             -  695
             - temperature sum from emergence to anthesis
@@ -1044,6 +1105,12 @@ CropParameters:
             - ['C.d']
         Grain_maize_203:
             <<: *temperate_maize
+            Metadata:
+                <<: *meta
+                Description: Maize variety calibrated for Central France and Northern Italy.
+                    sowing date 15 april to 25 Arpril, mean date of flowering 26 July, mature 20 October
+                Coverage:
+                   Region: Central France and Northern Italy
             TSUM1:
             -  775
             - temperature sum from emergence to anthesis
@@ -1054,6 +1121,12 @@ CropParameters:
             - ['C.d']
         Grain_maize_204:
             <<: *temperate_maize
+            Metadata:
+                <<: *meta
+                Description: Maize variety calibrated for Southern France, Italy, Spain and Portugal.
+                    sowing date 15 april to 25 Arpril, mean date of flowering 10-25 July, mature 20 October
+                Coverage:
+                   Region: Southern France, Italy, Spain, Portugal
             TSUM1:
             -  855
             - temperature sum from emergence to anthesis
@@ -1064,6 +1137,13 @@ CropParameters:
             - ['C.d']
         Grain_maize_205:
             <<: *temperate_maize
+            Metadata:
+                <<: *meta
+                Description: Maize variety calibrated for Greece, Southern Italy and Southern Spain.
+                    sowing date 10 March to 20 Arpril, mean date of flowering 10 june to 20 July,
+                    mature 15 september to 20 October
+                Coverage:
+                   Region: Greece, Southern Italy and Southern Spain
             TSUM1:
             -  935
             - temperature sum from emergence to anthesis

@@ -12,6 +12,21 @@
 #                   - https://github.com/ajwdewit/WOFOST_crop_parameters
 #
 Version: 1.0.0
+Metadata: &meta
+    Creator: Allard de Wit
+    Contact: allard.dewit@wur.nl
+    Publisher: Wageningen Environmental Research
+    Title: Parameter sets for the WOFOST7.2/WOFOST8.0 model for simulating soybean
+    Date: 2022-02-13
+    Language: EN
+    Format: YAML
+    Subject: WOFOST parameters for soybean
+    Description: This file provides parameters for several soybean varieties which were collected
+        for Europe in the framework of the MARS project as well as by Van Heemst (1988)
+    Coverage:
+       Region: Europe, global
+    Rights: European Union Public License (EUPL)
+    Keyword: soybean; Glycine max
 CropParameters:
     GenericC3: &GenericC3
         CO2EFFTB:
@@ -197,6 +212,10 @@ CropParameters:
                2.00, 0.00]
             - maximum leaf CO2 assimilation rate as function of DVS
             - ['-', 'kg.ha-1.hr-1']
+            REFCO2L:
+            - 360
+            - CO2 level at which AMAX and EFF were measured
+            - ['PPM']
             TMPFTB:
             - [ 0.0, 0.000,
                10.0, 0.300,
@@ -538,11 +557,20 @@ CropParameters:
              - ['kg..ha-1.d-1']
             RKUPTAKEMAX:
              - 7.4
-             - Maximum rate of daily phosphorous uptake
+             - Maximum rate of daily potassium uptake
              - ['kg.ha-1.d-1']
     Varieties:
         Soybean_901:
             <<: *soybean
+            Metadata:
+                <<: *meta
+                Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
+                Description: This file provides parameters for a soybean variety calibrated for Northern France with
+                    a sowing date on 28 April, a flowering date on 25 June and a mean date of harvest on 25 September
+                Source: https://edepot.wur.nl/308997
+                Type: Report
+                Coverage:
+                   Region: Northern-France
             TSUM1:
             -  350
             - temperature sum from emergence to anthesis
@@ -553,6 +581,15 @@ CropParameters:
             - ['C.d']
         Soybean_902:
             <<: *soybean
+            Metadata:
+                <<: *meta
+                Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
+                Description: This file provides parameters for a soybean variety calibrated for Central France with
+                    a sowing date on 28 April, a flowering date on 25 June and a mean date of harvest on 25 September
+                Source: https://edepot.wur.nl/308997
+                Type: Report
+                Coverage:
+                   Region: Central-France
             TSUM1:
             -  350
             - temperature sum from emergence to anthesis
@@ -563,6 +600,15 @@ CropParameters:
             - ['C.d']
         Soybean_903:
             <<: *soybean
+            Metadata:
+                <<: *meta
+                Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
+                Description: This file provides parameters for a soybean variety calibrated for Northern Spain with
+                    a sowing date on 30 April, a flowering date on 15 June and a mean date of harvest on 5 September
+                Source: https://edepot.wur.nl/308997
+                Type: Report
+                Coverage:
+                   Region: Northern-Spain
             TSUM1:
             -  300
             - temperature sum from emergence to anthesis
@@ -573,6 +619,15 @@ CropParameters:
             - ['C.d']
         Soybean_904:
             <<: *soybean
+            Metadata:
+                <<: *meta
+                Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
+                Description: This file provides parameters for a soybean variety calibrated for Southern France with
+                    a sowing date on 20 April, a flowering date on 20 June and a mean date of harvest on 25 September
+                Source: https://edepot.wur.nl/308997
+                Type: Report
+                Coverage:
+                   Region: Southern-France
             TSUM1:
             -  500
             - temperature sum from emergence to anthesis
@@ -625,6 +680,15 @@ CropParameters:
             - ['-', 'mass.mass-1']
         Soybean_905:
             <<: *soybean
+            Metadata:
+                <<: *meta
+                Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
+                Description: This file provides parameters for a soybean variety calibrated for Italy with
+                    a sowing date on 30 April, a flowering date on 15 June and a mean date of harvest on 25 August.
+                Source: https://edepot.wur.nl/308997
+                Type: Report
+                Coverage:
+                   Region: Italy
             TSUMEM:
             -   80
             - temperature sum from sowing to emergence
@@ -681,6 +745,16 @@ CropParameters:
             - ['-', 'mass.mass-1']
         Soybean_906:
             <<: *soybean
+            Metadata:
+                <<: *meta
+                Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
+                Description: This file provides parameters for a soybean variety calibrated for Spain and Greece with
+                    a sowing date on 20-30 April, a flowering date on 15-25 June and a mean date of harvest on 5-15
+                    September.
+                Source: https://edepot.wur.nl/308997
+                Type: Report
+                Coverage:
+                   Region: Spain, Greece
             TSUMEM:
             -   90
             - temperature sum from sowing to emergence
@@ -737,6 +811,15 @@ CropParameters:
             - ['-', 'mass.mass-1']
         Soybean_VanHeemst_1988:
             <<: *soybean
+            Metadata:
+                <<: *meta
+                Contributor: H.D.J. van Heemst
+                Description: Soybean variety based on the parameters collected by Van Heemst (1988). This variety
+                    is more representative for tropical soybean varieties.
+                Source: https://edepot.wur.nl/218353
+                Type: Report
+                Coverage:
+                   Region: Tropical regions
             TBASEM:
             - 10.0
             - Lower threshold temperature for emergence

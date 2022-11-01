@@ -12,6 +12,25 @@
 #                   - https://github.com/ajwdewit/WOFOST_crop_parameters
 #
 Version: 1.0.0
+Metadata: &meta
+    Creator: Allard de Wit
+    Contributor: H.D.J. van Heemst
+    Contact: allard.dewit@wur.nl
+    Publisher: Wageningen Environmental Research
+    Title: Parameter sets for the WOFOST cropping system model for sorghum
+    Date: 1988-01-01
+    Language: EN
+    Format: YAML
+    Subject: Generic crop parameters for cassava
+    Description: This file provides WOFOST parameters for sorghum as collected by Van Heemst (1988)
+    Identifier:
+    Relation:
+    Source: https://edepot.wur.nl/218353
+    Type: Report
+    Coverage:
+       Region: Tropical regions of the World
+    Rights: European Union Public License (EUPL)
+    Keyword: sorghum, Sorghum bicolor
 CropParameters:
     GenericC3: &GenericC3
         CO2EFFTB:
@@ -542,11 +561,13 @@ CropParameters:
              - ['kg..ha-1.d-1']
             RKUPTAKEMAX:
              - 7.4
-             - Maximum rate of daily phosphorous uptake
+             - Maximum rate of daily potassium uptake
              - ['kg.ha-1.d-1']
     Varieties:
         Sorghum_VanHeemst_1988:
             <<: *sorghum
+            Metadata:
+                <<: *meta
             TSUM1:
             -  730
             - temperature sum from emergence to anthesis

@@ -12,6 +12,26 @@
 #                   - https://github.com/ajwdewit/WOFOST_crop_parameters
 #
 Version: 1.0.0
+Metadata: &meta
+    Creator: Allard de Wit
+    Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
+    Contact: allard.dewit@wur.nl
+    Publisher: Wageningen Environmental Research
+    Title: Parameter sets for the WOFOST7.2/WOFOST8.0 model for simulating sugar beet
+    Date: 2022-02-13
+    Language: EN
+    Format: YAML
+    Subject: WOFOST parameters for sugar beet
+    Description: This file provides parameters for several sugarbeet varieties calibrated on
+        local experimental data or regional cropping calendars
+    Identifier:
+    Relation:
+    Source: https://edepot.wur.nl/308997
+    Type: Report
+    Coverage:
+       Region: Europe
+    Rights: European Union Public License (EUPL)
+    Keyword: sugar beet; beta vulgaris
 CropParameters:
     GenericC3: &GenericC3
         CO2EFFTB:
@@ -197,6 +217,10 @@ CropParameters:
                2.00, 36.00]
             - maximum leaf CO2 assimilation rate as function of DVS
             - ['-', 'kg.ha-1.hr-1']
+            REFCO2L:
+            - 360
+            - CO2 level at which AMAX and EFF were measured
+            - ['PPM']
             TMPFTB:
             - [ 0.0, 0.010,
                 3.0, 0.010,
@@ -543,11 +567,18 @@ CropParameters:
              - ['kg..ha-1.d-1']
             RKUPTAKEMAX:
              - 7.4
-             - Maximum rate of daily phosphorous uptake
+             - Maximum rate of daily potassium uptake
              - ['kg.ha-1.d-1']
     Varieties:
         Sugarbeet_601:
             <<: *sugarbeet
+            Metadata:
+                <<: *meta
+                Description: Sugar beet variety calibrated for Germany, Northern and Central France,
+                    Netherlands, Belgium, Luxembourg, UK, Ireland, Denmark with sowing date between 1 and 10 April
+                    and a date of harvest between 17 and 27 October
+                Coverage:
+                   Region: Germany, Northern and Central France, Netherlands, Belgium, Luxembourg, UK, Ireland, Denmark
             TSUM1:
             -  650
             - temperature sum from emergence to anthesis
@@ -558,6 +589,13 @@ CropParameters:
             - ['C.d']
         Sugarbeet_602:
             <<: *sugarbeet
+            Metadata:
+                <<: *meta
+                Description: Sugar beet variety calibrated for Southern France, Northern and Central Italy, Spain and
+                    Portugal with a sowing date between 26 March and 5 April and a harvest date between 27 September
+                    and 27 October.
+                Coverage:
+                   Region: Southern France, Northern and Central Italy, Spain and Portugal
             TSUM1:
             -  700
             - temperature sum from emergence to anthesis
@@ -572,6 +610,12 @@ CropParameters:
             - ['-']
         Sugarbeet_603:
             <<: *sugarbeet
+            Metadata:
+                <<: *meta
+                Description: Sugar beet variety calibrated for Southern Spain and Southern Italy with a sowing
+                    date around 26 March and a harvest date between 17 September to 27 October.
+                Coverage:
+                   Region: Southern Spain and Southern Italy
             TSUM1:
             -  800
             - temperature sum from emergence to anthesis
@@ -590,6 +634,12 @@ CropParameters:
             - ['d']
         Sugarbeet_604:
             <<: *sugarbeet
+            Metadata:
+                <<: *meta
+                Description: Sugar beet variety calibrated for Greece with a sowing date around 26 March and
+                    harvest date around  27 October
+                Coverage:
+                   Region: Greece
             TSUM1:
             -  850
             - temperature sum from emergence to anthesis

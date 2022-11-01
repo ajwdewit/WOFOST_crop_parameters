@@ -1,7 +1,7 @@
 Parameter sets for the WOFOST crop simulation model
 ===================================================
 
-This repository contains the parameter sets for 22 crops for the WOFOST
+This repository contains the parameter sets for 23 crops for the WOFOST
 crop simulation model.
 
 Format and structure of the parameter files
@@ -13,13 +13,16 @@ much more suited to store parameter sets that often have to be edited manually. 
 YAML is language independent and YAML parsers are available for a variety of languages.
 
 The parameter files are organized by crop type and within each file different crop ecotypes and
-crop varieties can be defined. To accomodate the definition of different crop varieties
+crop varieties can be defined. To accommodate the definition of different crop varieties
 in one file, the parameter files have been organized in a clear structure.  This can be most easily
 explained with an example (barley in this case):
 
 .. code-block:: yaml
 
     Version: 1.0.0
+    Metadata:
+        ## Meta data at the crop level goes here
+
     CropParameters:
         GenericC3: &GenericC3
 
@@ -38,6 +41,9 @@ explained with an example (barley in this case):
         Varieties:
             Spring_barley_301:
                 <<: *springbarley        # Variety Spring_barley_301 inherits from ecotype springbarley
+                Metadata:
+                    <<: *meta
+                    ## Metadata at the variety level goes here
                 TSUM1:
                 -  800
                 - temperature sum from emergence to anthesis
@@ -47,7 +53,8 @@ explained with an example (barley in this case):
                 - temperature sum from anthesis to maturity
                 - ['C.d']
 
-The parameter file starts with a version number that is used to identify the file structure.
+The parameter file starts with a version number that is used to identify the file structure and the
+metadata at the crop level.
 Next, the crop parameters are defined starting at the tag ``CropParameters``. First all parameters
 that are generic for C3 and C4 crops are defined by the tags ``GenericC3`` and ``GenericC4``.
 These parameters mainly have to do with |CO2| response on assimilation and transpiration.
@@ -66,7 +73,8 @@ Finally, the parameter file defines the varieties for the given crop (often call
 EcoTypes and redefine one or more parameters that are specific for the given variety. In the
 example above, the variety 'Spring_barley_301' inherits its parameters from the EcoType
 'springbarley' while it redefines the parameters TSUM1 and TSUM2 to values specific for this
-variety.
+variety. Moreover, a variety also inherits its metadata from the main metadata at the crop level
+but in many cases specific metadata at the variety level is available.
 
 Parameters themselves are defined by a tag that is the name of the parameter and a list of three
 items: 1) the value of the parameter, 2) a description of the parameter and 3) the units of the
@@ -76,7 +84,13 @@ that supports units during model definition and simulation.
 The indenting and general structure of the parameter files are part of the YAML syntax and not only
 enhance readability of the file, but also are essential for YAML to parse it.
 
+The repository contains one additional file (crops.yaml) which lists all the crops that
+are available in the repository. the crops.yaml file is used as an entrypoint for the
+`YAMLCropDataProvider` (see below) which uses it to fetch all parameter files. This approach ensures
+that the same data provider can be used for other repositories with parameter files, for example
+those for the `LINGRA`_ model.
 
+.. _LINGRA: https://github.com/ajwdewit/lingra_crop_parameters
 .. _cultivars: https://en.wikipedia.org/wiki/Cultivar
 .. _EcoTypes: https://en.wikipedia.org/wiki/Ecotype
 
@@ -151,23 +165,6 @@ the ``CropCalendar`` definition directly refer to the name of the parameter file
 ('Soybean_906') that is defined in the crop parameter file.
 
 Note that ``crop_name`` and ``variety_name`` in the agromanagement definition are **case sensitive**!
-
-Limitations
------------
-
-A limitation of the current version of the parameter files is that the metadata concerning the
-different ecotypes and varieties has not yet been defined in the file. In a subsequent version
-of the parameter files this will be taken into account including information like:
-
-* region where the variety can be applied
-
-* contact person
-
-* reference dataset
-
-* reference publication
-
-* etc.
 
 
 .. |CO2| replace:: CO\ :sub:`2`\

@@ -2,6 +2,7 @@
 # crop simulation model
 #
 # Creation date: 2017-07-06
+# Last update: 2022-10-07
 #
 # Contact: Allard de Wit (allard.dewit@wur.nl)
 #          Wageningen University and Research Centre
@@ -12,6 +13,25 @@
 #                   - https://github.com/ajwdewit/WOFOST_crop_parameters
 #
 Version: 1.0.0
+Metadata: &meta
+    Creator: Allard de Wit
+    Contributor: H.D.J. van Heemst
+    Contact: allard.dewit@wur.nl
+    Publisher: Wageningen Environmental Research
+    Title: Parameter sets for the WOFOST cropping system model for cotton
+    Date: 1988-01-01
+    Language: EN
+    Format: YAML
+    Subject: Generic crop parameters for cotton
+    Description: This file provides WOFOST parameters for cotton as collected by Van Heemst (1988)
+    Identifier:
+    Relation:
+    Source: https://edepot.wur.nl/218353
+    Type: Report
+    Coverage:
+       Region: No specific region
+    Rights: European Union Public License (EUPL)
+    Keyword: cotton, WOFOST, Gossypium hirsutum
 CropParameters:
     GenericC3: &GenericC3
         CO2EFFTB:
@@ -196,6 +216,10 @@ CropParameters:
                2.00, 0.00]
             - maximum leaf CO2 assimilation rate as function of DVS
             - ['-', 'kg.ha-1.hr-1']
+            REFCO2L:
+            - 360
+            - CO2 level at which AMAX and EFF were measured
+            - ['PPM']
             TMPFTB:
             - [ 0.0, 0.000,
                14.0, 0.000,
@@ -534,11 +558,13 @@ CropParameters:
              - ['kg..ha-1.d-1']
             RKUPTAKEMAX:
              - 7.4
-             - Maximum rate of daily phosphorous uptake
+             - Maximum rate of daily potassium uptake
              - ['kg.ha-1.d-1']
     Varieties:
         Cotton_VanHeemst_1988:
             <<: *cotton
+            Metadata:
+                <<: *meta
             TSUM1:
             -  760
             - temperature sum from emergence to anthesis
