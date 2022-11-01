@@ -1095,13 +1095,13 @@ CropParameters:
                     Parameters related to emergence are not provided and therefore this variety can only be used
                     with the simulation starting from emergence. Results are provided in "Cabrerea, J. M. C. A.,
                     R. Roetter, and H. H. Van Laar. Preliminary results of crop model development and evaluation for
-                    rice. No. 2169-2019-1595. 1998. (https://ageconsearch.umn.edu/record/287573/files/Cabrera.pdf)"
+                    rice. No. 2169-2019-1595. 1998."
                 Identifier:
                 Relation:
-                Source: https://doi.org/10.1016/0308-521X(95)00078-J
+                Source: https://doi.org/10.22004/ag.econ.287573
                 Type: Journal article
                 Coverage:
-                    Region: tropical regions
+                    Region: Philippines, Indonesia, Vietnam
             DLO:
             - 11.5
             - optimum daylength for development
@@ -1255,13 +1255,13 @@ CropParameters:
                     Parameters related to emergence are not provided and therefore this variety can only be used
                     with the simulation starting from emergence. Results are provided in "Cabrerea, J. M. C. A.,
                     R. Roetter, and H. H. Van Laar. Preliminary results of crop model development and evaluation for
-                    rice. No. 2169-2019-1595. 1998. (https://ageconsearch.umn.edu/record/287573/files/Cabrera.pdf)"
+                    rice. No. 2169-2019-1595. 1998. "
                 Identifier:
                 Relation:
-                Source: https://doi.org/10.1016/0308-521X(95)00078-J
+                Source: https://doi.org/10.22004/ag.econ.287573
                 Type: Journal article
                 Coverage:
-                    Region: tropical regions
+                    Region: Philippines, Indonesia, Vietnam
             <<: *rice_irri
             DLO:
             - 11.5
@@ -1421,14 +1421,14 @@ CropParameters:
                     Parameters related to emergence are not provided and therefore this variety can only be used
                     with the simulation starting from emergence. Results are provided in "Cabrerea, J. M. C. A.,
                     R. Roetter, and H. H. Van Laar. Preliminary results of crop model development and evaluation for
-                    rice. No. 2169-2019-1595. 1998. (https://ageconsearch.umn.edu/record/287573/files/Cabrera.pdf)"
+                    rice. No. 2169-2019-1595. 1998. "
                     Calibration results for this variety are likely derived from a sub-optimal experiment.
                 Identifier:
                 Relation:
-                Source: https://doi.org/10.1016/0308-521X(95)00078-J
+                Source: https://doi.org/10.22004/ag.econ.287573
                 Type: Journal article
                 Coverage:
-                    Region: tropical regions
+                    Region: Philippines, Indonesia, Vietnam
             DLO:
             - 11.5
             - optimum daylength for development
@@ -1595,13 +1595,13 @@ CropParameters:
                     Parameters related to emergence are not provided and therefore this variety can only be used
                     with the simulation starting from emergence. Results are provided in "Cabrerea, J. M. C. A.,
                     R. Roetter, and H. H. Van Laar. Preliminary results of crop model development and evaluation for
-                    rice. No. 2169-2019-1595. 1998. (https://ageconsearch.umn.edu/record/287573/files/Cabrera.pdf)"
+                    rice. No. 2169-2019-1595. 1998."
                 Identifier:
                 Relation:
-                Source: https://doi.org/10.1016/0308-521X(95)00078-J
+                Source: https://doi.org/10.22004/ag.econ.287573
                 Type: Journal article
                 Coverage:
-                    Region: tropical regions
+                    Region: Philippines, Indonesia, Vietnam
             DLO:
             - 11.5
             - optimum daylength for development
@@ -1761,13 +1761,13 @@ CropParameters:
                     Parameters related to emergence are not provided and therefore this variety can only be used
                     with the simulation starting from emergence. Results are provided in "Cabrerea, J. M. C. A.,
                     R. Roetter, and H. H. Van Laar. Preliminary results of crop model development and evaluation for
-                    rice. No. 2169-2019-1595. 1998. (https://ageconsearch.umn.edu/record/287573/files/Cabrera.pdf)"
+                    rice. No. 2169-2019-1595. 1998. "
                 Identifier:
                 Relation:
-                Source: https://doi.org/10.1016/0308-521X(95)00078-J
+                Source: https://doi.org/10.22004/ag.econ.287573
                 Type: Journal article
                 Coverage:
-                    Region: tropical regions
+                    Region: Philippines, Indonesia, Vietnam
             DLO:
             - 11.5
             - optimum daylength for development
@@ -1926,13 +1926,13 @@ CropParameters:
                     Parameters related to emergence are not provided and therefore this variety can only be used
                     with the simulation starting from emergence. Results are provided in "Cabrerea, J. M. C. A.,
                     R. Roetter, and H. H. Van Laar. Preliminary results of crop model development and evaluation for
-                    rice. No. 2169-2019-1595. 1998. (https://ageconsearch.umn.edu/record/287573/files/Cabrera.pdf)"
+                    rice. No. 2169-2019-1595. 1998. "
                 Identifier:
                 Relation:
-                Source: https://doi.org/10.1016/0308-521X(95)00078-J
+                Source: https://doi.org/10.22004/ag.econ.287573
                 Type: Journal article
                 Coverage:
-                    Region: tropical regions
+                    Region: Philippines, Indonesia, Vietnam
             DLO:
             - 11.5
             - optimum daylength for development
@@ -2091,13 +2091,13 @@ CropParameters:
                     Parameters related to emergence are not provided and therefore this variety can only be used
                     with the simulation starting from emergence. Results are provided in "Cabrerea, J. M. C. A.,
                     R. Roetter, and H. H. Van Laar. Preliminary results of crop model development and evaluation for
-                    rice. No. 2169-2019-1595. 1998. (https://ageconsearch.umn.edu/record/287573/files/Cabrera.pdf)"
+                    rice. No. 2169-2019-1595. 1998."
                 Identifier:
                 Relation:
-                Source: https://doi.org/10.1016/0308-521X(95)00078-J
+                Source: https://doi.org/10.22004/ag.econ.287573
                 Type: Journal article
                 Coverage:
-                    Region: tropical regions
+                    Region: Philippines, Indonesia, Vietnam
             DLO:
             - 11.5
             - optimum daylength for development

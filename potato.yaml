@@ -15,7 +15,6 @@
 Version: 1.0.0
 Metadata: &meta
     Creator: Allard de Wit
-    Contributor: Tamara ten Den, Pytrik Reidsma, Martin van Ittersum, Frits van Everts
     Contact: allard.dewit@wur.nl
     Publisher: Wageningen Environmental Research, Wageningen Plant Production Systems
     Title: Parameter sets for the WOFOST7.2/WOFOST8.0 model for simulating potato
@@ -609,6 +608,7 @@ CropParameters:
             <<: *potato
             Metadata:
                 <<: *meta
+                Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
                 Description: The Potato 701 variety was calibrated for regions in northern Europe in the framework
                     of the MARS crop yield monitoring system. This includes Germany, France, The Netherlands,
                     Belgium, Luxembourg, United Kingdom, Ireland, Denmark. Sowing date 15 April except United Kingdom
@@ -634,6 +634,7 @@ CropParameters:
             <<: *potato
             Metadata:
                 <<: *meta
+                Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
                 Description: The Potato 702 variety was calibrated for southern France with sowing dates around
                     15 april.
                 Date: 1992-01-01
@@ -657,6 +658,7 @@ CropParameters:
             <<: *potato
             Metadata:
                 <<: *meta
+                Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
                 Description: The Potato 703 variety was calibrated for Central and N-Italy with sowing dates around
                     15 april.
                 Date: 1992-01-01
@@ -684,6 +686,7 @@ CropParameters:
             <<: *potato
             Metadata:
                 <<: *meta
+                Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
                 Description: The Potato 704 variety was calibrated for Southern Italy, Greece, Spain and Portugal with
                     sowing dates ranging from 6 March (Greece), 15 april (Italy) and 25 April (Spain, Portugal).
                 Date: 1992-01-01
@@ -711,6 +714,7 @@ CropParameters:
             <<: *potato_nl
             Metadata:
                 <<: *meta
+                Contributor: Tamara ten Den, Pytrik Reidsma, Martin van Ittersum, Frits van Everts
                 Description: Innovator is a relatively early maturing variety that is popular due to its
                     frying and baking characteristics. It is currently growth in most of Europe and is becoming
                     popular in North America as well. Note that in the paper from Ten Den et al. (2021) reallocation
@@ -795,6 +799,7 @@ CropParameters:
             <<: *potato_nl
             Metadata:
                 <<: *meta
+                Contributor: Tamara ten Den, Pytrik Reidsma, Martin van Ittersum, Frits van Everts
                 Description: Fontane is a intermediate maturing variety and is popular as a ware potato for both
                     processing and consumption. It is currently growth in most of Europe but also in other places
                     across the World. Note that in the paper from Ten Den et al. (2021) reallocation of stem and leaf
@@ -878,6 +883,7 @@ CropParameters:
             <<: *potato_nl
             Metadata:
                 <<: *meta
+                Contributor: Tamara ten Den, Pytrik Reidsma, Martin van Ittersum, Frits van Everts
                 Description: Markies is a late maturing variety and is popular as a ware potato for both
                     processing and consumption. It is currently growth in most of Europe but also in other places
                     across the World. Note that in the paper from Ten Den et al. (2021) reallocation of stem and leaf
@@ -960,6 +966,7 @@ CropParameters:
         Premiere:
             Metadata:
                 <<: *meta
+                Contributor: Tamara ten Den, Pytrik Reidsma, Martin van Ittersum, Frits van Everts
                 Description: Premiere is a very early maturing variety and is popular as a potato for
                     processing into fries. It is currently growth in most of Europe but also in other places
                     across the World. Note that in the paper from Ten Den et al. (2021) reallocation of stem and leaf
@@ -1044,6 +1051,7 @@ CropParameters:
             <<: *potato_nl
             Metadata:
                 <<: *meta
+                Contributor: Tamara ten Den, Pytrik Reidsma, Martin van Ittersum, Frits van Everts
                 Description: Festien is a very late maturing variety and is only used as a starch potato for the
                     processing industry. Note that in the paper from Ten Den et al. (2021) reallocation of stem and leaf
                     biomass was applied, which is not implemented in WOFOST 7.2. In practice between 0.5 to 1.0 ton

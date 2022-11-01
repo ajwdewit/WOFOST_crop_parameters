@@ -26,7 +26,7 @@ Metadata: &meta
                  wheat cultivars for use with the WOFOST cropping system model
     Identifier: 
     Relation:
-    Source: https://edepot.wur.nl/308997
+    Source: https://edepot.wur.nl/308997, https://doi.org/10.1016/j.agsy.2018.05.002
     Type: 
     Coverage:
        Region: Europe    
