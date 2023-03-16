@@ -717,7 +717,7 @@ CropParameters:
                 Contributor: Tamara ten Den, Pytrik Reidsma, Martin van Ittersum, Frits van Everts
                 Description: Innovator is a relatively early maturing variety that is popular due to its
                     frying and baking characteristics. It is currently growth in most of Europe and is becoming
-                    popular in North America as well. Note that in the paper from Ten Den et al. (2021) reallocation
+                    popular in North America as well. Note that in the paper from Ten Den et al. (2022) reallocation
                     of stem and leaf
                     biomass was applied, which is not implemented in WOFOST 7.2. In practice between 0.5 to 1.0 ton
                     of total dry stem and leaf biomass may be translocated towards the tubers.
@@ -802,7 +802,7 @@ CropParameters:
                 Contributor: Tamara ten Den, Pytrik Reidsma, Martin van Ittersum, Frits van Everts
                 Description: Fontane is a intermediate maturing variety and is popular as a ware potato for both
                     processing and consumption. It is currently growth in most of Europe but also in other places
-                    across the World. Note that in the paper from Ten Den et al. (2021) reallocation of stem and leaf
+                    across the World. Note that in the paper from Ten Den et al. (2022) reallocation of stem and leaf
                     biomass was applied, which is not implemented in WOFOST 7.2. In practice between 0.5 to 1.0 ton
                     of total dry stem and leaf biomass may be translocated towards the tubers.
                 Identifier:
@@ -886,7 +886,7 @@ CropParameters:
                 Contributor: Tamara ten Den, Pytrik Reidsma, Martin van Ittersum, Frits van Everts
                 Description: Markies is a late maturing variety and is popular as a ware potato for both
                     processing and consumption. It is currently growth in most of Europe but also in other places
-                    across the World. Note that in the paper from Ten Den et al. (2021) reallocation of stem and leaf
+                    across the World. Note that in the paper from Ten Den et al. (2022) reallocation of stem and leaf
                     biomass was applied, which is not implemented in WOFOST 7.2. In practice between 0.5 to 1.0 ton
                     of total dry stem and leaf biomass may be translocated towards the tubers.
                 Identifier:
@@ -969,7 +969,7 @@ CropParameters:
                 Contributor: Tamara ten Den, Pytrik Reidsma, Martin van Ittersum, Frits van Everts
                 Description: Premiere is a very early maturing variety and is popular as a potato for
                     processing into fries. It is currently growth in most of Europe but also in other places
-                    across the World. Note that in the paper from Ten Den et al. (2021) reallocation of stem and leaf
+                    across the World. Note that in the paper from Ten Den et al. (2022) reallocation of stem and leaf
                     biomass was applied, which is not implemented in WOFOST 7.2. In practice between 0.5 to 1.0 ton
                     of total dry stem and leaf biomass may be translocated towards the tubers.
                 Identifier:
@@ -1053,7 +1053,7 @@ CropParameters:
                 <<: *meta
                 Contributor: Tamara ten Den, Pytrik Reidsma, Martin van Ittersum, Frits van Everts
                 Description: Festien is a very late maturing variety and is only used as a starch potato for the
-                    processing industry. Note that in the paper from Ten Den et al. (2021) reallocation of stem and leaf
+                    processing industry. Note that in the paper from Ten Den et al. (2022) reallocation of stem and leaf
                     biomass was applied, which is not implemented in WOFOST 7.2. In practice between 0.5 to 1.0 ton
                     of total dry stem and leaf biomass may be translocated towards the tubers.
                 Identifier:
