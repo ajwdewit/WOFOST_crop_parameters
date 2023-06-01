@@ -11,6 +11,10 @@
 #                   - http://www.wageningenur.nl/wofost
 #                   - https://github.com/ajwdewit/WOFOST_crop_parameters
 #
+# Changes:
+# - TSUMEM recomputed as ~180 C.d based on data from:
+#   https://acsess.onlinelibrary.wiley.com/doi/full/10.2135/cropsci2019.03.0160
+#   
 Version: 1.0.0
 Metadata: &meta
     Creator: Allard de Wit
@@ -90,7 +94,7 @@ CropParameters:
             # EMERGENCE
             #
             TBASEM:
-            - -10.0
+            - 0.0
             - Lower threshold temperature for emergence
             - ['C']
             TEFFMX:
@@ -98,7 +102,7 @@ CropParameters:
             - maximum effective temperature for emergence
             - ['C']
             TSUMEM:
-            -    0
+            -  180
             - temperature sum from sowing to emergence
             - ['C.d']
             #
