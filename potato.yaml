@@ -228,7 +228,7 @@ CropParameters:
                20.0, 1.000,
                26.0, 0.750,
                33.0, 0.010]
-            - reduction factor of AMAX as function of average daily temperature
+            - reduction factor of AMAX as function of average daytime (*not* daily)  temperature
             - ['C', '-']
             TMNFTB:
             - [ 0.0, 0.000,
@@ -601,7 +601,7 @@ CropParameters:
                 24.0, 1.00,
                 29.0, 0.75,
                 36.0, 0.01]
-            - reduction factor of AMAX as function of average daily temperature
+            - reduction factor of AMAX as function of average daytime (*not* daily)  temperature
             - ['C', '-']
     Varieties:
         Potato_701:

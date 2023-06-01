@@ -230,7 +230,7 @@ CropParameters:
                30.0, 0.950,
                35.0, 0.830,
                40.0, 0.600]
-            - reduction factor of AMAX as function of average daily temperature
+            - reduction factor of AMAX as function of average daytime (*not* daily)  temperature
             - ['C', '-']
             TMNFTB:
             - [ 0.0, 0.000,
