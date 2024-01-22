@@ -508,6 +508,17 @@ CropParameters:
             - time coefficient for K translocation to storage organs
             - ['d']
             #
+            # IMPORT DVS RELATED TO N/P/K UPTAKE AND TRANSLOCATION
+            #
+            DVS_NPK_STOP:
+            - 1.30
+            - development stage above which no crop N/P/K uptake occurs
+            - ['-']
+            DVS_NPK_TRANSL:
+            - 0.80
+            - development stage above which N/P/K translocation to storage organs does occur
+            - ['-']
+            #
             # IMPACT OF N/P/K STRESS ON PROCESSES
             #
             NLAI_NPK:
@@ -525,6 +536,10 @@ CropParameters:
             NLUE_NPK:
             - 1.10
             - coefficient for the reduction of gross CO2 assimilation rate due to nutrient (N-P-K) stress
+            - ['-']
+            NPK_TRANSLRT_FR:
+            - 0.50
+            - NPK translocation from roots as a fraction of total NPK amounts translocated from leaves and stems
             - ['-']
             RDRLV_NPK:
             - 0.05
