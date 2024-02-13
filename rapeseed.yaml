@@ -597,7 +597,7 @@ CropParameters:
             Metadata:
                 <<: *meta
                 Description: Oilseed rape calibrated for Southern France and Southern Italy. Mean date of flowering
-                    10 april (Italy) to 25 April (S-France). Maturity date 5 June (Italy) to 16 July (France).
+                    10 April (Italy) to 25 April (S-France). Maturity date 5 June (Italy) to 16 July (France).
                     Note that the current temperature sums have been estimated for crop simulations starting on
                     the 1st of January because impact of day length and vernalization have not been estimated.
             TSUM1:

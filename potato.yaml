@@ -636,7 +636,7 @@ CropParameters:
                 <<: *meta
                 Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
                 Description: The Potato 702 variety was calibrated for southern France with sowing dates around
-                    15 april.
+                    15 April.
                 Date: 1992-01-01
                 Identifier:
                 Relation:
@@ -660,7 +660,7 @@ CropParameters:
                 <<: *meta
                 Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
                 Description: The Potato 703 variety was calibrated for Central and N-Italy with sowing dates around
-                    15 april.
+                    15 April.
                 Date: 1992-01-01
                 Identifier:
                 Relation:
@@ -688,7 +688,7 @@ CropParameters:
                 <<: *meta
                 Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
                 Description: The Potato 704 variety was calibrated for Southern Italy, Greece, Spain and Portugal with
-                    sowing dates ranging from 6 March (Greece), 15 april (Italy) and 25 April (Spain, Portugal).
+                    sowing dates ranging from 6 March (Greece), 15 April (Italy) and 25 April (Spain, Portugal).
                 Date: 1992-01-01
                 Identifier:
                 Relation:

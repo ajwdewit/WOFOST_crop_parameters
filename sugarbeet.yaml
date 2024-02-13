@@ -637,7 +637,7 @@ CropParameters:
             Metadata:
                 <<: *meta
                 Description: Sugar beet variety calibrated for Greece with a sowing date around 26 March and
-                    harvest date around  27 October
+                    harvest date around 27 October
                 Coverage:
                    Region: Greece
             TSUM1:
