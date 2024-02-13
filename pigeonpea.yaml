@@ -554,7 +554,7 @@ CropParameters:
              - ['kg.ha-1.d-1']
             RPUPTAKEMAX:
              - 0.8
-             - Maximum rate of daily phosphorous uptake
+             - Maximum rate of daily phosphorus uptake
              - ['kg..ha-1.d-1']
             RKUPTAKEMAX:
              - 7.4
