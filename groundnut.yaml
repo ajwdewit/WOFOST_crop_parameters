@@ -230,7 +230,7 @@ CropParameters:
             TMNFTB:
             - [ 0.0, 0.000,
                 3.0, 1.000]
-            - reduction factor of gross assimlation rate as function of low minimum temperature
+            - reduction factor of gross assimilation rate as function of low minimum temperature
             - ['C', '-']
             #
             # CONVERSION EFFICIENCY OF ASSIMILATES
