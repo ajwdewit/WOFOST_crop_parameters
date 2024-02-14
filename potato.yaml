@@ -233,7 +233,7 @@ CropParameters:
             TMNFTB:
             - [ 0.0, 0.000,
                 3.0, 1.000]
-            - reduction factor of gross assimlation rate as function of low minimum temperature
+            - reduction factor of gross assimilation rate as function of low minimum temperature
             - ['C', '-']
             #
             # CONVERSION EFFICIENCY OF ASSIMILATES
@@ -554,7 +554,7 @@ CropParameters:
              - ['kg.ha-1.d-1']
             RPUPTAKEMAX:
              - 0.8
-             - Maximum rate of daily phosphorous uptake
+             - Maximum rate of daily phosphorus uptake
              - ['kg..ha-1.d-1']
             RKUPTAKEMAX:
              - 7.4
@@ -636,7 +636,7 @@ CropParameters:
                 <<: *meta
                 Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
                 Description: The Potato 702 variety was calibrated for southern France with sowing dates around
-                    15 april.
+                    15 April.
                 Date: 1992-01-01
                 Identifier:
                 Relation:
@@ -660,7 +660,7 @@ CropParameters:
                 <<: *meta
                 Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
                 Description: The Potato 703 variety was calibrated for Central and N-Italy with sowing dates around
-                    15 april.
+                    15 April.
                 Date: 1992-01-01
                 Identifier:
                 Relation:
@@ -688,7 +688,7 @@ CropParameters:
                 <<: *meta
                 Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
                 Description: The Potato 704 variety was calibrated for Southern Italy, Greece, Spain and Portugal with
-                    sowing dates ranging from 6 March (Greece), 15 april (Italy) and 25 April (Spain, Portugal).
+                    sowing dates ranging from 6 March (Greece), 15 April (Italy) and 25 April (Spain, Portugal).
                 Date: 1992-01-01
                 Identifier:
                 Relation:
