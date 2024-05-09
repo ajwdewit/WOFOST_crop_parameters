@@ -1152,3 +1152,76 @@ CropParameters:
             -  920
             - temperature sum from anthesis to maturity
             - ['C.d']
+        Fodder_maize_nl:
+            <<: *temperate_maize
+            Metadata:
+                Creator: Allard de Wit
+                Contributor: Omar Ali Eweys
+                Contact: allard.dewit@wur.nl
+                Publisher: Wageningen Environmental Research
+                Date: 2024-01-31
+                Language: EN
+                Format: YAML
+                Subject: WOFOST parameters for maize
+                Description: This file provides parameters for a maize variety calibrated on
+                    local experimental data in the Twente region in The Netherlands.
+                Identifier:
+                Relation:
+                Source: https://doi.org/10.1016/j.fcr.2017.06.004
+                Type: Article
+                Coverage:
+                   Region: NW Europe, Netherlands
+                Rights: European Union Public License (EUPL)
+                Keyword: maize; Zea mays
+            TSUM1:
+            - 600.0
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            - 1211.0
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            SLATB:
+            - [0.00, 0.0032,
+               0.78, 0.0012,
+               2.00, 0.0012]
+            - specific leaf area as a function of DVS
+            - ['-', 'ha.kg-1']
+            KDIFTB:
+            - [0.00, 0.620,
+               2.00, 0.620]
+            - extinction coefficient for diffuse visible light as function of DVS
+            - ['-', '-']
+            EFFTB:
+            - [ 0.0, 0.470,
+               40.0, 0.470]
+            - initial light-use efficiency single leaf as function of daily mean temperature
+            - ['C', 'kg.ha-1.hr-1.J-1.m2.s1']
+            AMAXTB:
+            - [0.00, 70.00,
+               1.25, 70.00,
+               1.50, 63.00,
+               1.75, 49.00,
+               2.00, 35.00]
+            CVL:
+            - 0.680
+            - efficiency of conversion into leaves
+            - ['mass.mass-1']
+            CVO:
+            - 0.670
+            - efficiency of conversion into storage organs
+            - ['mass.mass-1']
+            CVR:
+            - 0.690
+            - efficiency of conversion into roots
+            - ['mass.mass-1']
+            CVS:
+            - 0.660
+            - efficiency of conversion into stems
+            - ['mass.mass-1']
+            SPAN:
+            - 40.0
+            - life span of leaves growing at 35 Celsius
+            - ['d']
+
+
