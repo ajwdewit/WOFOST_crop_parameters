@@ -229,7 +229,7 @@ CropParameters:
             TMNFTB:
             - [ 5.0, 0.000,
                12.0, 1.000]
-            - reduction factor of gross assimlation rate as function of low minimum temperature
+            - reduction factor of gross assimilation rate as function of low minimum temperature
             - ['C', '-']
             #
             # CONVERSION EFFICIENCY OF ASSIMILATES
@@ -552,11 +552,11 @@ CropParameters:
              - ['kg.ha-1.d-1']
             RPUPTAKEMAX:
              - 0.8
-             - Maximum rate of daily phosphorous uptake
+             - Maximum rate of daily phosphorus uptake
              - ['kg..ha-1.d-1']
             RKUPTAKEMAX:
              - 7.4
-             - Maximum rate of daily phosphorous uptake
+             - Maximum rate of daily phosphorus uptake
              - ['kg.ha-1.d-1']
         temperate_maize: &temperate_maize
             <<: *GenericC4
@@ -710,7 +710,7 @@ CropParameters:
             TMNFTB:
             - [ 5.0, 0.000,
                 8.0, 1.000]
-            - reduction factor of gross assimlation rate as function of low minimum temperature
+            - reduction factor of gross assimilation rate as function of low minimum temperature
             - ['C', '-']
             #
             # CONVERSION EFFICIENCY OF ASSIMILATES
@@ -1044,7 +1044,7 @@ CropParameters:
              - ['kg.ha-1.d-1']
             RPUPTAKEMAX:
              - 0.8
-             - Maximum rate of daily phosphorous uptake
+             - Maximum rate of daily phosphorus uptake
              - ['kg..ha-1.d-1']
             RKUPTAKEMAX:
              - 7.4
@@ -1092,7 +1092,7 @@ CropParameters:
             Metadata:
                 <<: *meta
                 Description: Maize variety calibrated for Northern France and Southern Germany.
-                    sowing date 25 april to 1 May, mean date of flowering 26 July, mature 20 October
+                    sowing date 25 April to 1 May, mean date of flowering 26 July, mature 20 October
                 Coverage:
                    Region: Southern Germany, Northern France
             TSUM1:
@@ -1108,7 +1108,7 @@ CropParameters:
             Metadata:
                 <<: *meta
                 Description: Maize variety calibrated for Central France and Northern Italy.
-                    sowing date 15 april to 25 Arpril, mean date of flowering 26 July, mature 20 October
+                    sowing date 15 April to 25 April, mean date of flowering 26 July, mature 20 October
                 Coverage:
                    Region: Central France and Northern Italy
             TSUM1:
@@ -1124,7 +1124,7 @@ CropParameters:
             Metadata:
                 <<: *meta
                 Description: Maize variety calibrated for Southern France, Italy, Spain and Portugal.
-                    sowing date 15 april to 25 Arpril, mean date of flowering 10-25 July, mature 20 October
+                    sowing date 15 April to 25 April, mean date of flowering 10-25 July, mature 20 October
                 Coverage:
                    Region: Southern France, Italy, Spain, Portugal
             TSUM1:
@@ -1140,8 +1140,8 @@ CropParameters:
             Metadata:
                 <<: *meta
                 Description: Maize variety calibrated for Greece, Southern Italy and Southern Spain.
-                    sowing date 10 March to 20 Arpril, mean date of flowering 10 june to 20 July,
-                    mature 15 september to 20 October
+                    sowing date 10 March to 20 April, mean date of flowering 10 June to 20 July,
+                    mature 15 September to 20 October
                 Coverage:
                    Region: Greece, Southern Italy and Southern Spain
             TSUM1:

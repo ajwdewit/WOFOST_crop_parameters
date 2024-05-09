@@ -231,7 +231,7 @@ CropParameters:
             TMNFTB:
             - [ 0.0, 0.000,
                 3.0, 1.000]
-            - reduction factor of gross assimlation rate as function of low minimum temperature
+            - reduction factor of gross assimilation rate as function of low minimum temperature
             - ['C', '-']
             #
             # CONVERSION EFFICIENCY OF ASSIMILATES
@@ -562,7 +562,7 @@ CropParameters:
              - ['kg.ha-1.d-1']
             RPUPTAKEMAX:
              - 0.8
-             - Maximum rate of daily phosphorous uptake
+             - Maximum rate of daily phosphorus uptake
              - ['kg..ha-1.d-1']
             RKUPTAKEMAX:
              - 7.4
@@ -792,8 +792,8 @@ CropParameters:
                 Coverage:
                     Region: Central to Northern France
                     Temporal: Variety was introduced in 1995
-                    Sowing: september to november
-                    Harvesting: end of July to early august
+                    Sowing: September to November
+                    Harvesting: end of July to early August
                 Keyword: wheat, WOFOST, France, Bermude
             DLO:
             - 15.8
@@ -832,8 +832,8 @@ CropParameters:
                 Coverage:
                     Region: France, Central Europe
                     Temporal: Variety was introduced in 1995
-                    Sowing: september to november
-                    Harvesting: end of July to early august
+                    Sowing: September to November
+                    Harvesting: end of July to early August
                 Keyword: wheat, WOFOST, France, Apache
             DLO:
             - 15.8
