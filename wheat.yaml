@@ -58,6 +58,14 @@ CropParameters:
            2000., 1.90]
          - multiplication factor for AMAX to account for an increasing CO2 concentration
          - ['PPM', '-']
+        AMAX_SLP:
+        - 3.24
+        - slope of relationship between maximum leaf photosynthesis rate and specific leaf nitrogen
+        - ['kg CO2 ha-1 h-1 (kg N m-2)-1'] 
+        AMAX_LNB:
+        - 0.0
+        - specific leaf nitrogen below which there is no photosynthesis
+        - ['kg N ha-1'] 
     GenericC4: &GenericC4
         CO2EFFTB:
          - [40., 0.00,
@@ -209,13 +217,10 @@ CropParameters:
                40.0, 0.450]
             - initial light-use efficiency single leaf as function of daily mean temperature
             - ['C', 'kg.ha-1.hr-1.J-1.m2.s1']
-            AMAXTB:
-            - [0.00, 35.83,
-               1.00, 35.83,
-               1.30, 35.83,
-               2.00, 4.48]
-            - maximum leaf CO2 assimilation rate as function of DVS
-            - ['-', 'kg.ha-1.hr-1']
+            AMAX_REF:
+            - 35.83
+            - maximum leaf CO2 assimilation rate
+            - ['kg.ha-1.hr-1']
             REFCO2L:
             - 360
             - CO2 level at which AMAX and EFF were measured
@@ -427,147 +432,54 @@ CropParameters:
             - 0.00
             - fraction of crop nitrogen uptake by biological fixation
             - ['-']
-            #
-            # MAXIMUM, CRITICAL AND RESIDUAL PHOSPHORUS CONCENTRATION IN DIFFERENT ORGANS
-            #
-            PMAXLV_TB:
-            - [0.00, 0.0110,
-               0.40, 0.0080,
-               0.70, 0.0060,
-               1.00, 0.0040,
-               2.00, 0.0027,
-               2.10, 0.0027]
-            - maximum P concentration in leaves as function of development stage in kg P kg-1 dry biomass
-            - ['-', 'mass.mass-1']
-            PMAXRT_FR:
-            - 0.5000
-            - maximum P concentration in roots as fraction of maximum P concentration in leaves
-            - ['-']
-            PMAXST_FR:
-            - 0.5000
-            - maximum P concentration in stems as fraction of maximum P concentration in leaves
-            - ['-']
-            PMAXSO:
-            - 0.0026
-            - maximum P concentration in storage organs [kg P kg-1 dry biomass]
-            - ['mass.mass-1']
-            PCRIT_FR:
-            - 1.00
-            - Critical P concentration as fraction of maximum P concentration
-            - ['-']
-            PRESIDLV:
-            - 0.0005
-            - residual P fraction in leaves [kg P kg-1 dry biomass]
-            - ['mass.mass-1']
-            PRESIDST:
-            - 0.0003
-            - residual P fraction in stems [kg P kg-1 dry biomass]
-            - ['mass.mass-1']
-            PRESIDRT:
-            - 0.0003
-            - residual P fraction in roots [kg P kg-1 dry biomass]
-            - ['mass.mass-1']
-            TCPT:
-            -  10
-            - time coefficient for P translocation to storage organs
-            - ['d']
-            #
-            # MAXIMUM, CRITICAL AND RESIDUAL POTASSIUM CONCENTRATION IN DIFFERENT ORGANS
-            #
-            KMAXLV_TB:
-            - [0.00, 0.1200,
-               0.40, 0.0800,
-               0.70, 0.0600,
-               1.00, 0.0400,
-               2.00, 0.0280,
-               2.10, 0.0280]
-            - maximum K concentration in leaves as function of development stage in kg K kg-1 dry biomass
-            - ['-', 'mass.mass-1']
-            KMAXRT_FR:
-            - 0.5000
-            - maximum K concentration in roots as fraction of maximum K concentration in leaves
-            - ['-']
-            KMAXST_FR:
-            - 0.5000
-            - maximum K concentration in stems as fraction of maximum K concentration in leaves
-            - ['-']
-            KMAXSO:
-            - 0.0048
-            - maximum K concentration in storage organs [kg K kg-1 dry biomass]
-            - ['mass.mass-1']
-            KCRIT_FR:
-            - 1.00
-            - Critical K concentration as fraction of maximum K concentration
-            - ['-']
-            KRESIDLV:
-            - 0.0090
-            - residual K fraction in leaves [kg K kg-1 dry biomass]
-            - ['mass.mass-1']
-            KRESIDST:
-            - 0.0050
-            - residual K fraction in stems [kg K kg-1 dry biomass]
-            - ['mass.mass-1']
-            KRESIDRT:
-            - 0.0050
-            - residual K fraction in roots [kg K kg-1 dry biomass]
-            - ['mass.mass-1']
-            TCKT:
-            -  10
-            - time coefficient for K translocation to storage organs
-            - ['d']
-            #
-            # IMPORT DVS RELATED TO N/P/K UPTAKE AND TRANSLOCATION
-            #
-            DVS_NPK_STOP:
-            - 1.30
-            - development stage above which no crop N/P/K uptake occurs
-            - ['-']
-            DVS_NPK_TRANSL:
-            - 0.80
-            - development stage above which N/P/K translocation to storage organs does occur
-            - ['-']
-            #
-            # IMPACT OF N/P/K STRESS ON PROCESSES
-            #
-            NLAI_NPK:
-            - 1.00
-            - coefficient for the reduction due to nutrient NPK stress of the LAI increase (during juvenile phase)
-            - ['-']
-            NSLA_NPK:
-            - 0.50
-            - coefficient for the effect of nutrient NPK stress on SLA reduction
-            - ['-']
-            NPART:
-            - 1.00
-            - coefficient for the effect of nutrient N stress on leaf allocation
-            - ['-']
-            NLUE_NPK:
-            - 1.10
-            - coefficient for the reduction of gross CO2 assimilation rate due to nutrient (N-P-K) stress
-            - ['-']
-            NPK_TRANSLRT_FR:
-            - 0.50
-            - NPK translocation from roots as a fraction of total NPK amounts translocated from leaves and stems
-            - ['-']
-            RDRLV_NPK:
-            - 0.05
-            - maximum relative death rate of leaves due to nutrient NPK stress
-            - ['-']
-            #
-            # Maximum N/P/K uptake rates, see changelog.txt
-            #
             RNUPTAKEMAX:
-             - 7.2
+             - 4.26
              - Maximum rate of daily nitrogen uptake
              - ['kg.ha-1.d-1']
-            RPUPTAKEMAX:
+            DVS_N_TRANSL:
              - 0.8
-             - Maximum rate of daily phosphorus uptake
-             - ['kg..ha-1.d-1']
-            RKUPTAKEMAX:
-             - 7.4
-             - Maximum rate of daily potassium uptake
-             - ['kg.ha-1.d-1']
+             - development stage above which N translocation to storage organs does occur
+             - ['-'] 
+            NSLLV_TB:
+            - [0.0, 1.0,
+               1.1, 1.0,
+               1.5, 1.4,
+               2.0, 1.5,
+               2.5, 1.5]
+            - Increament factor rate stems due to N stress
+            - ['-']
+            RGRLAI_MIN:
+            - 0.004
+            - maximum relative increase in LAI under maximum nitrogen stress
+            - ['ha.ha-1.d-1']
+            #
+            # BIOMASS REALLOCATION
+            #
+            REALLOC_DVS:
+            - 1.5
+            - Development stage when reallocation from stems and leaves to storage organs starts.
+              DVS values > 2.0 mean that reallocation is not enabled for this crop.
+            - ['-']
+            REALLOC_STEM_FRACTION:
+            - 0.2
+            - Fraction of stem biomass that can be reallocated to the storage organs
+            - ['kg.kg-1']
+            REALLOC_LEAF_FRACTION:
+            - 0.0
+            - Fraction of stem biomass that can be reallocated to the storage organs
+            - ['kg.kg-1']
+            REALLOC_STEM_RATE:
+            - 0.0415
+            - Relative rate of reallocation of stem biomass
+            - ['d-1']
+            REALLOC_LEAF_RATE:
+            - 0.0
+            - Relative rate of reallocation of leaf biomass
+            - ['d-1']
+            REALLOC_EFFICIENCY:
+            - 0.95
+            - Conversion efficiency of reallocated stem and leaf dry matter into storage organ dry matter
+            - ['kg.kg-1']            
     Varieties:
         Winter_wheat_101:
             <<: *winterwheat
@@ -779,7 +691,7 @@ CropParameters:
             -  5.0
             - Saturated vernalization requirement
             - ['d']
-        bermude:
+        Bermude:
             <<: *winterwheat
             Metadata: 
                 <<: *meta
@@ -819,7 +731,7 @@ CropParameters:
             - 41.0
             - Saturated vernalization requirement
             - ['d']
-        apache:
+        Apache:
             <<: *winterwheat
             Metadata: 
                 <<: *meta
@@ -859,3 +771,301 @@ CropParameters:
             - 41.0
             - Saturated vernalization requirement
             - ['d']
+        Arminda:
+            <<: *winterwheat
+            Metadata: 
+                <<: *meta
+                Date: 2024-06-03
+                Subject: crop parameters for wheat cultivar arminda
+                Description: Crop specific parameters for variety 'arminda'. The parameters of this variety 
+                    were derived from experimental trials in the Netherlands during the 1980-ies
+                Source: https://doi.org/10.1016/j.eja.2024.127099
+                Coverage:
+                    Region: NW Europe
+                    Temporal: Variety was introduced in the 1970-ties
+                    Sowing: September to November
+                    Harvesting: end of July to early August
+                Keyword: wheat, WOFOST, Netherlands, arminda
+            TDWI:
+            -  593.00
+            - initial total crop dry weight
+            - ['kg.ha-1']
+            DLO:
+            - 16.3
+            - optimum daylength for development
+            - ['hr']
+            TSUM1:
+            -  886.0
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  860.0
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            AMAX_REF:
+            - 40.2
+            - maximum leaf CO2 assimilation rate
+            - ['kg.ha-1.hr-1']
+            REFCO2L:
+            - 360
+            - CO2 level at which AMAX and EFF were measured
+            - ['PPM']
+            VERNBASE:
+            -  9.0
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 44.0
+            - Saturated vernalization requirement
+            - ['d']
+            TMNFTB:
+            - [ -3.0, 0.000,
+                 0.0, 1.000]
+        Kanzler:
+            <<: *winterwheat
+            Metadata: 
+                <<: *meta
+                Date: 2024-06-03
+                Subject: crop parameters for wheat cultivar Kanzler
+                Description: Crop specific parameters for variety 'Kanzler'. The parameters of this variety 
+                    were derived from experimental trials in the Netherlands during the 1980-ies
+                Source: https://doi.org/10.1016/j.eja.2024.127099
+                Coverage:
+                    Region: NW Europe
+                    Temporal: Variety was introduced in the 1970-ties
+                    Sowing: September to November
+                    Harvesting: end of July to early August
+                Keyword: wheat, WOFOST, Netherlands, Kanzler
+            TDWI:
+            -  593.00
+            - initial total crop dry weight
+            - ['kg.ha-1']
+            DLO:
+            - 16.3
+            - optimum daylength for development
+            - ['hr']
+            TSUM1:
+            -  778.0
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  1021.0
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            AMAX_REF:
+            - 40.2
+            - maximum leaf CO2 assimilation rate
+            - ['kg.ha-1.hr-1']
+            REFCO2L:
+            - 360
+            - CO2 level at which AMAX and EFF were measured
+            - ['PPM']
+            VERNBASE:
+            -  12.0
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 62.0
+            - Saturated vernalization requirement
+            - ['d']
+            TMNFTB:
+            - [ -3.0, 0.000,
+                 0.0, 1.000]
+            RNUPTAKEMAX:
+             - 2.6968
+             - Maximum rate of daily nitrogen uptake
+             - ['kg.ha-1.d-1']
+            REALLOC_STEM_RATE:
+            - 0.036
+            - Relative rate of reallocation of stem biomass
+            - ['d-1']
+        Bussard: &bussard
+            <<: *winterwheat
+            Metadata: 
+                <<: *meta
+                Date: 2024-06-03
+                Subject: crop parameters for wheat cultivar Bussard
+                Description: Crop specific parameters for variety 'Bussard'. The parameters of this variety 
+                    were derived from experimental trials in the Netherlands during the 1980-ies
+                Source: https://doi.org/10.1016/j.eja.2024.127099
+                Coverage:
+                    Region: NW Europe
+                    Temporal: Variety was introduced in the 1970-ties
+                    Sowing: September to November
+                    Harvesting: end of July to early August
+                Keyword: wheat, WOFOST, Netherlands, Bussard
+            TDWI:
+            -  593.00
+            - initial total crop dry weight
+            - ['kg.ha-1']
+            DLO:
+            - 16.3
+            - optimum daylength for development
+            - ['hr']
+            TSUM1:
+            -  794.0
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  958.0
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            AMAX_REF:
+            - 40.2
+            - maximum leaf CO2 assimilation rate
+            - ['kg.ha-1.hr-1']
+            REFCO2L:
+            - 360
+            - CO2 level at which AMAX and EFF were measured
+            - ['PPM']
+            VERNBASE:
+            -  12.0
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 62.0
+            - Saturated vernalization requirement
+            - ['d']
+            TMNFTB:
+            - [ -3.0, 0.000,
+                 0.0, 1.000]
+            RNUPTAKEMAX:
+             - 2.6968
+             - Maximum rate of daily nitrogen uptake
+             - ['kg.ha-1.d-1']
+            REALLOC_STEM_RATE:
+            - 0.036
+            - Relative rate of reallocation of stem biomass
+            - ['d-1']
+        Ramiro:
+            <<: *bussard
+            Metadata: 
+                <<: *meta
+                Date: 2024-06-03
+                Subject: crop parameters for wheat cultivar Ramiro. Values are currently equal to cultivar 'Bussard'
+                Description: Crop specific parameters for variety 'Ramiro'. The parameters of this variety 
+                    were derived from experimental trials in the Netherlands during the 1980-ies
+                Source: https://doi.org/10.1016/j.eja.2024.127099
+                Coverage:
+                    Region: NW Europe
+                    Temporal: Variety was introduced in the 1970-ties
+                    Sowing: September to November
+                    Harvesting: end of July to early August
+                Keyword: wheat, WOFOST, Netherlands, Ramiro
+
+        Greif:
+            <<: *bussard
+            Metadata: 
+                <<: *meta
+                Date: 2024-06-03
+                Subject: crop parameters for wheat cultivar Greif. Values are currently equal to cultivar 'Bussard'
+                Description: Crop specific parameters for variety 'Greif'. The parameters of this variety 
+                    were derived from experimental trials in the Netherlands during the 1980-ies
+                Source: https://doi.org/10.1016/j.eja.2024.127099
+                Coverage:
+                    Region: NW Europe
+                    Temporal: Variety was introduced in the 1970-ties
+                    Sowing: September to November
+                    Harvesting: end of July to early August
+                Keyword: wheat, WOFOST, Netherlands, Greif
+        Julius: &julius
+            <<: *winterwheat
+            Metadata: 
+                <<: *meta
+                Date: 2024-06-03
+                Subject: crop parameters for wheat cultivar 'Julius'
+                Description: Crop specific parameters for variety 'Julius'. The parameters of this variety 
+                    were derived from experimental trials in the Netherlands during 2013-2015
+                Source: https://doi.org/10.1016/j.eja.2024.127099
+                Coverage:
+                    Region: NW Europe
+                    Temporal: Variety was introduced in the 2000's
+                    Sowing: September to November
+                    Harvesting: end of July to early August
+                Keyword: wheat, WOFOST, Netherlands, Julius
+            TDWI:
+            -  593.00
+            - initial total crop dry weight
+            - ['kg.ha-1']
+            DLO:
+            - 16.3
+            - optimum daylength for development
+            - ['hr']
+            TSUM1:
+            -  880.0
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  890.0
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            AMAX_REF:
+            - 40.2
+            - maximum leaf CO2 assimilation rate
+            - ['kg.ha-1.hr-1']
+            REFCO2L:
+            - 360
+            - CO2 level at which AMAX and EFF were measured
+            - ['PPM']
+            VERNBASE:
+            -  9.0
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 44.0
+            - Saturated vernalization requirement
+            - ['d']
+            TMNFTB:
+            - [ -3.0, 0.000,
+                 0.0, 1.000]
+            RNUPTAKEMAX:
+             - 4.26
+             - Maximum rate of daily nitrogen uptake
+             - ['kg.ha-1.d-1']
+            REALLOC_STEM_RATE:
+            - 0.0415
+            - Relative rate of reallocation of stem biomass
+            - ['d-1']
+            NMAXRT_FR:
+            - 0.38335
+            - maximum N concentration in roots as fraction of maximum N concentration in leaves
+            - ['-']
+            NMAXST_FR:
+            - 0.38335
+            - maximum N concentration in stems as fraction of maximum N concentration in leaves
+            - ['-']
+            NMAXSO:
+            - 0.02035
+            - maximum N concentration in storage organs [kg N kg-1 dry biomass]
+            - ['mass.mass-1']
+        Ritmo:
+            <<: *julius
+            Metadata: 
+                <<: *meta
+                Date: 2024-06-03
+                Subject: crop parameters for wheat cultivar 'Ritmo'. They are currently equivalent to cultivar 'Julius'
+                Description: Crop specific parameters for variety 'Ritmo'. The parameters of this variety 
+                    were derived from experimental trials in the Netherlands during 2013-2015
+                Source: https://doi.org/10.1016/j.eja.2024.127099
+                Coverage:
+                    Region: NW Europe
+                    Temporal: Variety was introduced in the 2000's
+                    Sowing: September to November
+                    Harvesting: end of July to early August
+                Keyword: wheat, WOFOST, Netherlands, Ritmo
+        Tabasco:
+            <<: *julius
+            Metadata: 
+                <<: *meta
+                Date: 2024-06-03
+                Subject: crop parameters for wheat cultivar 'Tabasco'. They are currently equivalent to cultivar 'Julius'
+                Description: Crop specific parameters for variety 'Tabasco'. The parameters of this variety 
+                    were derived from experimental trials in the Netherlands during 2013-2015
+                Source: https://doi.org/10.1016/j.eja.2024.127099
+                Coverage:
+                    Region: NW Europe
+                    Temporal: Variety was introduced in the 2000's
+                    Sowing: September to November
+                    Harvesting: end of July to early August
+                Keyword: wheat, WOFOST, Netherlands, Tabasco
+                
