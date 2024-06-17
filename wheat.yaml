@@ -221,6 +221,10 @@ CropParameters:
             - 35.83
             - maximum leaf CO2 assimilation rate
             - ['kg.ha-1.hr-1']
+            KN:
+            - 0.4
+            - Extinction coefficient of leaf N concentration with canopy depth
+            - ['-']
             REFCO2L:
             - 360
             - CO2 level at which AMAX and EFF were measured

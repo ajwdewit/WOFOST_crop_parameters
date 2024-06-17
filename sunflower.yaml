@@ -218,12 +218,14 @@ CropParameters:
                40.0, 0.400]
             - initial light-use efficiency single leaf as function of daily mean temperature
             - ['C', 'kg.ha-1.hr-1.J-1.m2.s1']
-            AMAXTB:
-            - [0.00, 36.00,
-               1.22, 36.00,
-               2.00, 12.00]
-            - maximum leaf CO2 assimilation rate as function of DVS
-            - ['-', 'kg.ha-1.hr-1']
+            AMAX_REF:
+            - 36.0
+            - maximum leaf CO2 assimilation rate
+            - ['kg.ha-1.hr-1']
+            KN:
+            - 0.4
+            - Extinction coefficient of leaf N concentration with canopy depth
+            - ['-']
             REFCO2L:
             - 360
             - CO2 level at which AMAX and EFF were measured
