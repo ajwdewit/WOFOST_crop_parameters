@@ -13,7 +13,7 @@
 #
 Version: 1.0.0
 Metadata: &meta
-    Creator: Allard de Wit
+    Creator: Allard de Wit and Herman Berghuijs
     Contributor: Kees van Diepen, Hendrik Boogaard, Raymond van de Wijngaart
     Contact: allard.dewit@wur.nl
     Publisher: Wageningen Environmental Research
@@ -777,15 +777,48 @@ CropParameters:
                 <<: *meta
                 Date: 2024-06-03
                 Subject: crop parameters for wheat cultivar arminda
-                Description: Crop specific parameters for variety 'arminda'. The parameters of this variety 
-                    were derived from experimental trials in the Netherlands during the 1980-ies
+                Description: Crop specific parameters for variety 'Arminda'. In WOFOST 7.3, reallocation was introduced.
+                     The reallocation parameters were estimated for variety Armina. It was assumed that the decrease in the
+                     stem and chaff dry weight was not due to mortality but due to reallocation of dry matter from the stem.
+                     Therefore, the relative stem mortality rate was set to 0.0 for all development stages.
                 Source: https://doi.org/10.1016/j.eja.2024.127099
                 Coverage:
                     Region: NW Europe
-                    Temporal: Variety was introduced in the 1970-ties
-                    Sowing: September to November
+                    Temporal: Variety was introduced 1977
+                    Sowing: October to November
                     Harvesting: end of July to early August
                 Keyword: wheat, WOFOST, Netherlands, arminda
+            FRTB:
+            - [0.000, 0.500,
+                0.100, 0.500,
+                0.200, 0.400,
+                0.350, 0.220,
+                0.400, 0.170,
+                0.500, 0.130,
+                0.700, 0.070,
+                0.900, 0.030,
+                1.200, 0.000,
+                2.000, 0.000]
+            FLTB:
+            - [0.000,  0.510,
+                0.100, 0.510,
+                0.740, 0.000,
+                1.000, 0.000,
+                1.001, 0.000,
+                2.00,  0.000]
+            FSTB:
+            - [0.000,  0.490,
+                0.100, 0.490,
+                0.740, 1.000,
+                1.000, 1.000,
+                1.001, 0.000,
+                2.00,  0.000]
+            FOTB:
+            - [0.000, 0.000,
+                0.950, 0.000,
+                1.000, 0.000,
+                1.001, 1.000,
+                2.000, 1.000]
             TDWI:
             -  593.00
             - initial total crop dry weight
@@ -799,7 +832,7 @@ CropParameters:
             - temperature sum from emergence to anthesis
             - ['C.d']
             TSUM2:
-            -  860.0
+            -  870.0
             - temperature sum from anthesis to maturity
             - ['C.d']
             AMAX_REF:
@@ -1004,8 +1037,8 @@ CropParameters:
             - maximum leaf CO2 assimilation rate
             - ['kg.ha-1.hr-1']
             REFCO2L:
-            - 360
-            - CO2 level at which AMAX and EFF were measured
+            - 400
+            - CO2 level at which AMAX and EFF were measured or estimated
             - ['PPM']
             VERNBASE:
             -  9.0

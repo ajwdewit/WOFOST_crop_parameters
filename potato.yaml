@@ -15,7 +15,7 @@
 Version: 1.0.0
 Metadata: &meta
     Creator: Allard de Wit
-    Contact: allard.dewit@wur.nl
+    Contact: allard.dewit@wur.nl and Herman Berghuijs
     Publisher: Wageningen Environmental Research, Wageningen Plant Production Systems
     Title: Parameter sets for the WOFOST7.2/WOFOST8.0 model for simulating potato
     Date: 2022-02-13
@@ -58,6 +58,14 @@ CropParameters:
            2000., 1.90]
          - multiplication factor for AMAX to account for an increasing CO2 concentration
          - ['PPM', '-']
+        AMAX_SLP:
+        - 3.24
+        - slope of relationship between maximum leaf photosynthesis rate and specific leaf nitrogen
+        - ['kg CO2 ha-1 h-1 (kg N m-2)-1']
+        AMAX_LNB:
+        - 0.0
+        - specific leaf nitrogen below which there is no photosynthesis
+        - ['kg N ha-1']
     GenericC4: &GenericC4
         CO2EFFTB:
          - [40., 0.00,
@@ -420,94 +428,6 @@ CropParameters:
             - fraction of crop nitrogen uptake by biological fixation
             - ['-']
             #
-            # MAXIMUM, CRITICAL AND RESIDUAL PHOSPHORUS CONCENTRATION IN DIFFERENT ORGANS
-            #
-            PMAXLV_TB:
-            - [0.00, 0.0150,
-               0.40, 0.0125,
-               0.70, 0.0113,
-               1.00, 0.0113,
-               2.00, 0.0100,
-               2.10, 0.0100]
-            - maximum P concentration in leaves as function of development stage in kg P kg-1 dry biomass
-            - ['-', 'mass.mass-1']
-            PMAXRT_FR:
-            - 0.5000
-            - maximum P concentration in roots as fraction of maximum P concentration in leaves
-            - ['-']
-            PMAXST_FR:
-            - 0.5000
-            - maximum P concentration in stems as fraction of maximum P concentration in leaves
-            - ['-']
-            PMAXSO:
-            - 0.00176
-            - maximum P concentration in storage organs [kg P kg-1 dry biomass]
-            - ['mass.mass-1']
-            PCRIT_FR:
-            - 1.00
-            - Critical P concentration as fraction of maximum P concentration
-            - ['-']
-            PRESIDLV:
-            - 0.0019
-            - residual P fraction in leaves [kg P kg-1 dry biomass]
-            - ['mass.mass-1']
-            PRESIDST:
-            - 0.0009
-            - residual P fraction in stems [kg P kg-1 dry biomass]
-            - ['mass.mass-1']
-            PRESIDRT:
-            - 0.0009
-            - residual P fraction in roots [kg P kg-1 dry biomass]
-            - ['mass.mass-1']
-            TCPT:
-            -  10
-            - time coefficient for P translocation to storage organs
-            - ['d']
-            #
-            # MAXIMUM, CRITICAL AND RESIDUAL POTASSIUM CONCENTRATION IN DIFFERENT ORGANS
-            #
-            KMAXLV_TB:
-            - [0.00, 0.0570,
-               0.40, 0.0480,
-               0.70, 0.0430,
-               1.00, 0.0430,
-               2.00, 0.0380,
-               2.10, 0.0380]
-            - maximum K concentration in leaves as function of development stage in kg K kg-1 dry biomass
-            - ['-', 'mass.mass-1']
-            KMAXRT_FR:
-            - 0.5000
-            - maximum K concentration in roots as fraction of maximum K concentration in leaves
-            - ['-']
-            KMAXST_FR:
-            - 0.5000
-            - maximum K concentration in stems as fraction of maximum K concentration in leaves
-            - ['-']
-            KMAXSO:
-            - 0.0176
-            - maximum K concentration in storage organs [kg K kg-1 dry biomass]
-            - ['mass.mass-1']
-            KCRIT_FR:
-            - 1.00
-            - Critical K concentration as fraction of maximum K concentration
-            - ['-']
-            KRESIDLV:
-            - 0.0173
-            - residual K fraction in leaves [kg K kg-1 dry biomass]
-            - ['mass.mass-1']
-            KRESIDST:
-            - 0.0087
-            - residual K fraction in stems [kg K kg-1 dry biomass]
-            - ['mass.mass-1']
-            KRESIDRT:
-            - 0.0087
-            - residual K fraction in roots [kg K kg-1 dry biomass]
-            - ['mass.mass-1']
-            TCKT:
-            -  10
-            - time coefficient for K translocation to storage organs
-            - ['d']
-            #
             # IMPORT DVS RELATED TO N/P/K UPTAKE AND TRANSLOCATION
             #
             DVS_NPK_STOP:
@@ -552,14 +472,50 @@ CropParameters:
              - 7.2
              - Maximum rate of daily nitrogen uptake
              - ['kg.ha-1.d-1']
-            RPUPTAKEMAX:
+            DVS_N_TRANSL:
              - 0.8
-             - Maximum rate of daily phosphorus uptake
-             - ['kg..ha-1.d-1']
-            RKUPTAKEMAX:
-             - 7.4
-             - Maximum rate of daily potassium uptake
-             - ['kg.ha-1.d-1']
+             - development stage above which N translocation to storage organs does occur
+             - ['-']
+            NSLLV_TB:
+            - [0.0, 1.0,
+               1.1, 1.0,
+               1.5, 1.4,
+               2.0, 1.5,
+               2.5, 1.5]
+            - Increament factor rate stems due to N stress
+            - ['-']
+            RGRLAI_MIN:
+            - 0.004
+            - maximum relative increase in LAI under maximum nitrogen stress
+            - ['ha.ha-1.d-1']
+            #
+            # BIOMASS REALLOCATION
+            #
+            REALLOC_DVS:
+            - 3.0
+            - Development stage when reallocation from stems and leaves to storage organs starts.
+              DVS values > 2.0 mean that reallocation is not enabled for this crop.
+            - ['-']
+            REALLOC_STEM_FRACTION:
+            - 0.2
+            - Fraction of stem biomass that can be reallocated to the storage organs
+            - ['kg.kg-1']
+            REALLOC_LEAF_FRACTION:
+            - 0.0
+            - Fraction of stem biomass that can be reallocated to the storage organs
+            - ['kg.kg-1']
+            REALLOC_STEM_RATE:
+            - 0.0415
+            - Relative rate of reallocation of stem biomass
+            - ['d-1']
+            REALLOC_LEAF_RATE:
+            - 0.0
+            - Relative rate of reallocation of leaf biomass
+            - ['d-1']
+            REALLOC_EFFICIENCY:
+            - 0.95
+            - Conversion efficiency of reallocated stem and leaf dry matter into storage organ dry matter
+            - ['kg.kg-1']
         potato_nl: &potato_nl
             # New estimates of parameters for modern Dutch potato cultivars. The parameters defined
             # here under this ecotype are assumed generic across cultivars.

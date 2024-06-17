@@ -59,6 +59,14 @@ CropParameters:
            2000., 1.90]
          - multiplication factor for AMAX to account for an increasing CO2 concentration
          - ['PPM', '-']
+        AMAX_SLP:
+         - 3.24
+         - slope of relationship between maximum leaf photosynthesis rate and specific leaf nitrogen
+         - ['kg CO2 ha-1 h-1 (kg N m-2)-1']
+        AMAX_LNB:
+         - 0.0
+         - specific leaf nitrogen below which there is no photosynthesis
+         - ['kg N ha-1']
     GenericC4: &GenericC4
         CO2EFFTB:
          - [40., 0.00,
