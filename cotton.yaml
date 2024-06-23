@@ -429,59 +429,54 @@ CropParameters:
             - 0.00
             - fraction of crop nitrogen uptake by biological fixation
             - ['-']
-            #
-            # IMPORT DVS RELATED TO N/P/K UPTAKE AND TRANSLOCATION
-            #
-            DVS_NPK_STOP:
-            - 1.30
-            - development stage above which no crop N/P/K uptake occurs
-            - ['-']
-            DVS_NPK_TRANSL:
-            - 0.80
-            - development stage above which N/P/K translocation to storage organs does occur
-            - ['-']
-            #
-            # IMPACT OF N/P/K STRESS ON PROCESSES
-            #
-            NLAI_NPK:
-            - 1.00
-            - coefficient for the reduction due to nutrient NPK stress of the LAI increase (during juvenile phase)
-            - ['-']
-            NSLA_NPK:
-            - 0.50
-            - coefficient for the effect of nutrient NPK stress on SLA reduction
-            - ['-']
-            NPART:
-            - 1.00
-            - coefficient for the effect of nutrient N stress on leaf allocation
-            - ['-']
-            NLUE_NPK:
-            - 1.10
-            - coefficient for the reduction of gross CO2 assimilation rate due to nutrient (N-P-K) stress
-            - ['-']
-            NPK_TRANSLRT_FR:
-            - 0.50
-            - NPK translocation from roots as a fraction of total NPK amounts translocated from leaves and stems
-            - ['-']
-            RDRLV_NPK:
-            - 0.05
-            - maximum relative death rate of leaves due to nutrient NPK stress
-            - ['-']
-            #
-            # Maximum N/P/K uptake rates, see changelog.txt
-            #
             RNUPTAKEMAX:
              - 7.2
              - Maximum rate of daily nitrogen uptake
              - ['kg.ha-1.d-1']
-            RPUPTAKEMAX:
+            DVS_N_TRANSL:
              - 0.8
-             - Maximum rate of daily phosphorus uptake
-             - ['kg..ha-1.d-1']
-            RKUPTAKEMAX:
-             - 7.4
-             - Maximum rate of daily potassium uptake
-             - ['kg.ha-1.d-1']
+             - development stage above which N translocation to storage organs does occur
+             - ['-']
+            NSLLV_TB:
+            - [0.0, 1.0,
+               1.1, 1.0,
+               1.5, 1.4,
+               2.0, 1.5,
+               2.5, 1.5]
+            - Increament factor rate stems due to N stress
+            - ['-']
+            RGRLAI_MIN:
+            - 0.004
+            - maximum relative increase in LAI under maximum nitrogen stress
+            - ['ha.ha-1.d-1']
+            #
+            # BIOMASS REALLOCATION
+            #
+            REALLOC_DVS:
+            - 3.0
+            - Development stage when reallocation from stems and leaves to storage organs starts.
+              DVS values > 2.0 mean that reallocation is not enabled for this crop.
+            - ['-']
+            REALLOC_STEM_FRACTION:
+            - 0.2
+            - Fraction of stem biomass that can be reallocated to the storage organs
+            - ['kg.kg-1']
+            REALLOC_LEAF_FRACTION:
+            - 0.0
+            - Fraction of stem biomass that can be reallocated to the storage organs
+            - ['kg.kg-1']
+            REALLOC_STEM_RATE:
+            - 0.0415
+            - Relative rate of reallocation of stem biomass
+            - ['d-1']
+            REALLOC_LEAF_RATE:
+            - 0.0
+            - Relative rate of reallocation of leaf biomass
+            - ['d-1']
+            REALLOC_EFFICIENCY:
+            - 0.95
+            - Conversion efficiency of reallocated stem and leaf dry matter into storage organ dry matter
+            - ['kg.kg-1']
     Varieties:
         Cotton_VanHeemst_1988:
             <<: *cotton

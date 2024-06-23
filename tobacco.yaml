@@ -423,65 +423,54 @@ CropParameters:
             - 0.00
             - fraction of crop nitrogen uptake by biological fixation
             - ['-']
-            #
-            # MAXIMUM, CRITICAL AND RESIDUAL PHOSPHORUS CONCENTRATION IN DIFFERENT ORGANS
-            #
-            PMAXLV_TB:
-            - [0.00, 0.0078,
-               0.40, 0.0065,
-               0.70, 0.0059,
-               1.00, 0.0052,
-               2.00, 0.0052,
-               2.10, 0.0052]
-            - maximum P concentration in leaves as function of development stage in kg P kg-1 dry biomass
-            - ['-', 'mass.mass-1']
-            PMAXRT_FR:
-            - 0.5000
-            - maximum P concentration in roots as fraction of maximum P concentration in leaves
-            - ['-']
-            PMAXST_FR:
-            - 0.5000
-            - maximum P concentration in stems as fraction of maximum P concentration in leaves
-            - ['-']
-            PMAXSO:
-            - 0.0024
-            - maximum P concentration in storage organs [kg P kg-1 dry biomass]
-            - ['mass.mass-1']
-            PCRIT_FR:
-            - 1.00
-            - Critical P concentration as fraction of maximum P concentration
-            - ['-']
-            PRESIDLV:
-            - 0.0020
-            - residual P fraction in leaves [kg P kg-1 dry biomass]
-            - ['mass.mass-1']
-            PRESIDST:
-            - 0.0010
-            - residual P fraction in stems [kg P kg-1 dry biomass]
-            - ['mass.mass-1']
-            PRESIDRT:
-            - 0.0010
-            - residual P fraction in roots [kg P kg-1 dry biomass]
-            - ['mass.mass-1']
-            TCPT:
-            -  10
-            - time coefficient for P translocation to storage organs
-            - ['d']
-            #
-            # Maximum N/P/K uptake rates, see changelog.txt
-            #
             RNUPTAKEMAX:
              - 7.2
              - Maximum rate of daily nitrogen uptake
              - ['kg.ha-1.d-1']
-            RPUPTAKEMAX:
+            DVS_N_TRANSL:
              - 0.8
-             - Maximum rate of daily phosphorus uptake
-             - ['kg..ha-1.d-1']
-            RKUPTAKEMAX:
-             - 7.4
-             - Maximum rate of daily potassium uptake
-             - ['kg.ha-1.d-1']
+             - development stage above which N translocation to storage organs does occur
+             - ['-']
+            NSLLV_TB:
+            - [0.0, 1.0,
+               1.1, 1.0,
+               1.5, 1.4,
+               2.0, 1.5,
+               2.5, 1.5]
+            - Increament factor rate stems due to N stress
+            - ['-']
+            RGRLAI_MIN:
+            - 0.004
+            - maximum relative increase in LAI under maximum nitrogen stress
+            - ['ha.ha-1.d-1']
+            #
+            # BIOMASS REALLOCATION
+            #
+            REALLOC_DVS:
+            - 3.0
+            - Development stage when reallocation from stems and leaves to storage organs starts.
+              DVS values > 2.0 mean that reallocation is not enabled for this crop.
+            - ['-']
+            REALLOC_STEM_FRACTION:
+            - 0.2
+            - Fraction of stem biomass that can be reallocated to the storage organs
+            - ['kg.kg-1']
+            REALLOC_LEAF_FRACTION:
+            - 0.0
+            - Fraction of stem biomass that can be reallocated to the storage organs
+            - ['kg.kg-1']
+            REALLOC_STEM_RATE:
+            - 0.0415
+            - Relative rate of reallocation of stem biomass
+            - ['d-1']
+            REALLOC_LEAF_RATE:
+            - 0.0
+            - Relative rate of reallocation of leaf biomass
+            - ['d-1']
+            REALLOC_EFFICIENCY:
+            - 0.95
+            - Conversion efficiency of reallocated stem and leaf dry matter into storage organ dry matter
+            - ['kg.kg-1']
     Varieties:
         Tobacco_VanHeemst_1988:
             <<: *tobacco

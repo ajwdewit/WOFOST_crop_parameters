@@ -378,7 +378,7 @@ CropParameters:
             - maximum daily increase in rooting depth
             - ['cm.d-1']
             RDMCR:
-            -  50.0
+            -  60.0
             - maximum rooting depth
             - ['cm']
             #
@@ -429,47 +429,6 @@ CropParameters:
             - 0.00
             - fraction of crop nitrogen uptake by biological fixation
             - ['-']
-            #
-            # IMPORT DVS RELATED TO N/P/K UPTAKE AND TRANSLOCATION
-            #
-            DVS_NPK_STOP:
-            - 1.60
-            - development stage above which no crop N/P/K uptake occurs
-            - ['-']
-            DVS_NPK_TRANSL:
-            - 0.80
-            - development stage above which N/P/K translocation to storage organs does occur
-            - ['-']
-            #
-            # IMPACT OF N/P/K STRESS ON PROCESSES
-            #
-            NLAI_NPK:
-            - 1.00
-            - coefficient for the reduction due to nutrient NPK stress of the LAI increase (during juvenile phase)
-            - ['-']
-            NSLA_NPK:
-            - 0.50
-            - coefficient for the effect of nutrient NPK stress on SLA reduction
-            - ['-']
-            NPART:
-            - 1.00
-            - coefficient for the effect of nutrient N stress on leaf allocation
-            - ['-']
-            NLUE_NPK:
-            - 1.10
-            - coefficient for the reduction of gross CO2 assimilation rate due to nutrient (N-P-K) stress
-            - ['-']
-            NPK_TRANSLRT_FR:
-            - 0.50
-            - NPK translocation from roots as a fraction of total NPK amounts translocated from leaves and stems
-            - ['-']
-            RDRLV_NPK:
-            - 0.05
-            - maximum relative death rate of leaves due to nutrient NPK stress
-            - ['-']
-            #
-            # Maximum N/P/K uptake rates, see changelog.txt
-            #
             RNUPTAKEMAX:
              - 7.2
              - Maximum rate of daily nitrogen uptake
