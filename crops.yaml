@@ -6,17 +6,17 @@ available_crops:
   - cowpea
   - fababean
   - groundnut
-  - maize
-  - millet
+#  - maize
+#  - millet
   - mungbean
   - pigeonpea
   - potato
   - rapeseed
   - rice
-  - sorghum
+#  - sorghum
   - soybean
   - sugarbeet
-  - sugarcane
+#  - sugarcane
   - sunflower
   - sweetpotato
   - tobacco
