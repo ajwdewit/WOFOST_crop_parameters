@@ -1,8 +1,18 @@
-Parameter sets for the WOFOST crop simulation model
+Parameter sets for the WOFOST cropping system model
 ===================================================
 
 This repository contains the parameter sets for 23 crops for the WOFOST
-crop simulation model.
+cropping system model.
+
+WOFOST versions and parameter files
+-----------------------------------
+
+Since the release of PCSE 6.0, there are several versions of WOFOST available (7.2, 7.3, 8.1 and 
+the deprecated version 8.0-beta). The parameter files for the different model version reside on different
+branches within this repository. The parameter files that are currently on the master branch of this 
+repository will remain available for backwards compatibility with PCSE 5.5 and are suitable for WOFOST 
+versions 7.2 and 8.0-beta. However, they will probably be deleted at some point in the future in
+order to reduce the burden of maintaining the files.
 
 Format and structure of the parameter files
 -------------------------------------------
@@ -99,12 +109,15 @@ How to use the parameter files
 ------------------------------
 
 The crop parameter files have been designed to work with the Python Crop Simulation Environment (`PCSE`_)
-which provides a DataProvider that can directly use the YAML crop parameter files:
+which provides a DataProvider that can directly use the YAML crop parameter files. From PCSE 6.0
+onward it is required to provide the WOFOST model object as input for the YAMLCropDataProvider. This
+way, the YAMLCropDataProvider can select the correct branch from the repository:
 
 .. code-block:: python
 
-    >>> from pcse.fileinput import YAMLCropDataProvider
-    >>> cropd = YAMLCropDataProvider()
+    >>> from pcse.input import YAMLCropDataProvider
+    >>> from pcse.models import Wofost81_PP
+    >>> cropd = YAMLCropDataProvider(Wofost81_PP)
     >>> cropd.print_crops_varieties()
     crop 'mungbean', available varieties:
      - 'Mungbean_VanHeemst_1988'
@@ -127,6 +140,14 @@ which provides a DataProvider that can directly use the YAML crop parameter file
      - 'Sorghum_VanHeemst_1988'
     >>> cropd.set_active_crop('soybean', 'Soybean_906')
     >>> print(cropd)
+    Crop parameters loaded from: https://raw.githubusercontent.com/ajwdewit/WOFOST_crop_parameters/wofost81
+    YAMLCropDataProvider - current active crop 'soybean' with variety 'Soybean_906'
+    Available crop parameters:
+     {'CO2EFFTB': [40.0, 0.0, 360.0, 1.0, 720.0, 1.11, 1000.0, 1.11, 2000.0, 1.11], 'CO2TRATB': [40.0, 0.0, 360.0, 1.0, 720.0,
+    ...
+    'REALLOC_DVS': 3.0, 'REALLOC_STEM_FRACTION': 0.2, 'REALLOC_LEAF_FRACTION': 0.0, 'REALLOC_STEM_RATE': 0.0415,
+     'REALLOC_LEAF_RATE': 0.0, 'REALLOC_EFFICIENCY': 0.95}
+
     YAMLCropDataProvider - current active crop 'soybean' with variety 'Soybean_906'
     Available crop parameters:
      {'DTSMTB': [0.0, 0.0, 7.0, 0.0, 30.0, 23.0, 45.0, 38.0], 'NLAI_NPK': 1.0, 'NRESIDLV': 0.0093, 'KCRIT_FR': 1.0,
@@ -135,9 +156,21 @@ which provides a DataProvider that can directly use the YAML crop parameter file
 
      720.0, 0.9, 1000.0, 0.9, 2000.0, 0.9], 'TSUM2': 1300, 'TSUM1': 500, 'TSUMEM': 90}
 
+
+For PCSE 5.X releases, the following code is still sufficient:
+
+.. code-block:: python
+
+    >>> from pcse.fileinput import YAMLCropDataProvider
+    >>> cropd = YAMLCropDataProvider()
+
 .. _PCSE: http://pcse.readthedocs.io
 
-Moreover, the PCSE `AgroManager`_ is designed to work with the YAMLCropDataProvider and the parameters files
+
+Connecting crop parameters and agromanagement
+---------------------------------------------
+
+the PCSE `AgroManager`_ is designed to work with the YAMLCropDataProvider and the parameters files
 by referring to the crop type (``crop_name``) and crop variety (``variety_name``) in its definition of the
 agromanagement:
 
