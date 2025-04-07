@@ -328,14 +328,14 @@ CropParameters:
                1.50, 0.000,
                1.51, 0.020,
                2.00, 0.020]
-            - Relative death rate of stems as a function of DVS
+            - Relative death rate of roots as a function of DVS
             - ['-', 'kg.kg-1.d-1']
             RDRSTB:
             - [0.00, 0.000,
                1.50, 0.000,
                1.51, 0.020,
                2.00, 0.020]
-            - relative death rate of roots as a function of DVS
+            - relative death rate of stems as a function of DVS
             - ['-', 'kg.kg-1.d-1']
             #
             # WATER USE
