@@ -1,3 +1,13 @@
+Important notice
+================
+
+Parameter sets for the different WOFOST version now reside on different branches of this repository. 
+
+This master branch will still contain the parameters for WOFOST 7.2 for some time in the future to 
+keep older versions of PCSE working. However, at some point I will remove the parameter files from
+master because it confuses people as well.
+
+
 Parameter sets for the WOFOST cropping system model
 ===================================================
 
