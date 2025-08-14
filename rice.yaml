@@ -375,6 +375,9 @@ CropParameters:
             -  80.0
             - maximum rooting depth
             - ['cm']
+            #
+            # Biomass reallocation
+            #
             REALLOC_DVS:
             - 3.0
             - Development stage when reallocation from stems and leaves to storage organs starts.
@@ -688,6 +691,9 @@ CropParameters:
             -  80.0
             - maximum rooting depth
             - ['cm']
+            #
+            # Biomass reallocation
+            #
             REALLOC_DVS:
             - 3.0
             - Development stage when reallocation from stems and leaves to storage organs starts.
