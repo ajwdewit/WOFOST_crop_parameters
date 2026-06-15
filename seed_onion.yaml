@@ -403,7 +403,8 @@ CropParameters:
     Varieties:
         onion_agriadapt:
             <<: *seed_onion
-            <<: *meta
+            Metadata:
+                <<: *meta
             TSUM1:
             -  250
             - temperature sum from emergence to anthesis
