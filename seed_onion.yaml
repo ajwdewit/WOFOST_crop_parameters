@@ -86,6 +86,7 @@ CropParameters:
     EcoTypes:
         seed_onion: &seed_onion
             <<: *GenericC3
+            <<: *meta
             #
             # EMERGENCE
             #
@@ -381,6 +382,7 @@ CropParameters:
     Varieties:
         onion_agriadapt:
             <<: *seed_onion
+            <<: *meta
             TSUM1:
             -  250
             - temperature sum from emergence to anthesis
