@@ -467,3 +467,84 @@ CropParameters:
             - 36.0
             - life span of leaves growing at 35 Celsius
             - ['d']
+        Achat:
+            <<: *sugarbeet
+            Metadata:
+                Creator: Herman Berghuijs
+                Contributor: Hendrik Boogaard, Allard de Wit
+                Contact: allard.dewit@wur.nl
+                Publisher: Wageningen Environmental Research
+                Title: Parameter sets for the WOFOST7.2/7.3 model for simulating sugar beet
+                Date: 2026-06-17
+                Language: EN
+                Format: YAML
+                Subject: WOFOST parameters for sugar beet
+                Description: This file provides parameters for the Achat sugarbeet variety calibrated on
+                    experimental data from Kenter and Hoffmann (2025) in the framework of the MARS project.
+                Identifier:
+                Relation:
+                Source: https://doi.org/10.18174/odjar.v11i0.18784
+                Type: Article
+                Coverage:
+                   Region: Europe
+                Rights: European Union Public License (EUPL)
+                Keyword: sugar beet; beta vulgaris
+
+            TSUM1:
+            -  650
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            - 2000
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            DVSEND:
+            -  2.0
+            - development stage at harvest (= 2.0 at maturity)
+            - ['-']
+            SPAN:
+            -52.0
+            - life span of leaves growing at 35 Celsius
+            - ['d']
+            FLTB:
+            - [0.0, 0.91,
+               0.2, 0.91,
+               0.4, 0.91,
+               0.6, 0.91,
+               0.8, 0.75,
+               1.0, 0.18,
+               1.2, 0.02,
+               1.4, 0.00,
+               1.6, 0.00,
+               1.8, 0.00,
+               2.0, 0.00]
+            - fraction of total dry matter to leaves as a function of DVS
+            - ['-', 'mass.mass-1']
+            FSTB:
+            - [0.0, 0.00,
+               0.2, 0.09,
+               0.4, 0.09,
+               0.6, 0.07,
+               0.8, 0.00,
+               1.0, 0.00,
+               1.2, 0.00,
+               1.4, 0.00,
+               1.6, 0.00,
+               1.8, 0.00,
+               2.0, 0.00]
+            - fraction of total dry matter to stems as a function of DVS
+            - ['-', 'mass.mass-1']
+            FOTB:
+            - [0.0, 0.00,
+               0.2, 0.00,
+               0.4, 0.00,
+               0.6, 0.02,
+               0.8, 0.25,
+               1.0, 0.82,
+               1.2, 0.98,
+               1.4, 1.00,
+               1.6, 1.00,
+               1.8, 1.00,
+               2.0, 1.00]
+            - fraction of total dry matter to storage organs as a function of DVS
+            - ['-', 'mass.mass-1']
