@@ -503,7 +503,7 @@ CropParameters:
             - development stage at harvest (= 2.0 at maturity)
             - ['-']
             SPAN:
-            -52.0
+            - 52.0
             - life span of leaves growing at 35 Celsius
             - ['d']
             FLTB:
