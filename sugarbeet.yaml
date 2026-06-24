@@ -571,7 +571,7 @@ CropParameters:
             - 36.0
             - life span of leaves growing at 35 Celsius
             - ['d']
-       Achat:
+        Achat:
             <<: *sugarbeet
             Metadata:
                 Creator: Herman Berghuijs
