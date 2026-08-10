@@ -110,7 +110,6 @@ those for the `LINGRA`_ model.
 How to use the parameter files
 ------------------------------
 
-
 **Important Notice for R users**
 
     Some people are reading WOFOST parameter files with R using: ``read_yaml(file = file_yaml)``
@@ -121,9 +120,16 @@ How to use the parameter files
     To get the appropriate values for varieties.
 
 The crop parameter files have been designed to work with the Python Crop Simulation Environment (`PCSE`_)
-which provides a DataProvider that can directly use the YAML crop parameter files. From PCSE 6.0
-onward it is required to provide the WOFOST model object as input for the YAMLCropDataProvider. This
-way, the YAMLCropDataProvider can select the correct branch from the repository:
+which provides a DataProvider that can directly use the YAML crop parameter files.
+
+PCSE versions 6.X
+.................
+
+From PCSE 6.0
+onward it is required to provide a crop model class object as input for the YAMLCropDataProvider. This
+way, the YAMLCropDataProvider can select the correct branch from the repository. Currently, this is only
+implemented for the WOFOST and LINGRA models as the parameters for these models have been properly organized.
+For example, for WOFOST this could be:
 
 .. code-block:: python
 
@@ -168,8 +174,10 @@ way, the YAMLCropDataProvider can select the correct branch from the repository:
 
      720.0, 0.9, 1000.0, 0.9, 2000.0, 0.9], 'TSUM2': 1300, 'TSUM1': 500, 'TSUMEM': 90}
 
+PCSE versions 5.X
+.................
 
-For PCSE 5.X releases, the following code is required:
+For PCSE 5.X releases, the URL of the repository with parameter files has to be specified explicitly, for example:
 
 .. code-block:: python
 
