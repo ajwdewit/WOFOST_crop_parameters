@@ -1,28 +1,20 @@
 Important notice
 ================
 
-Parameter sets for the different WOFOST version now reside on different branches of this repository. 
+Parameter sets for the different WOFOST version now reside on different branches of this repository.
+The parameter files on the main branch have been removed.
 
-This master branch will still contain the parameters for WOFOST 7.2 for some time in the future to 
-keep older versions of PCSE working. However, at some point I will remove the parameter files from
-master because it confuses people as well.
+The URLs for the different WOFOST models can be found here:
 
+    - `WOFOST 7.2 <https://github.com/ajwdewit/WOFOST_crop_parameters/tree/wofost72>`_
+    - `WOFOST 7.3 <https://github.com/ajwdewit/WOFOST_crop_parameters/tree/wofost73>`_
+    - `WOFOST 8.0 (deprecated) <https://github.com/ajwdewit/WOFOST_crop_parameters/tree/wofost80>`_
+    - `WOFOST 8.1 <https://github.com/ajwdewit/WOFOST_crop_parameters/tree/wofost81>`_
 
 Parameter sets for the WOFOST cropping system model
 ===================================================
 
-This repository contains the parameter sets for 23 crops for the WOFOST
-cropping system model.
-
-WOFOST versions and parameter files
------------------------------------
-
-Since the release of PCSE 6.0, there are several versions of WOFOST available (7.2, 7.3, 8.1 and 
-the deprecated version 8.0-beta). The parameter files for the different model version reside on different
-branches within this repository. The parameter files that are currently on the master branch of this 
-repository will remain available for backwards compatibility with PCSE 5.5 and are suitable for WOFOST 
-versions 7.2 and 8.0-beta. However, they will probably be deleted at some point in the future in
-order to reduce the burden of maintaining the files.
+This repository contains the parameter sets for 23 crops for several versions of the WOFOST cropping system model.
 
 Format and structure of the parameter files
 -------------------------------------------
@@ -119,7 +111,8 @@ How to use the parameter files
 ------------------------------
 
 
-**Important Notice**
+**Important Notice for R users**
+
     Some people are reading WOFOST parameter files with R using: ``read_yaml(file = file_yaml)``
     
     However, by default R does not respect the Anchors and Aliases that are used to overwrite 
@@ -176,12 +169,12 @@ way, the YAMLCropDataProvider can select the correct branch from the repository:
      720.0, 0.9, 1000.0, 0.9, 2000.0, 0.9], 'TSUM2': 1300, 'TSUM1': 500, 'TSUMEM': 90}
 
 
-For PCSE 5.X releases, the following code is still sufficient:
+For PCSE 5.X releases, the following code is required:
 
 .. code-block:: python
 
     >>> from pcse.fileinput import YAMLCropDataProvider
-    >>> cropd = YAMLCropDataProvider()
+    >>> cropd = YAMLCropDataProvider(repository="https://raw.githubusercontent.com/ajwdewit/WOFOST_crop_parameters/refs/heads/wofost72")
 
 .. _PCSE: http://pcse.readthedocs.io
 
