@@ -44,7 +44,7 @@ CropParameters:
          - multiplication factor for EFF to account for an increasing CO2 concentration
          - ['PPM', '-']
         CO2TRATB:
-         - [40., 0.00,
+         - [40., 1.00,
            360., 1.00,
            720., 0.9,
           1000., 0.9,
@@ -69,7 +69,7 @@ CropParameters:
          - multiplication factor for EFF to account for an increasing CO2 concentration
          - ['PPM', '-']
         CO2TRATB:
-         - [40., 0.00,
+         - [40., 1.00,
            360., 1.00,
            720., 0.74,
           1000., 0.74,
