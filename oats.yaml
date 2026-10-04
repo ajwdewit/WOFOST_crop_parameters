@@ -1,0 +1,339 @@
+Version: 1.0.0
+Metadata: &meta
+    Creator: Adapted from WOFOST crop parameters (Wageningen)
+    Contact: Based on spring barley calibration
+    Publisher: Adapted for oats (Avena sativa) - Northern Europe
+    Title: Parameter sets for WOFOST 7.2 for simulating oats in Northern Europe
+    Date: 2026-09-09
+    Language: EN
+    Format: YAML
+    Subject: WOFOST parameters for oats (Avena sativa)
+    Description: |
+      Oat parameters adapted from spring barley ecotype with adjustments for 
+      Northern European conditions. Key changes: lower TSUM1/TSUM2, reduced 
+      AMAXTB, increased rooting depth. Suitable for 
+      spring oats in Scandinavia, Baltic states, UK, Ireland, Northern Germany.
+    Keyword: oats; Avena sativa; Northern Europe; spring oats
+    Coverage:
+       Region: Northern Europe (Scandinavia, Baltic, UK, Ireland, Northern Germany)
+
+CropParameters:
+    GenericC3: &GenericC3
+        CO2EFFTB:
+        - [40., 0.00, 360., 1.00, 720., 1.11, 1000., 1.11, 2000., 1.11]
+        - multiplication factor for EFF to account for an increasing CO2 concentration
+        - ['PPM', '-']
+        CO2TRATB:
+        - [40., 1.00, 360., 1.00, 720., 0.9, 1000., 0.9, 2000., 0.9]
+        - multiplication factor for maximum transpiration rate TRAMX
+        - ['PPM', '-']
+        CO2AMAXTB:
+        - [40., 0.00, 360., 1.00, 720., 1.60, 1000., 1.90, 2000., 1.90]
+        - multiplication factor for AMAX to account for an increasing CO2 concentration
+        - ['PPM', '-']
+    GenericC4: &GenericC4
+        CO2EFFTB: 
+        - [40., 0.00, 360., 1.00, 720., 1.00, 1000., 1.00, 2000., 1.00]
+        - multiplication factor for EFF to account for an increasing CO2 concentration
+        - ['PPM', '-']
+        CO2TRATB: 
+        - [40., 1.00, 360., 1.00, 720., 0.74, 1000., 0.74, 2000., 0.74]
+        - multiplication factor for maximum transpiration rate TRAMX
+        - ['PPM', '-']
+        CO2AMAXTB: 
+        - [40., 0.00, 360., 1.00, 720., 1.00, 1000., 1.00, 2000., 1.00]
+        - multiplication factor for AMAX to account for an increasing CO2 concentration
+        - ['PPM', '-']
+    EcoTypes:
+        oats: &oats
+            <<: *GenericC3
+            # EMERGENCE
+            TBASEM: 
+            - 3.0
+            - Lower threshold temperature for emergence
+            - ['C']
+            TEFFMX: 
+            - 18.0
+            - maximum effective temperature for emergence
+            - ['C']
+            TSUMEM: 
+            - 155
+            - temperature sum from sowing to emergence
+            - ['C.d']
+
+            # PHENOLOGICAL DEVELOPMENT
+            IDSL: 
+            - 0
+            - indicates whether pre-anthesis development depends on temperature (=0)
+            - ['NA']
+            DLO:  
+            - -99.0
+            - optimum daylength for development
+            - ['hr']
+            DLC:  
+            - -99.0
+            - critical daylength (lower threshold)
+            - ['hr']
+            TSUM1: 
+            -  760
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:  
+            - 710
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            DTSMTB:
+            - [0.0, 0.0, 2.0, 0.0, 13.0, 11.0, 30.0, 28.0]
+            - daily increase in temperature sum as function of daily average temperature
+            - ['C', 'C']
+            DVSI: 
+            -  0.0
+            - Initial development stage
+            - ['-']
+            DVSEND:  
+            - 2.0
+            - development stage at harvest (= 2.0 at maturity)
+            - ['-']
+            VERNBASE: 
+            -  14.0
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:  
+            - 70.0
+            - Saturated vernalization requirement
+            - ['d']
+            VERNDVS:  
+            - 0.30
+            - Critical DVS for vernalization to switch off
+            - ['-']
+            VERNRTB:
+            - [-8.0, 0.0, -4.0, 0.0, 3.0, 1.0, 10.0, 1.0, 17.0, 0.0, 20.0, 0.0]
+            - Temperature response function for vernalization
+            - ['C', '-']
+
+            # INITIAL STATES
+            TDWI:  
+            - 75.00
+            - initial total crop dry weight
+            - ['kg.ha-1']
+            RGRLAI:  
+            - 0.0075
+            - maximum relative increase in LAI
+            - ['d-1']
+
+            # CROP GREEN AREA
+            SLATB:
+            - [0.00, 0.00200,
+               0.30, 0.00350,
+               0.90, 0.00250,
+               1.45, 0.00220,
+               2.00, 0.00220]
+            - specific leaf area as a function of DVS
+            - ['-', 'ha.kg-1']
+            SPA:  
+            - 0.0000
+            - specific pod area
+            - ['ha.kg-1']
+            SSATB:
+            - [0.00, 0.0000, 2.00, 0.0000]
+            - specific stem area as function of DVS
+            - ['-', 'ha.kg-1']
+            SPAN: 
+            - 25.0
+            - life span of leaves growing at 35 Celsius
+            - ['d']
+            TBASE: 
+            - 1.0
+            - lower threshold temperature for ageing of leaves
+            - ['C']
+
+            # CO2 ASSIMILATION
+            KDIFTB:
+            - [0.00, 0.440,
+               2.00, 0.440]
+            - extinction coefficient for diffuse visible light as function of DVS
+            - ['-', '-']
+            EFFTB:
+            - [0.0, 0.420, 40.0, 0.420]
+            - initial light-use efficiency single leaf as function of daily mean temperature
+            - ['C', 'kg.ha-1.hr-1.J-1.m2.s1']
+            AMAXTB:
+            - [0.00, 27.00, 1.57, 27.00, 2.00, 0.00]
+            - maximum leaf CO2 assimilation rate as function of DVS
+            - ['-', 'kg.ha-1.hr-1']
+            REFCO2L: 
+            - 360
+            - CO2 level at which AMAX and EFF were measured
+            - ['PPM']
+            TMPFTB:
+            - [0.0, 0.010, 
+               3.0, 0.010, 
+               10.0, 0.750, 
+               15.0, 1.000, 
+               20.0, 1.000, 
+               26.0, 0.750, 
+               33.0, 0.010]
+            - reduction factor of AMAX as function of average daytime temperature
+            - ['C', '-']
+            TMNFTB:
+            - [0.0, 0.000, 3.0, 1.000]
+            - reduction factor of gross assimilation rate as function of low minimum temperature
+            - ['C', '-']
+
+            # CONVERSION EFFICIENCY OF ASSIMILATES
+            CVL:  
+            - 0.720
+            - efficiency of conversion into leaves
+            - ['mass.mass-1']
+            CVO:  
+            - 0.740
+            - efficiency of conversion into storage organs
+            - ['mass.mass-1']
+            CVR:  
+            - 0.720
+            - efficiency of conversion into roots
+            - ['mass.mass-1']
+            CVS:  
+            - 0.690
+            - efficiency of conversion into stems
+            - ['mass.mass-1']
+
+            # RESPIRATION
+            Q10:  
+            - 2.00
+            - relative increase in respiration rate per 10 degrees Celsius
+            - ['-']
+            RML:  
+            - 0.0300
+            - relative maintenance respiration rate of leaves
+            - ['d-1']
+            RMO:  
+            - 0.0045
+            - relative maintenance respiration rate of storage organs
+            - ['d-1']
+            RMR:  
+            - 0.0100
+            - relative maintenance respiration rate of roots
+            - ['d-1']
+            RMS:  
+            - 0.0150
+            - relative maintenance respiration rate of stems
+            - ['d-1']
+            RFSETB:
+            - [0.00, 1.000, 2.00, 1.000]
+            - reduction factor for senescence as function of DVS
+            - ['-', '-']
+
+            # PARTITIONING
+            FRTB:
+            - [0.000, 0.600,
+               0.400, 0.550,
+               1.000, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to roots as a function of DVS
+            - ['-', 'mass.mass-1']
+            FLTB:
+            - [0.000, 1.000,
+               0.330, 1.000,
+               0.800, 0.400,
+               1.000, 0.100,
+               1.010, 0.000,
+               2.000, 0.000]
+            - fraction of total dry matter to leaves as a function of DVS
+            - ['-', 'mass.mass-1']
+            FSTB:
+            - [0.000, 0.000,
+               0.330, 0.000,
+               0.800, 0.600,
+               1.000, 0.900,
+               1.010, 0.150,
+               2.000, 0.000]
+            - fraction of total dry matter to stems as a function of DVS
+            - ['-', 'mass.mass-1']
+            FOTB:
+            - [0.000, 0.000,
+               0.800, 0.000,
+               1.000, 0.000,
+               1.010, 0.850,
+               2.000, 1.000]
+            - fraction of total dry matter to storage organs as a function of DVS
+            - ['-', 'mass.mass-1']
+
+            # DEATH RATES
+            PERDL:  
+            - 0.030
+            - maximum relative death rate of leaves due to water stress
+            - ['-']
+            RDRRTB:
+            - [0.00, 0.000, 1.50, 0.000, 1.51, 0.020, 2.00, 0.020]
+            - Relative death rate of roots as a function of DVS
+            - ['-', 'kg.kg-1.d-1']
+            RDRSTB:
+            - [0.00, 0.000, 1.50, 0.000, 1.51, 0.020, 2.00, 0.020]
+            - relative death rate of stems as a function of DVS
+            - ['-', 'kg.kg-1.d-1']
+
+            # WATER USE
+            CFET:  
+            - 1.00
+            - correction factor transpiration rate
+            - ['-']
+            DEPNR:  
+            - 3.00
+            - crop group number for soil water depletion
+            - ['-']
+            IAIRDU:  
+            - 0
+            - air ducts in roots present (=1) or not (=0)
+            - ['NA']
+            IOX:  
+            - 0
+            - Oxygen stress effect enabled (=1) or not (=0)
+            - ['NA']
+
+            # ROOTING DEPTH
+            RDI:  
+            - 10.0
+            - initial rooting depth
+            - ['cm']
+            RRI:  
+            - 1.20
+            - maximum daily increase in rooting depth
+            - ['cm.d-1']
+            RDMCR:  
+            - 70.0
+            - maximum rooting depth
+            - ['cm']
+    Varieties:
+        Oats_NorthernEurope_Spring:
+            <<: *oats
+            Metadata:
+                <<: *meta
+                Contributor: Adapted from spring barley ecotype
+                Description: |
+                  Spring oat parameters for Northern Europe (Scandinavia, Baltic, UK, 
+                  Ireland, Northern Germany). Based on spring barley with adjustments:
+                  - Reduced TSUM1 (760 vs 800) and TSUM2 (710 vs 750) for earlier maturity
+                  - Lower AMAXTB (27 vs 30-32) reflecting oats' lower photosynthetic capacity
+                  - Increased RDMCR (70 cm vs 50-60) for deeper rooting
+                  - Earlier emergence (TSUMEM 155 vs 170) for cool soil tolerance
+                  - Suitable for spring sowing (March-May) with harvest in August-September
+                  WARNING: This parameter set has not been validated against observed experimental data.
+                Source: Adapted from ajwdewit/WOFOST_crop_parameters (spring barley)
+                Type: Adapted parameter set
+                Coverage:
+                   Region: Northern Europe (Scandinavia, Baltic, UK, Ireland, Northern Germany)
+                Rights: European Union Public License (EUPL) - derived from original
+                Keyword: oats; Avena sativa; spring oats; Northern Europe; WOFOST
+            TSUM1: 
+            - 760
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2: 
+            - 710
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            TSUMEM: 
+            - 155
+            - temperature sum from sowing to emergence
+            - ['C.d']
