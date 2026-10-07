@@ -91,6 +91,14 @@ CropParameters:
            2000., 1.00]
          - multiplication factor for AMAX to account for an increasing CO2 concentration
          - ['PPM', '-']
+        AMAX_SLP:
+         - 8.56
+         - slope of relationship between maximum leaf photosynthesis rate and specific leaf nitrogen
+         - ['kg CO2 ha-1 h-1 (kg N m-2)-1']
+        AMAX_LNB:
+         - 0.0
+         - specific leaf nitrogen below which there is no photosynthesis
+         - ['kg N ha-1']
     EcoTypes:
         tropical_maize: &tropical_maize
             <<: *GenericC4
@@ -219,7 +227,7 @@ CropParameters:
             - initial light-use efficiency single leaf as function of daily mean temperature
             - ['C', 'kg.ha-1.hr-1.J-1.m2.s1']
             AMAX_REF:
-            - 70.0
+            - 80.0
             - maximum leaf CO2 assimilation rate
             - ['kg.ha-1.hr-1']
             KN:
@@ -599,14 +607,14 @@ CropParameters:
                40.0, 0.450]
             - initial light-use efficiency single leaf as function of daily mean temperature
             - ['C', 'kg.ha-1.hr-1.J-1.m2.s1']
-            AMAXTB:
-            - [0.00, 70.00,
-               1.25, 70.00,
-               1.50, 63.00,
-               1.75, 49.00,
-               2.00, 21.00]
-            - maximum leaf CO2 assimilation rate as function of DVS
-            - ['-', 'kg.ha-1.hr-1']
+            AMAX_REF:
+            - 80.0
+            - maximum leaf CO2 assimilation rate
+            - ['kg.ha-1.hr-1']
+            KN:
+            - 0.4
+            - Extinction coefficient of leaf N concentration with canopy depth
+            - ['-']
             REFCO2L:
             - 360
             - CO2 level at which AMAX and EFF were measured
@@ -957,14 +965,50 @@ CropParameters:
              - 7.2
              - Maximum rate of daily nitrogen uptake
              - ['kg.ha-1.d-1']
-            RPUPTAKEMAX:
+            DVS_N_TRANSL:
              - 0.8
-             - Maximum rate of daily phosphorus uptake
-             - ['kg..ha-1.d-1']
-            RKUPTAKEMAX:
-             - 7.4
-             - Maximum rate of daily potassium uptake
-             - ['kg.ha-1.d-1']
+             - development stage above which N translocation to storage organs does occur
+             - ['-']
+            NSLLV_TB:
+            - [0.0, 1.0,
+               1.1, 1.0,
+               1.5, 1.4,
+               2.0, 1.5,
+               2.5, 1.5]
+            - Increment factor rate stems due to N stress
+            - ['-']
+            RGRLAI_MIN:
+            - 0.004
+            - maximum relative increase in LAI under maximum nitrogen stress
+            - ['ha.ha-1.d-1']
+            #
+            # BIOMASS REALLOCATION
+            #
+            REALLOC_DVS:
+            - 3.0
+            - Development stage when reallocation from stems and leaves to storage organs starts.
+              DVS values > 2.0 mean that reallocation is not enabled for this crop.
+            - ['-']
+            REALLOC_STEM_FRACTION:
+            - 0.2
+            - Fraction of stem biomass that can be reallocated to the storage organs
+            - ['kg.kg-1']
+            REALLOC_LEAF_FRACTION:
+            - 0.0
+            - Fraction of stem biomass that can be reallocated to the storage organs
+            - ['kg.kg-1']
+            REALLOC_STEM_RATE:
+            - 0.0415
+            - Relative rate of reallocation of stem biomass
+            - ['d-1']
+            REALLOC_LEAF_RATE:
+            - 0.0
+            - Relative rate of reallocation of leaf biomass
+            - ['d-1']
+            REALLOC_EFFICIENCY:
+            - 0.95
+            - Conversion efficiency of reallocated stem and leaf dry matter into storage organ dry matter
+            - ['kg.kg-1']
     Varieties:
         Maize_VanHeemst_1988:
             <<: *tropical_maize
@@ -1113,12 +1157,6 @@ CropParameters:
                40.0, 0.470]
             - initial light-use efficiency single leaf as function of daily mean temperature
             - ['C', 'kg.ha-1.hr-1.J-1.m2.s1']
-            AMAXTB:
-            - [0.00, 70.00,
-               1.25, 70.00,
-               1.50, 63.00,
-               1.75, 49.00,
-               2.00, 35.00]
             CVL:
             - 0.680
             - efficiency of conversion into leaves
