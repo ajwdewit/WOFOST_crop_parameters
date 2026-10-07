@@ -14,16 +14,17 @@
 Version: 1.0.0
 Metadata: &meta
     Creator: Allard de Wit
-    Contributor: E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
+    Contributor: Herman Berghuijs, E.R. Boons-Prins, G.H.J. de Koning, CA. van Diepen, F.W.T. Penning de Vries
     Contact: allard.dewit@wur.nl
     Publisher: Wageningen Environmental Research
-    Title: Parameter sets for the WOFOST7.2/WOFOST8.0 model for simulating maize
-    Date: 2022-02-13
+    Title: Parameter sets for the WOFOST8.1 model for simulating maize
+    Date: 2026-10-07
     Language: EN
     Format: YAML
     Subject: WOFOST parameters for maize
     Description: This file provides parameters for one or more maize varieties calibrated on
-        local experimental data or regional cropping calendars
+        local experimental data or regional cropping calendars. Specific parameters for WOFOST 8.1 were
+        derived by Herman Berghuijs in particular the relationship between leaf N concentration and AMAX 
     Identifier:
     Relation:
     Source: https://edepot.wur.nl/308997

@@ -14,15 +14,16 @@
 Version: 1.0.0
 Metadata: &meta
     Creator: Allard de Wit
-    Contributor: H.D.J. van Heemst
+    Contributor: Herman Berghuijs, H.D.J. van Heemst
     Contact: allard.dewit@wur.nl
     Publisher: Wageningen Environmental Research
-    Title: Parameter sets for the WOFOST cropping system model for sugar cane
-    Date: 1988-01-01
+    Title: Parameter sets for the WOFOST 8.1 cropping system model for sugar cane
+    Date: 2026-10-07
     Language: EN
     Format: YAML
     Subject: Generic crop parameters for sugar cane
-    Description: This file provides WOFOST parameters for sugar cane as collected by Van Heemst (1988)
+    Description: This file provides WOFOST parameters for sugar cane as collected by Van Heemst (1988).  Specific parameters 
+        for WOFOST 8.1 were derived by Herman Berghuijs in particular the relationship between leaf N concentration and AMAX.
     Identifier:
     Relation:
     Source: https://edepot.wur.nl/218353
@@ -90,6 +91,14 @@ CropParameters:
            2000., 1.00]
          - multiplication factor for AMAX to account for an increasing CO2 concentration
          - ['PPM', '-']
+        AMAX_SLP:
+         - 8.56
+         - slope of relationship between maximum leaf photosynthesis rate and specific leaf nitrogen
+         - ['kg CO2 ha-1 h-1 (kg N m-2)-1']
+        AMAX_LNB:
+         - 0.0
+         - specific leaf nitrogen below which there is no photosynthesis
+         - ['kg N ha-1']
     EcoTypes:
         sugarcane: &sugarcane
             <<: *GenericC4
