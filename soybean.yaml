@@ -777,12 +777,10 @@ CropParameters:
                2.00, 0.500]
             - extinction coefficient for diffuse visible light as function of DVS
             - ['-', '-']
-            AMAXTB:
-            - [0.00, 37.00,
-               1.70, 37.00,
-               2.00, 0.00]
-            - maximum leaf CO2 assimilation rate as function of DVS
-            - ['-', 'kg.ha-1.hr-1']
+            AMAX_REF:
+            - 37.0
+            - maximum leaf CO2 assimilation rate
+            - ['kg.ha-1.hr-1']
             TMPFTB:
             - [ 0.0, 0.000,
                10.0, 0.000,
