@@ -530,15 +530,6 @@ CropParameters:
             - 22.0
             - life span of leaves growing at 35 Celsius
             - ['d']
-            AMAXTB:
-            - [0.00, 40.00,
-               0.80, 40.00,
-               1.00, 30.00,
-               1.20, 35.00,
-               1.40, 20.00,
-               2.00, 0.00]
-            - maximum leaf CO2 assimilation rate as function of DVS
-            - ['-', 'kg.ha-1.hr-1']
             RMO:
             - 0.0120
             - relative maintenance respiration rate of storage organs
@@ -598,15 +589,6 @@ CropParameters:
             - 28.0
             - life span of leaves growing at 35 Celsius
             - ['d']
-            AMAXTB:
-            - [0.00, 40.00,
-               0.80, 40.00,
-               1.00, 30.00,
-               1.20, 35.00,
-               1.40, 20.00,
-               2.00, 0.00]
-            - maximum leaf CO2 assimilation rate as function of DVS
-            - ['-', 'kg.ha-1.hr-1']
             RMO:
             - 0.0120
             - relative maintenance respiration rate of storage organs
@@ -674,15 +656,6 @@ CropParameters:
             - 35.0
             - life span of leaves growing at 35 Celsius
             - ['d']
-            AMAXTB:
-            - [0.00, 31.00,
-               0.80, 31.00,
-               1.00, 21.00,
-               1.20, 26.00,
-               1.40, 26.00,
-               2.00, 0.00]
-            - maximum leaf CO2 assimilation rate as function of DVS
-            - ['-', 'kg.ha-1.hr-1']
             CVO:
             - 0.400
             - efficiency of conversion into storage organs
