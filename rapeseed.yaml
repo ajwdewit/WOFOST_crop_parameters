@@ -88,7 +88,7 @@ CropParameters:
          - multiplication factor for AMAX to account for an increasing CO2 concentration
          - ['PPM', '-']
     EcoTypes:
-        rapeseed: &rapeseed
+        rapeseed_spring: &rapeseed_spring
             <<: *GenericC3
             #
             # EMERGENCE
@@ -386,9 +386,48 @@ CropParameters:
             - 125.0
             - maximum rooting depth
             - ['cm']
+        rapeseed_winter: &rapeseed_winter
+            <<: *GenericC3
+            <<: *rapeseed_spring
+            Metadata: &meta_winter
+                Creator: Allard de Wit
+                Contributor: Hendrik Boogaard, Allard de Wit, Herman Berghuijs, Steven Hoek, Mechteld terHorst, Paulien Adriaanse
+                Contact: allard.dewit@wur.nl
+                Publisher: Wageningen Environmental Research
+                Title: Parameter sets for the WOFOST7.2/7.3 model for simulating winter oilseed rape
+                Date: 2026-11-13
+                Language: EN
+                Format: YAML
+                Subject: WOFOST parameters for winter oilseed rape
+                Description: This file provides parameters for one or more winter oilseed rape varieties calibrated on
+                    local experimental data.
+                Identifier:
+                Relation:
+                Source: https://efsa.onlinelibrary.wiley.com/doi/epdf/10.2903/sp.efsa.2025.EN-9637
+                Type: Report
+                Coverage:
+                   Region: Europe
+                Rights: European Union Public License (EUPL)
+                Keyword: Oilseed rape; Brassica campestris
+            #
+            # PHENOLOGICAL DEVELOPMENT
+            #
+            IDSL:
+            -  2
+            - indicates whether pre-anthesis development depends on temperature (=0), plus daylength (=1) , plus vernalization (=2)
+            - ['NA']
+            #
+            # INITIAL STATES
+            #
+            TDWI:
+            # Derived from https://doi.org/10.4141/cjps-2014-222
+            # Assuming unsized seed weight and highest density
+            - 6.6
+            - initial total crop dry weight
+            - ['kg.ha-1']
     Varieties:
-        Oilseed_rape_1001:
-            <<: *rapeseed
+        Oilseed_rape_1001_spring:
+            <<: *rapeseed_spring
             Metadata:
                 <<: *meta
                 Description: Oilseed rape calibrated for Western and Northern Europe including Northern France,
@@ -403,8 +442,8 @@ CropParameters:
             -  600
             - temperature sum from anthesis to maturity
             - ['C.d']
-        Oilseed_rape_1002:
-            <<: *rapeseed
+        Oilseed_rape_1002_spring:
+            <<: *rapeseed_spring
             Metadata:
                 <<: *meta
                 Description: Oilseed rape calibrated for Southern France and Southern Italy. Mean date of flowering
@@ -471,8 +510,8 @@ CropParameters:
                2.000, 1.000]
             - fraction of total dry matter to storage organs as a function of DVS
             - ['-', 'mass.mass-1']
-        Oilseed_rape_1003:
-            <<: *rapeseed
+        Oilseed_rape_1003_spring:
+            <<: *rapeseed_spring
             Metadata:
                 <<: *meta
                 Description: Oilseed rape calibrated for Southern Spain. Mean date of flowering
@@ -539,8 +578,8 @@ CropParameters:
                2.000, 1.000]
             - fraction of total dry matter to storage organs as a function of DVS
             - ['-', 'mass.mass-1']
-        Oilseed_rape_1004:
-            <<: *rapeseed
+        Oilseed_rape_1004_spring:
+            <<: *rapeseed_spring
             Metadata:
                 <<: *meta
                 Description: Oilseed rape calibrated for Spain, except Southern part. Mean date of maturity 25 June.
@@ -643,3 +682,380 @@ CropParameters:
                2.000, 0.610]
             - fraction of total dry matter to storage organs as a function of DVS
             - ['-', 'mass.mass-1']
+        Oilseed_rape_winter_1784:
+            <<: *rapeseed_winter
+            Metadata:
+                <<: *meta_winter
+                Description: Oilseed rape calibrated for Ireland and central UK.
+            DLO:
+            - 16.3
+            - optimum daylength for development
+            - ['hr']
+            DLC:
+            - 8.0
+            - critical daylength (lower threshold)
+            - ['hr']
+            TSUM1:
+            -  266
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  992
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            VERNBASE:
+            - 7.6
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 38.4
+            - Saturated vernalization requirement
+            - ['d']
+        Oilseed_rape_winter_1820:
+            <<: *rapeseed_winter
+            Metadata:
+                <<: *meta_winter
+                Description: Oilseed rape calibrated for southern UK.
+            DLO:
+            - 15.5
+            - optimum daylength for development
+            - ['hr']
+            DLC:
+            - 8.0
+            - critical daylength (lower threshold)
+            - ['hr']
+            TSUM1:
+            -  242
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  962
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            VERNBASE:
+            - 7.6
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 38.3
+            - Saturated vernalization requirement
+            - ['d']
+        Oilseed_rape_winter_1845:
+            <<: *rapeseed_winter
+            Metadata:
+                <<: *meta_winter
+                Description: Oilseed rape calibrated for Netherlands and Belgium.
+            DLO:
+            - 14.9
+            - optimum daylength for development
+            - ['hr']
+            DLC:
+            - 8.0
+            - critical daylength (lower threshold)
+            - ['hr']
+            TSUM1:
+            -  259
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  1039
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            VERNBASE:
+            - 9.3
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 46.5
+            - Saturated vernalization requirement
+            - ['d']
+        Oilseed_rape_winter_1842:
+            <<: *rapeseed_winter
+            Metadata:
+                <<: *meta_winter
+                Description: Oilseed rape calibrated for northern Germany
+            DLO:
+            - 14.9
+            - optimum daylength for development
+            - ['hr']
+            DLC:
+            - 8.0
+            - critical daylength (lower threshold)
+            - ['hr']
+            TSUM1:
+            -  255
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  996
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            VERNBASE:
+            - 12.2
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 61.0
+            - Saturated vernalization requirement
+            - ['d']
+        Oilseed_rape_winter_1840:
+            <<: *rapeseed_winter
+            Metadata:
+                <<: *meta_winter
+                Description: Oilseed rape calibrated for Denmark and S-Sweden
+            DLO:
+            - 16.5
+            - optimum daylength for development
+            - ['hr']
+            DLC:
+            - 8.0
+            - critical daylength (lower threshold)
+            - ['hr']
+            TSUM1:
+            -  200
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  1007
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            VERNBASE:
+            - 13.3
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 66.6
+            - Saturated vernalization requirement
+            - ['d']
+        Oilseed_rape_winter_1976:
+            <<: *rapeseed_winter
+            Metadata:
+                <<: *meta_winter
+                Description: Oilseed rape calibrated for north France
+            DLO:
+            - 14.4
+            - optimum daylength for development
+            - ['hr']
+            DLC:
+            - 8.0
+            - critical daylength (lower threshold)
+            - ['hr']
+            TSUM1:
+            -  280
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  1014
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            VERNBASE:
+            - 7.0
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 34.9
+            - Saturated vernalization requirement
+            - ['d']
+        Oilseed_rape_winter_2057:
+            <<: *rapeseed_winter
+            Metadata:
+                <<: *meta_winter
+                Description: Oilseed rape calibrated for South-Western France
+            DLO:
+            - 13.7
+            - optimum daylength for development
+            - ['hr']
+            DLC:
+            - 8.0
+            - critical daylength (lower threshold)
+            - ['hr']
+            TSUM1:
+            -  333
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  955
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            VERNBASE:
+            - 3.6
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 18.0
+            - Saturated vernalization requirement
+            - ['d']
+        Oilseed_rape_winter_2034:
+            <<: *rapeseed_winter
+            Metadata:
+                <<: *meta_winter
+                Description: Oilseed rape calibrated for Central and Eastern France
+            DLO:
+            - 14.1
+            - optimum daylength for development
+            - ['hr']
+            DLC:
+            - 8.0
+            - critical daylength (lower threshold)
+            - ['hr']
+            TSUM1:
+            -  258
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  1187
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            VERNBASE:
+            - 8.6
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 43.2
+            - Saturated vernalization requirement
+            - ['d']
+        Oilseed_rape_winter_2137:
+            <<: *rapeseed_winter
+            Metadata:
+                <<: *meta_winter
+                Description: Oilseed rape calibrated for France Mediterranean coast and Central and eastern Spain
+            DLO:
+            - 14.0
+            - optimum daylength for development
+            - ['hr']
+            DLC:
+            - 8.0
+            - critical daylength (lower threshold)
+            - ['hr']
+            TSUM1:
+            -  258
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  1187
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            VERNBASE:
+            - 5.7
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 28.7
+            - Saturated vernalization requirement
+            - ['d']
+        Oilseed_rape_winter_2075:
+            <<: *rapeseed_winter
+            Metadata:
+                <<: *meta_winter
+                Description: Oilseed rape calibrated for Pyrenees, Basque Country, Calibria and N-portugal
+            DLO:
+            - 14.0
+            - optimum daylength for development
+            - ['hr']
+            DLC:
+            - 8.0
+            - critical daylength (lower threshold)
+            - ['hr']
+            TSUM1:
+            -  255
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  996
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            VERNBASE:
+            - 2.7
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 13.6
+            - Saturated vernalization requirement
+            - ['d']
+        Oilseed_rape_winter_2135:
+            <<: *rapeseed_winter
+            Metadata:
+                <<: *meta_winter
+                Description: Oilseed rape calibrated for Southern and Central Spain
+            DLO:
+            - 14.0
+            - optimum daylength for development
+            - ['hr']
+            DLC:
+            - 8.0
+            - critical daylength (lower threshold)
+            - ['hr']
+            TSUM1:
+            -  258
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  1187
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            VERNBASE:
+            - 0.4
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 2.1
+            - Saturated vernalization requirement
+            - ['d']
+        Oilseed_rape_winter_1932:
+            <<: *rapeseed_winter
+            Metadata:
+                <<: *meta_winter
+                Description: Oilseed rape calibrated for Southern-Western Germany and Wallonia
+            DLO:
+            - 14.9
+            - optimum daylength for development
+            - ['hr']
+            DLC:
+            - 8.0
+            - critical daylength (lower threshold)
+            - ['hr']
+            TSUM1:
+            -  255
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  996
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            VERNBASE:
+            - 12.2
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 61.0
+            - Saturated vernalization requirement
+            - ['d']
+        Oilseed_rape_winter_1957:
+            <<: *rapeseed_winter
+            Metadata:
+                <<: *meta_winter
+                Description: Oilseed rape calibrated for Southern Germany
+            DLO:
+            - 15.1
+            - optimum daylength for development
+            - ['hr']
+            DLC:
+            - 8.0
+            - critical daylength (lower threshold)
+            - ['hr']
+            TSUM1:
+            -  247
+            - temperature sum from emergence to anthesis
+            - ['C.d']
+            TSUM2:
+            -  1030
+            - temperature sum from anthesis to maturity
+            - ['C.d']
+            VERNBASE:
+            - 12.2
+            - Base vernalization requirement
+            - ['d']
+            VERNSAT:
+            - 62.0
+            - Saturated vernalization requirement
+            - ['d']
